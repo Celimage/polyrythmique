@@ -1,0 +1,7 @@
+Clic : utiliser bouton
+Double clique : sélectionner
+Clique long : afficher les détails
+
+
+Son des voix : Son -> Solo -> Muet
+
