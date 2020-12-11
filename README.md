@@ -4,7 +4,7 @@
 
 Cette application a pour but d'aider les rythmiciens et rythmicienne à enregistrer leurs polyrythmies.
 Elle propose trois fonctionnalités majeures : la prise de rythme de zéro, la prise de rythme sur fond
-musical et un métronome. Les détails de ces fonctionnalités sont spécifiées
+musical et un métronome. Les détails de ces fonctionnalités sont spécifiées dans le cahier des charges à la racine du dépôt.
 
 Cette application est développée par plusieurs groupes d'étudiants de Polytech Tours en quatrième année d'informatique. Le commanditaire du projet est Sylvain FABRE.
 Mathieu DELALANDRE s'occupe de l'encadremment du projet.
