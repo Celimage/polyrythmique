@@ -37,7 +37,7 @@ La documentation du code est écrite en anglais, avec traduction française des 
 L'application est développée en anglais.<br />
 Vous pouvez trouver une traduction des termes musicaux <a href="https://web-music-school.fr/traduction-musicale/">ici</a>.
 De plus, une anacrouse se traduit par anacrusis.<br />
-Vous trouverez une traduction des noms des instruments <a href="https://wallstreetenglish.fr/fiches-anglais/vocabulaire/instruments-musique-en-anglais">ici</a>.
+Vous trouverez une traduction des noms des instruments <a href="https://wallstreetenglish.fr/fiches-anglais/vocabulaire/instruments-musique-en-anglais">ici</a>.<br />
 Certains termes peuvent être manquants dans ces fiches.
 
 Les fichiers JSON transitant entre les différentes parties du projet seront quant à eux en français, car les groupes s'occupant des bibliothèques polyrythmique et musicale ont préféré travailler avec des données écrites en français.
