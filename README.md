@@ -5,8 +5,6 @@
 Cette application est
 
 ## Règles de nommage
-
-Voici les règles de nommage définis pour ce dépôt git :
 | **Objets concernés** | **Casse** |
 | Fichiers<br />Dossiers | `snake_case` |
 | Variables<br />Fonctions<br />(Attributs)<br />(Méthodes) | `camelCase` |
