@@ -26,19 +26,21 @@ Une fois le cahier des charges établit, nous avons défini le type et la forme 
 Le développement est fait séparément par chaque groupe. Nous possédons un <a href="https://drive.google.com/drive/u/0/folders/1hZ3fyTK6NMRb3P3QUoIZ0C5QQG39dSzV">Google Drive</a>,
 un <a href="https://trello.com/b/707qIlIW/polyrythmique">Trello</a> et un serveur discord.
 
-## documentation
+## Documentation
 
 Étant donné que le projet est destiné a être développé par différents groupes d'étudiants sur plusieures années différentes, il est extrêmement important de créer une documentation propre, complète et lisible.
 
-La documentation du code est écrite en anglais et générée avec <a href="https://compodoc.app">CompoDoc</a>. Le reste de la documentation se fait via les fichiers README.
+La documentation du code est écrite en anglais, avec traduction française des termes musicaux, et générée avec <a href="https://compodoc.app">CompoDoc</a>. Le reste de la documentation se fait via les fichiers README.
 
 ## Règles de nommage (utilisées pour la totalité du dépôt)
 
 L'application est développée en anglais.<br />
-Vous pouvez trouver une traduction des termes musicaux<a href="https://web-music-school.fr/traduction-musicale/">ici</a>.
+Vous pouvez trouver une traduction des termes musicaux <a href="https://web-music-school.fr/traduction-musicale/">ici</a>.
 De plus, une anacrouse se traduit par anacrusis.<br />
 Vous trouverez une traduction des noms des instruments <a href="https://wallstreetenglish.fr/fiches-anglais/vocabulaire/instruments-musique-en-anglais">ici</a>.
-Certains termes sont peut-être manquants dans ces fiches.
+Certains termes peuvent être manquants dans ces fiches.
+
+Les fichiers JSON transitant entre les différentes parties du projet seront quant à eux en français, car les groupes s'occupant des bibliothèques polyrythmique et musicale ont préféré travailler avec des données écrites en français.
 
 | Objets concernés | Casse |
 | ---------------- | ----- |
