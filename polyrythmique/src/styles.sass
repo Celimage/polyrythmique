@@ -1,5 +1,14 @@
 @use "~sass/vars"
 
+@mixin placeholder
+  &::-webkit-input-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+  &::placeholder
+    @content
+
+
 $INTERACTIVE_PAD: 0.25rem
 
 html
@@ -19,7 +28,7 @@ a
 
 main
   flex-grow: 1
-  padding : 0 2rem
+  padding : 0 1rem
 
 
 button
@@ -27,8 +36,24 @@ button
   border: none
   padding: $INTERACTIVE_PAD
   color: vars.$TEXT_COLOR
+  border-radius: 0.5rem
+
+input
+  display: block
+  background-color: rgba(255,255,255,0.2)
+  color: vars.$TEXT_COLOR
+  font-size: 1em
+  padding: 0.25rem
+  border: none
+  border-radius: 0.5rem
+  @include placeholder
+    color: vars.$TEXT_COLOR
+    font-style: italic
+    opacity: 0.7
+    font-size: 0.95em
+
 
 
 @media (max-width: vars.$PHONE_MAX_WIDTH)
   main
-    padding: 0 1rem
+    padding: 0 0.5rem

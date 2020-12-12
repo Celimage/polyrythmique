@@ -1,0 +1,21 @@
+<div class="track">
+  <div class="soundPlan">
+    <img (click)="changeSoundPlan()" *ngIf="selectedSoundPlan == 0"
+      src="../assets/images/sound.svg" alt="Plan normal (non muet, non solo)" />
+    <img (click)="changeSoundPlan()" *ngIf="selectedSoundPlan == 1"
+      src="../assets/images/solo.svg" alt="Plan solo" />
+    <img (click)="changeSoundPlan()" *ngIf="selectedSoundPlan == 2"
+      src="../assets/images/mute.svg" alt="Plan muet" />
+  </div>
+  <div class="trackContent">
+    
+  </div>
+  <div [ngClass]="{'instrument': true, 'modify': modifyInstrument}">
+    <span *ngIf="instrument != ''; else placeholder" (click)="toggleModifyInstrument()">{{ instrument }}</span>
+    <ng-template #placeholder><span (click)="modifyInstrument = !modifyInstrument">Défaut</span></ng-template>
+    <div>
+      <input [(ngModel)]="instrument" value="instrument" placeholder="instrument"/>
+      <button (click)="toggleModifyInstrument()">→</button>
+    </div>
+  </div>
+</div>

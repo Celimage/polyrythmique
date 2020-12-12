@@ -5,7 +5,8 @@ $SLOPE: ($WIDTH * 49.1) / 120.6
 $ICON_WIDTH: $WIDTH * 0.85
 
 aside
-  position: fixed
+  position: -webkit-sticky
+  position: sticky
   top: 0
   right: 0
   height: 100vh
@@ -75,17 +76,19 @@ img
 
 @media (max-width: vars.$PHONE_MAX_WIDTH)
   aside
+    position: fixed
     left: 0
-    width: 40%
-    min-width: 275px
     background-color: vars.$GRAY
 
   button
-    display: block
+    display: inline-block
     &:not(.active)+nav
       display: none
+    //&:not(.active)
 
   nav
+    width: 40%
+    min-width: 275px
     justify-content: space-evenly
     z-index: 2
 

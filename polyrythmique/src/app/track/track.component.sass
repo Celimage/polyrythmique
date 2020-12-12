@@ -1,0 +1,69 @@
+@use "~sass/vars"
+
+$HEIGHT: 3rem
+
+$INSTRUMENT_WIDTH: 9rem
+$INSTR_INPUT_HEIGHT: 2rem
+
+%absVertCenteredInteractive
+  cursor: pointer
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+
+:host
+  display: block
+  width: 100%
+
+.track
+  display: flex
+  height: $HEIGHT
+  width: 100%
+  background-image: linear-gradient(to right, vars.$TRANSPARENT_MIDDLE_DARK_GRAY, vars.$MIDDLE_DARK_GRAY 5%, vars.$MIDDLE_DARK_GRAY 87%, vars.$TRANSPARENT_MIDDLE_DARK_GRAY)
+  margin: 1rem 0
+  padding: 0 0.5rem
+
+  &>div
+    height: 100%
+
+.soundPlan
+  position: relative
+  justify-content: center
+  width: $HEIGHT
+
+  img
+    @extend %absVertCenteredInteractive
+
+.trackContent
+  flex-grow: 1
+
+.instrument
+  position: relative
+  min-width: $INSTRUMENT_WIDTH
+
+  div, span
+    @extend %absVertCenteredInteractive
+  &>div
+    cursor: default
+    width: 100%
+    height: $INSTR_INPUT_HEIGHT
+    display: none
+
+    input
+      flex-grow: 1
+      max-width: $INSTRUMENT_WIDTH - $INSTR_INPUT_HEIGHT
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+    button
+      height: 100%
+      width: $INSTR_INPUT_HEIGHT
+      background: vars.$DEEP_DARK_GRAY
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+
+
+.instrument.modify
+  span
+    display: none
+  div
+    display: flex
