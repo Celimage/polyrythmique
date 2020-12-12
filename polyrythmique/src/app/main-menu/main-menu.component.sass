@@ -1,0 +1,122 @@
+@use "~sass/vars"
+
+$WIDTH: 3.5rem
+$SLOPE: ($WIDTH * 49.1) / 120.6
+$ICON_WIDTH: $WIDTH * 0.85
+
+aside
+  position: fixed
+  top: 0
+  right: 0
+  height: 100vh
+  width: $WIDTH
+
+nav
+  height: 100%
+  width: 100%
+  display: flex
+  flex-direction: column
+
+button
+  display: none
+
+a
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 0
+  height: calc(100% / 3)
+  width: 100%
+  background-color: vars.$GRAY
+  z-index: 10
+
+  &::before, &::after
+    content: ""
+    position: absolute
+    border-color: transparent transparent transparent vars.$GRAY
+    border-style: solid
+    height: 0
+    width: 0
+  &::before
+    top: 0
+    border-width: $SLOPE 0 0 $WIDTH
+    transform: translateY(-100%)
+  &::after
+    bottom: 0
+    border-width: 0 0 $SLOPE $WIDTH
+    transform: translateY(100%)
+
+  &:first-child::before
+    border: none
+  &:last-child::after
+    border: none
+
+
+.middle
+  background-color: vars.$DARK_GRAY
+  z-index: 9
+
+  &::before, &::after
+    border-color: transparent transparent transparent vars.$DARK_GRAY
+.dark
+  background-color: vars.$DEEP_DARK_GRAY
+  z-index: 8
+
+  &::before, &::after
+    border-color: transparent transparent transparent vars.$DEEP_DARK_GRAY
+
+
+span
+  display: none
+img
+  width: $ICON_WIDTH
+
+
+@media (max-width: vars.$PHONE_MAX_WIDTH)
+  aside
+    left: 0
+    width: 40%
+    min-width: 275px
+    background-color: vars.$GRAY
+
+  button
+    display: block
+    &:not(.active)+nav
+      display: none
+
+  nav
+    justify-content: space-evenly
+    z-index: 2
+
+    &::after
+      content: ""
+      width: 500%
+      height: 100vh
+      position: absolute
+      top: 0
+      left: 100%
+      z-index: 1
+      background-color: vars.$DARK_GRAY
+      opacity: 1 - vars.$DISABLED_OPACITY
+
+    a
+      background-color: transparent
+      height: auto
+      justify-content: flex-start
+      padding-left: 1rem
+      box-sizing: border-box
+
+      &::before, &::after
+        border: none
+
+      span
+        display: inline-block
+        padding: 0 0.5rem
+      img
+        width: $ICON_WIDTH * 0.75
+
+
+
+
+    &

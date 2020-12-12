@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@use "~sass/vars"
+
+$INTERACTIVE_PAD: 0.25rem
+
+html
+  font-size: 120%
+
+body
+  display: flex
+  margin: 0
+  background-color: vars.$GRAY
+  color: vars.$TEXT_COLOR
+
+a
+  color: vars.$TEXT_COLOR
+  text-decoration: none
+  padding: $INTERACTIVE_PAD
+  display: inline-block
+
+main
+  flex-grow: 1
+  padding : 0 2rem
+
+
+button
+  background: none
+  border: none
+  padding: $INTERACTIVE_PAD
+  color: vars.$TEXT_COLOR
+
+
+@media (max-width: vars.$PHONE_MAX_WIDTH)
+  main
+    padding: 0 1rem
