@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { RhythmComponent } from "./rhythm/rhythm.component";
+
+const routes: Routes = [{path: "rhythm", component: RhythmComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
