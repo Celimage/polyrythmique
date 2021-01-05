@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-main-menu',
@@ -6,11 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-menu.component.sass']
 })
 export class MainMenuComponent implements OnInit {
-  active = 1;
+  /**
+    The number of the active tab
+  */
+  @Input() active: number = 1;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  setActive(active: number): void {
+    this.active = active;
+  }
 }

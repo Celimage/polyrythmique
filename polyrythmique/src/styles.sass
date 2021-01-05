@@ -1,5 +1,9 @@
 @use "~sass/vars"
 
+@font-face
+  font-family: "Comfortaa"
+  src: url("./assets/fonts/comfortaa/comfortaa-variable-font-wght.ttf") format("truetype")
+
 @mixin placeholder
   &::-webkit-input-placeholder
     @content
@@ -13,6 +17,7 @@ $INTERACTIVE_PAD: 0.25rem
 
 html
   font-size: 120%
+  font-family: vars.$FONT_FAMILY
 
 body
   display: flex
@@ -26,9 +31,25 @@ a
   padding: $INTERACTIVE_PAD
   display: inline-block
 
+h2
+  text-transform: uppercase
+
+
+h3
+  font-variant: small-caps
+
+.hide
+  display: none
+
+.disabled
+  opacity: vars.$DISABLED_OPACITY !important
+  cursor: not-allowed !important
+
 main
   flex-grow: 1
   padding : 0 1rem
+  display: flex
+  flex-direction: column
 
 
 button
@@ -37,20 +58,25 @@ button
   padding: $INTERACTIVE_PAD
   color: vars.$TEXT_COLOR
   border-radius: 0.5rem
+  font-family: vars.$FONT_FAMILY
+  font-size: 1em
 
 input
   display: block
   background-color: rgba(255,255,255,0.2)
   color: vars.$TEXT_COLOR
   font-size: 1em
+  font-family: vars.$FONT_FAMILY
   padding: 0.25rem
   border: none
   border-radius: 0.5rem
   @include placeholder
     color: vars.$TEXT_COLOR
+    font-family: vars.$FONT_FAMILY
     font-style: italic
     opacity: 0.7
     font-size: 0.95em
+
 
 
 

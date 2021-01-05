@@ -5,6 +5,11 @@ $HEIGHT: 3rem
 $INSTRUMENT_WIDTH: 9rem
 $INSTR_INPUT_HEIGHT: 2rem
 
+$BORDER_WIDTH: 0.25rem
+
+@mixin create-gradient($property, $exterior-color, $interior-color)
+  #{$property}: linear-gradient(to right, $exterior-color, $interior-color 5%, $interior-color 87%, $exterior-color)
+
 %absVertCenteredInteractive
   cursor: pointer
   position: absolute
@@ -15,13 +20,26 @@ $INSTR_INPUT_HEIGHT: 2rem
   display: block
   width: 100%
 
-.track
+  &.selected>article
+    @include create-gradient(border-image-source, vars.$TRANSPARENT_ORANGE, vars.$ORANGE)
+    border-image-slice: 100% 0 100% 0
+    border-image-width: $BORDER_WIDTH 0 $BORDER_WIDTH 0
+    border-image-repeat: stretch
+
+
+article
   display: flex
   height: $HEIGHT
   width: 100%
-  background-image: linear-gradient(to right, vars.$TRANSPARENT_MIDDLE_DARK_GRAY, vars.$MIDDLE_DARK_GRAY 5%, vars.$MIDDLE_DARK_GRAY 87%, vars.$TRANSPARENT_MIDDLE_DARK_GRAY)
-  margin: 1rem 0
+  @include create-gradient(background-image, vars.$TRANSPARENT_MIDDLE_DARK_GRAY, vars.$MIDDLE_DARK_GRAY)
+  margin: 0.75rem 0
   padding: 0 0.5rem
+
+  background-clip: padding-box
+
+  border-style: solid
+  border-width: $BORDER_WIDTH 0
+  border-color: transparent
 
   &>div
     height: 100%

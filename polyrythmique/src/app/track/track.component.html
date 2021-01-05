@@ -1,21 +1,21 @@
-<div class="track">
+<article (dblclick)="selectTrack()">
   <div class="soundPlan">
-    <img (click)="changeSoundPlan()" *ngIf="selectedSoundPlan == 0"
+    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 0"
       src="../assets/images/sound.svg" alt="Plan normal (non muet, non solo)" />
-    <img (click)="changeSoundPlan()" *ngIf="selectedSoundPlan == 1"
+    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 1"
       src="../assets/images/solo.svg" alt="Plan solo" />
-    <img (click)="changeSoundPlan()" *ngIf="selectedSoundPlan == 2"
+    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 2"
       src="../assets/images/mute.svg" alt="Plan muet" />
   </div>
   <div class="trackContent">
-    
+
   </div>
   <div [ngClass]="{'instrument': true, 'modify': modifyInstrument}">
-    <span *ngIf="instrument != ''; else placeholder" (click)="toggleModifyInstrument()">{{ instrument }}</span>
+    <span *ngIf="track.getInstrument() != ''; else placeholder" (click)="toggleModifyInstrument()">{{ track.getInstrument() }}</span>
     <ng-template #placeholder><span (click)="modifyInstrument = !modifyInstrument">Défaut</span></ng-template>
     <div>
-      <input [(ngModel)]="instrument" value="instrument" placeholder="instrument"/>
-      <button (click)="toggleModifyInstrument()">→</button>
+      <input [(ngModel)]="modifiableInstrument" value="track.getInstrument()" placeholder="instrument"/>
+      <button (click)="toggleModifyInstrument()">➤</button>
     </div>
   </div>
-</div>
+</article>

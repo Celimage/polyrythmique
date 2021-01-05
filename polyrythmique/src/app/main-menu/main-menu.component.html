@@ -1,16 +1,16 @@
 <aside>
   <button>MENU</button>
   <nav>
-    <a routerLink="/rhythm" [ngClass]="{'middle' : active == 2, 'dark' : active == 3}">
+    <a routerLink="/rhythm" [ngClass]="{'middle' : active == 2, 'dark' : active == 3}" (click)="setActive(1)">
       <img src="../assets/images/rhythm.svg" alt="Créer une polyrythmie" />
       <span>Créer une polyrythmie</span>
     </a>
 
-    <a routerLink="/rhythm_sound" [ngClass]="{'middle' : active != 2}">
-      <img src="../assets/images/rhythm_sound.svg" alt="Créer une polyrythmie depuis une musique" />
+    <a routerLink="/rhythm-sound" [ngClass]="{'middle' : active != 2}" (click)="setActive(2)">
+      <img src="../assets/images/rhythm-sound.svg" alt="Créer une polyrythmie depuis une musique" />
       <span>Créer une polyrythmie depuis une musique</span>
     </a>
-    <a routerLink="/metronome" [ngClass]="{'middle' : active == 2, 'dark' : active == 1}">
+    <a routerLink="/metronome" [ngClass]="{'middle' : active == 2, 'dark' : active == 1}" (click)="setActive(3)">
       <img src="../assets/images/metronome.svg" alt="Métronome" />
       <span>Métronome</span>
     </a>

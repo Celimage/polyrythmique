@@ -1,11 +1,41 @@
 @use "~sass/vars"
 
+$TAP_BUTTON_SIZE: 8rem
+
 :host
-  display: block
+  display: flex
+  flex-direction: column
   width: 100%
+  flex-grow: 1
+
 
 section
   width: 100%
 
 #tracks
   padding: 0.5rem 0
+
+#controls
+  margin-top: auto
+  margin-bottom: 2rem
+  display: flex
+
+  &>div
+    flex-grow: 1
+
+
+#start-button, #tap-button
+  height: $TAP_BUTTON_SIZE
+  width: $TAP_BUTTON_SIZE
+
+  border-width: 0.75rem
+  border-style: solid
+  border-radius: 50%
+
+  font-size: 1.8em
+
+#start-button
+  border-color: vars.$ORANGE
+
+#tap-button
+  border-color: vars.$RED

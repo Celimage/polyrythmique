@@ -1,0 +1,37 @@
+@use "~sass/vars"
+
+section
+  width: 100%
+  padding: 3.5rem 0
+
+h2, h3
+  text-align: center
+
+h3
+  margin: 0
+
+section>div
+  width: 60vw
+  margin: auto
+  display: flex
+  justify-content: space-evenly
+
+  &>a, &>div
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    background-color: vars.$LIGHT_GRAY
+    border-radius: 1.5rem
+    width : 12rem
+    min-height : 12rem
+    padding: 1rem
+    box-sizing: border-box
+
+  &>div
+    cursor: pointer
+
+img
+  display: block
+  height: 5rem
+  width: 5rem
+  margin: auto

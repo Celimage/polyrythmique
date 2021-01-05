@@ -1,7 +1,17 @@
+<h1 class="hide">Créer une polyrythmie</h1>
+
 <section id="tracks">
-  <app-track></app-track>
+  <app-track *ngFor="let track of tracks" [track]="track" (selectedTrack)="setSelectedTrackIndex($event)" [ngClass]="{'selected' : track.getId() == selectedTrackIndex}"></app-track>
+  <app-create-track (create)="addTrack($event)"></app-create-track>
 </section>
 
 <section id="controls">
-  <p>Controls</p>
+  <div>
+
+  </div>
+  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{'disabled': !selectedTrackIndex}">START</button>
+  <button *ngIf="recording" id="tap-button" (click)="addNote($event)">TAP</button>
+  <div>
+
+  </div>
 </section>
