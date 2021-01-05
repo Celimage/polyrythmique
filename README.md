@@ -44,7 +44,12 @@ Les fichiers JSON transitant entre les différentes parties du projet seront qua
 
 | Objets concernés | Casse |
 | ---------------- | ----- |
-| Fichiers<br />Dossiers | `snake_case` |
-| Variables<br />Fonctions<br />(Attributs)<br />(Méthodes) | `camelCase` |
+| Fichiers<br />Dossiers | `kebab-case` |
+| **Typescript :**<br />Variables<br />Fonctions<br />(Attributs)<br />(Méthodes) | `camelCase` |
+| **SASS :**<br />Variables<br />Mixins<br />Etc. | `kebab-case` |
 | Constantes<br />Variables d’environnement<br />Valeurs des enum | `UPPER_SNAKE_CASE` |
 | Enum<br />(Classes) | `PascalCase` |
+
+## Important
+
+Le fichier `_vars.sass` présent à la racine du git est à déplacer dans le dossier ignoré par git `locamat/nodes_module/sass`
