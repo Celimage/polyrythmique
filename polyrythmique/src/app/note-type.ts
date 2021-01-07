@@ -2,10 +2,9 @@ import { environment } from "./../environments/environment";
 
 // B = binaire | T = Ternaire
 /**
+ * This enum list every note type that can be visually created.
  *
- *
- *
- * VALUES NOTATION :
+ * VALUES NOTATION :<br />
  *   All values start by _ due to the fact that a value cannot start by a number.
  *
  *   R -> rest
