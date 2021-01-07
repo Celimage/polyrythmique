@@ -8,13 +8,13 @@
       src="../assets/images/mute.svg" alt="Plan muet" />
   </div>
   <div class="trackContent">
-
+    {{ track.getNotes().length }}
   </div>
   <div [ngClass]="{'instrument': true, 'modify': modifyInstrument}">
     <span *ngIf="track.getInstrument() != ''; else placeholder" (click)="toggleModifyInstrument()">{{ track.getInstrument() }}</span>
-    <ng-template #placeholder><span (click)="modifyInstrument = !modifyInstrument">Défaut</span></ng-template>
+    <ng-template #placeholder><span (click)="toggleModifyInstrument()">Défaut</span></ng-template>
     <div>
-      <input [(ngModel)]="modifiableInstrument" value="track.getInstrument()" placeholder="instrument"/>
+      <input [(ngModel)]="modifiableInstrument" value="track.getInstrument()" placeholder="instrument" #instruInput />
       <button (click)="toggleModifyInstrument()">➤</button>
     </div>
   </div>

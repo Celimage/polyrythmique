@@ -2,11 +2,14 @@
 
 $TAP_BUTTON_SIZE: 8rem
 
+$CONTROLS_HEIGHT: 12rem
+
 :host
   display: flex
   flex-direction: column
   width: 100%
   flex-grow: 1
+  max-height: 100vh
 
 
 section
@@ -14,11 +17,18 @@ section
 
 #tracks
   padding: 0.5rem 0
+  overflow-y: auto
+  overflow-x: hidden
+  scroll-behavior: smooth
+  max-height: calc(100vh - $CONTROLS_HEIGHT)
 
 #controls
   margin-top: auto
   margin-bottom: 2rem
+  padding-top: 0.5rem
   display: flex
+  height: $CONTROLS_HEIGHT
+  align-items: center
 
   &>div
     flex-grow: 1
@@ -32,10 +42,12 @@ section
   border-style: solid
   border-radius: 50%
 
-  font-size: 1.8em
+  cursor: pointer
 
 #start-button
+  font-size: 1.8em
   border-color: vars.$ORANGE
 
 #tap-button
+  font-size: 2.4em
   border-color: vars.$RED

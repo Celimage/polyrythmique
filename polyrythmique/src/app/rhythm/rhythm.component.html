@@ -1,7 +1,8 @@
 <h1 class="hide">Créer une polyrythmie</h1>
 
 <section id="tracks">
-  <app-track *ngFor="let track of tracks" [track]="track" (selectedTrack)="setSelectedTrackIndex($event)" [ngClass]="{'selected' : track.getId() == selectedTrackIndex}"></app-track>
+  <app-track *ngFor="let track of tracks" [track]="track" (selectedTrack)="setSelectedTrackId($event)"
+            [ngClass]="{'selected' : track.getId() == selectedTrackId, 'recording' : recording && track.getId() == selectedTrackId}"></app-track>
   <app-create-track (create)="addTrack($event)"></app-create-track>
 </section>
 
@@ -9,8 +10,8 @@
   <div>
 
   </div>
-  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{'disabled': !selectedTrackIndex}">START</button>
-  <button *ngIf="recording" id="tap-button" (click)="addNote($event)">TAP</button>
+  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{'disabled': !selectedTrackId}">START</button>
+  <button *ngIf="recording" id="tap-button" (click)="addNote($event)" (mousedown)="startTap($event)" (mouseup)="endTap($event)">TAP</button>
   <div>
 
   </div>

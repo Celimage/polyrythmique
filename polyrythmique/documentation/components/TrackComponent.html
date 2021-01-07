@@ -1,0 +1,1260 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>polyrythmique documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">polyrythmique documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TrackComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/track/track.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-track</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./track.component.sass</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./track.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#intrumentInput">intrumentInput</a>
+                            </li>
+                            <li>
+                                <a href="#isSelected">isSelected</a>
+                            </li>
+                            <li>
+                                <a href="#modifiableInstrument">modifiableInstrument</a>
+                            </li>
+                            <li>
+                                <a href="#modifyInstrument">modifyInstrument</a>
+                            </li>
+                            <li>
+                                <a href="#volume">volume</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changeSoundPlan">changeSoundPlan</a>
+                            </li>
+                            <li>
+                                <a href="#getId">getId</a>
+                            </li>
+                            <li>
+                                <a href="#mute">mute</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#selectTrack">selectTrack</a>
+                            </li>
+                            <li>
+                                <a href="#setSoloMuted">setSoloMuted</a>
+                            </li>
+                            <li>
+                                <a href="#setVolume">setVolume</a>
+                            </li>
+                            <li>
+                                <a href="#toggleModifyInstrument">toggleModifyInstrument</a>
+                            </li>
+                            <li>
+                                <a href="#toggleSoloMuted">toggleSoloMuted</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#soloMuted">soloMuted</a>
+                            </li>
+                            <li>
+                                <a href="#track">track</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isSolo">isSolo</a>
+                            </li>
+                            <li>
+                                <a href="#selectedTrack">selectedTrack</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/track/track.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="soloMuted"></a>
+                        <b>soloMuted</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/track/track.component.ts:19</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="track"></a>
+                        <b>track</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Track.html" target="_self" >Track</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Track()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/track/track.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isSolo"></a>
+                        <b>isSolo</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/track/track.component.ts:20</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedTrack"></a>
+                        <b>selectedTrack</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;number | null&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/track/track.component.ts:23</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeSoundPlan"></a>
+                    <span class="name">
+                        <b>
+                            changeSoundPlan
+                        </b>
+                        <a href="#changeSoundPlan"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeSoundPlan()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/track/track.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getId"></a>
+                    <span class="name">
+                        <b>
+                            getId
+                        </b>
+                        <a href="#getId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getId()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/track/track.component.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mute"></a>
+                    <span class="name">
+                        <b>
+                            mute
+                        </b>
+                        <a href="#mute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mute()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/track/track.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/track/track.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectTrack"></a>
+                    <span class="name">
+                        <b>
+                            selectTrack
+                        </b>
+                        <a href="#selectTrack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectTrack()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/track/track.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSoloMuted"></a>
+                    <span class="name">
+                        <b>
+                            setSoloMuted
+                        </b>
+                        <a href="#setSoloMuted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setSoloMuted(bool: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/track/track.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bool</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setVolume"></a>
+                    <span class="name">
+                        <b>
+                            setVolume
+                        </b>
+                        <a href="#setVolume"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setVolume(volume: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/track/track.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>volume</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleModifyInstrument"></a>
+                    <span class="name">
+                        <b>
+                            toggleModifyInstrument
+                        </b>
+                        <a href="#toggleModifyInstrument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleModifyInstrument()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/track/track.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleSoloMuted"></a>
+                    <span class="name">
+                        <b>
+                            toggleSoloMuted
+                        </b>
+                        <a href="#toggleSoloMuted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleSoloMuted()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/track/track.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="intrumentInput"></a>
+                        <span class="name">
+                            <b>
+                            intrumentInput</b>
+                            <a href="#intrumentInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;instruInput&#x27;, {static: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/track/track.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isSelected"></a>
+                        <span class="name">
+                            <b>
+                            isSelected</b>
+                            <a href="#isSelected"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/track/track.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modifiableInstrument"></a>
+                        <span class="name">
+                            <b>
+                            modifiableInstrument</b>
+                            <a href="#modifiableInstrument"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/track/track.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modifyInstrument"></a>
+                        <span class="name">
+                            <b>
+                            modifyInstrument</b>
+                            <a href="#modifyInstrument"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/track/track.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="volume"></a>
+                        <span class="name">
+                            <b>
+                            volume</b>
+                            <a href="#volume"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/track/track.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from &quot;@angular/core&quot;;
+
+import { Track } from &quot;../track&quot;
+import { Note } from &quot;../note&quot;
+
+@Component({
+  selector: &quot;app-track&quot;,
+  templateUrl: &quot;./track.component.html&quot;,
+  styleUrls: [&quot;./track.component.sass&quot;]
+})
+export class TrackComponent implements OnInit {
+  @Input() track: Track &#x3D; new Track();
+
+  modifiableInstrument: string &#x3D; &quot;&quot;;
+  modifyInstrument &#x3D; false;
+
+    // Must be between 0 (mute) and 1 (max)
+  volume: number &#x3D; 1;
+  @Input() soloMuted: boolean &#x3D; false;
+  @Output() isSolo: EventEmitter&lt;boolean&gt; &#x3D; new EventEmitter&lt;boolean&gt;();
+
+  isSelected: boolean &#x3D; false;
+  @Output() selectedTrack: EventEmitter&lt;number | null&gt; &#x3D; new EventEmitter&lt;number | null&gt;();
+
+  @ViewChild(&#x27;instruInput&#x27;, { static: true }) intrumentInput: ElementRef;
+
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.modifiableInstrument &#x3D; this.track.getInstrument();
+  }
+
+  changeSoundPlan(): void {
+      // Change the number of the selected sound plan
+    this.track.setPlan((this.track.getPlan() + 1) % 3);
+
+      // TODO: change the sound track behaviour
+    if(this.track.getPlan() &#x3D;&#x3D; 2) {
+      this.mute();
+      this.isSolo.emit(false);
+    } else if(this.track.getPlan() &#x3D;&#x3D; 0) {
+      this.volume &#x3D; 1;
+    } else {
+      this.isSolo.emit(true);
+    }
+  }
+
+  toggleSoloMuted(): void {
+    this.soloMuted &#x3D; !this.soloMuted;
+  }
+  setSoloMuted(bool: boolean): void {
+    this.soloMuted &#x3D; bool;
+  }
+
+  mute(): void {
+    this.volume &#x3D; 0;
+  }
+
+  setVolume(volume: number): void {
+    if(volume &gt;&#x3D; 0 &amp;&amp; volume &lt;&#x3D; 1) {
+      this.volume &#x3D; volume;
+    } else {
+        // Debug purpose only
+      console.log(&quot;Cannot set volume of track &quot; + this.track.getId() + &quot;, volume must be between 0 and 1, is &quot; + volume);
+    }
+  }
+
+  toggleModifyInstrument(): void {
+      // Change the instrument&#x27;s name
+    this.modifyInstrument &#x3D; !this.modifyInstrument;
+      // If modification ended
+    if(!this.modifyInstrument) {
+      this.track.setInstrument(this.modifiableInstrument);
+    } else {
+        // The timeout allow the input to load before putting it focus
+      setTimeout(()&#x3D;&gt;{
+        this.intrumentInput.nativeElement.focus();
+      }, 0);
+    }
+
+      // TODO: change the sound track&#x27;s behaviour (with the musical librairy part)
+  }
+
+  selectTrack(): void {
+    this.isSelected &#x3D; !this.isSelected;
+    if(this.isSelected) {
+      this.selectedTrack.emit(this.track.getId());
+    } else {
+      this.selectedTrack.emit(null);
+    }
+  }
+
+  getId(): number {
+    return this.track.getId();
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;article (dblclick)&#x3D;&quot;selectTrack()&quot;&gt;
+  &lt;div class&#x3D;&quot;soundPlan&quot;&gt;
+    &lt;img (click)&#x3D;&quot;changeSoundPlan()&quot; *ngIf&#x3D;&quot;track.getPlan() &#x3D;&#x3D; 0&quot;
+      src&#x3D;&quot;../assets/images/sound.svg&quot; alt&#x3D;&quot;Plan normal (non muet, non solo)&quot; /&gt;
+    &lt;img (click)&#x3D;&quot;changeSoundPlan()&quot; *ngIf&#x3D;&quot;track.getPlan() &#x3D;&#x3D; 1&quot;
+      src&#x3D;&quot;../assets/images/solo.svg&quot; alt&#x3D;&quot;Plan solo&quot; /&gt;
+    &lt;img (click)&#x3D;&quot;changeSoundPlan()&quot; *ngIf&#x3D;&quot;track.getPlan() &#x3D;&#x3D; 2&quot;
+      src&#x3D;&quot;../assets/images/mute.svg&quot; alt&#x3D;&quot;Plan muet&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;trackContent&quot;&gt;
+    {{ track.getNotes().length }}
+  &lt;/div&gt;
+  &lt;div [ngClass]&#x3D;&quot;{&#x27;instrument&#x27;: true, &#x27;modify&#x27;: modifyInstrument}&quot;&gt;
+    &lt;span *ngIf&#x3D;&quot;track.getInstrument() !&#x3D; &#x27;&#x27;; else placeholder&quot; (click)&#x3D;&quot;toggleModifyInstrument()&quot;&gt;{{ track.getInstrument() }}&lt;/span&gt;
+    &lt;ng-template #placeholder&gt;&lt;span (click)&#x3D;&quot;toggleModifyInstrument()&quot;&gt;Défaut&lt;/span&gt;&lt;/ng-template&gt;
+    &lt;div&gt;
+      &lt;input [(ngModel)]&#x3D;&quot;modifiableInstrument&quot; value&#x3D;&quot;track.getInstrument()&quot; placeholder&#x3D;&quot;instrument&quot; #instruInput /&gt;
+      &lt;button (click)&#x3D;&quot;toggleModifyInstrument()&quot;&gt;➤&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./track.component.sass</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@use &quot;~sass/vars&quot;
+
+$HEIGHT: 3rem
+
+$INSTRUMENT_WIDTH: 9rem
+$INSTR_INPUT_HEIGHT: 2rem
+
+$BORDER_WIDTH: 0.25rem
+
+@mixin create-gradient($property, $exterior-color, $interior-color)
+  #{$property}: linear-gradient(to right, $exterior-color, $interior-color 5%, $interior-color 87%, $exterior-color)
+
+%absVertCenteredInteractive
+  cursor: pointer
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+
+:host
+  display: block
+  width: 100%
+
+  &amp;.selected&gt;article
+    @include create-gradient(border-image-source, vars.$TRANSPARENT_ORANGE, vars.$ORANGE)
+    border-image-slice: 100% 0 100% 0
+    border-image-width: $BORDER_WIDTH 0 $BORDER_WIDTH 0
+    border-image-repeat: stretch
+
+  &amp;.recording&gt;article
+    @include create-gradient(border-image-source, vars.$TRANSPARENT_RED, vars.$RED)
+
+
+article
+  display: flex
+  height: $HEIGHT
+  width: 100%
+  @include create-gradient(background-image, vars.$TRANSPARENT_MIDDLE_DARK_GRAY, vars.$MIDDLE_DARK_GRAY)
+  margin: 0.75rem 0
+  padding: 0 0.5rem
+
+  background-clip: padding-box
+
+  border-style: solid
+  border-width: $BORDER_WIDTH 0
+  border-color: transparent
+
+  &amp;&gt;div
+    height: 100%
+
+.soundPlan
+  position: relative
+  justify-content: center
+  width: $HEIGHT
+
+  img
+    @extend %absVertCenteredInteractive
+
+.trackContent
+  flex-grow: 1
+
+.instrument
+  position: relative
+  min-width: $INSTRUMENT_WIDTH
+
+  div, span
+    @extend %absVertCenteredInteractive
+  &amp;&gt;div
+    cursor: default
+    width: 100%
+    height: $INSTR_INPUT_HEIGHT
+    display: none
+
+    input
+      flex-grow: 1
+      max-width: $INSTRUMENT_WIDTH - $INSTR_INPUT_HEIGHT
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+    button
+      height: 100%
+      width: $INSTR_INPUT_HEIGHT
+      background: vars.$DEEP_DARK_GRAY
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+
+
+.instrument.modify
+  span
+    display: none
+  div
+    display: flex
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><article (dblclick)="selectTrack()">  <div class="soundPlan">    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 0"      src="../assets/images/sound.svg" alt="Plan normal (non muet, non solo)" />    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 1"      src="../assets/images/solo.svg" alt="Plan solo" />    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 2"      src="../assets/images/mute.svg" alt="Plan muet" />  </div>  <div class="trackContent">    {{ track.getNotes().length }}  </div>  <div [ngClass]="{\'instrument\': true, \'modify\': modifyInstrument}">    <span *ngIf="track.getInstrument() != \'\'; else placeholder" (click)="toggleModifyInstrument()">{{ track.getInstrument() }}</span>    <ng-template #placeholder><span (click)="toggleModifyInstrument()">Défaut</span></ng-template>    <div>      <input [(ngModel)]="modifiableInstrument" value="track.getInstrument()" placeholder="instrument" #instruInput />      <button (click)="toggleModifyInstrument()">➤</button>    </div>  </div></article></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'TrackComponent', 'selector': 'app-track'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TrackComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TrackComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

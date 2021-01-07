@@ -26,6 +26,9 @@ $BORDER_WIDTH: 0.25rem
     border-image-width: $BORDER_WIDTH 0 $BORDER_WIDTH 0
     border-image-repeat: stretch
 
+  &.recording>article
+    @include create-gradient(border-image-source, vars.$TRANSPARENT_RED, vars.$RED)
+
 
 article
   display: flex

@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from "@angular/core";
 
 import { Track } from "../track"
+import { Note } from "../note"
 
 @Component({
   selector: "app-track",
@@ -11,11 +12,19 @@ export class TrackComponent implements OnInit {
   @Input() track: Track = new Track();
 
   modifiableInstrument: string = "";
-
   modifyInstrument = false;
+
+    // Must be between 0 (mute) and 1 (max)
+  volume: number = 1;
+  @Input() soloMuted: boolean = false;
+  @Output() isSolo: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   isSelected: boolean = false;
   @Output() selectedTrack: EventEmitter<number | null> = new EventEmitter<number | null>();
+
+  @ViewChild('instruInput', { static: true }) intrumentInput: ElementRef;
+
+
 
   constructor() { }
 
@@ -28,16 +37,50 @@ export class TrackComponent implements OnInit {
     this.track.setPlan((this.track.getPlan() + 1) % 3);
 
       // TODO: change the sound track behaviour
+    if(this.track.getPlan() == 2) {
+      this.mute();
+      this.isSolo.emit(false);
+    } else if(this.track.getPlan() == 0) {
+      this.volume = 1;
+    } else {
+      this.isSolo.emit(true);
+    }
+  }
+
+  toggleSoloMuted(): void {
+    this.soloMuted = !this.soloMuted;
+  }
+  setSoloMuted(bool: boolean): void {
+    this.soloMuted = bool;
+  }
+
+  mute(): void {
+    this.volume = 0;
+  }
+
+  setVolume(volume: number): void {
+    if(volume >= 0 && volume <= 1) {
+      this.volume = volume;
+    } else {
+        // Debug purpose only
+      console.log("Cannot set volume of track " + this.track.getId() + ", volume must be between 0 and 1, is " + volume);
+    }
   }
 
   toggleModifyInstrument(): void {
       // Change the instrument's name
-    if(this.modifyInstrument) {
-      this.track.setInstrument(this.modifiableInstrument);
-    }
     this.modifyInstrument = !this.modifyInstrument;
+      // If modification ended
+    if(!this.modifyInstrument) {
+      this.track.setInstrument(this.modifiableInstrument);
+    } else {
+        // The timeout allow the input to load before putting it focus
+      setTimeout(()=>{
+        this.intrumentInput.nativeElement.focus();
+      }, 0);
+    }
 
-      // TODO: change the sound track's behaviour
+      // TODO: change the sound track's behaviour (with the musical librairy part)
   }
 
   selectTrack(): void {
