@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BasicNote } from "../enums/basic-note";
+
 @Component({
   selector: 'app-signature',
   templateUrl: './signature.component.html',
@@ -16,7 +18,7 @@ export class SignatureComponent implements OnInit {
   /**
    * The note used as time base
    */
-  private bottom: SignatureComponent.SigBottom = SignatureComponent.SigBottom.QUARTER_NOTE;
+  private bottom: BasicNote = BasicNote.QUARTER_NOTE;
 
 
   /**
@@ -48,14 +50,14 @@ export class SignatureComponent implements OnInit {
   /**
    * Get the {@link SignatureComponent#bottom|bottom}'s value
    */
-  getBottom(): SignatureComponent.SigBottom {
+  getBottom(): BasicNote {
     return this.bottom;
   }
 
   /**
    * Set the {@link SignatureComponent#bottom|bottom}'s value
    */
-  setBottom(bottom: SignatureComponent.SigBottom): void {
+  setBottom(bottom: BasicNote): void {
     if(this.isCompatible(this.top, bottom)) {
       this.bottom = bottom;
     }
@@ -65,7 +67,7 @@ export class SignatureComponent implements OnInit {
    * Set both {@link SignatureComponent#top|top} and
    *   {@link SignatureComponent#bottom|bottom} values of the signature
    */
-  setTopAndBottom(top: number, bottom: SignatureComponent.SigBottom) {
+  setTopAndBottom(top: number, bottom: BasicNote) {
     if(this.isCompatible(top, bottom)) {
       this.top = top;
       this.bottom = bottom;
@@ -76,7 +78,7 @@ export class SignatureComponent implements OnInit {
    * Check if the {@link SignatureComponent#top|top} and {@link SignatureComponent#bottom|bottom} number of the signature are compatible<br />
    * NOT FINISHED
    */
-  private isCompatible(top: number, bottom: SignatureComponent.SigBottom): boolean {
+  private isCompatible(top: number, bottom: BasicNote): boolean {
     if(top >= 1 && top % 1 == 1) {
       return true;
     } else {
@@ -84,20 +86,8 @@ export class SignatureComponent implements OnInit {
     }
   }
 
-}
-
-/**
- * @ignore
- */
-export namespace SignatureComponent {
-  /**
-   * Stock the possible values of the signature's {@link SignatureComponent#bottom|bottom} attribute
-   */
-  export enum SigBottom {
-    WHOLE_NOTE = 1,
-    HALF_NOTE = 2,
-    QUARTER_NOTE = 4,
-    HEIGHT_NOTE = 8,
-    SIXTEEN_NOTE = 16
+  getBottomNumber(): number {
+    return BasicNote.getNumber(this.bottom);
   }
+
 }

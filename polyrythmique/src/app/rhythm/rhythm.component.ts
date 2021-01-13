@@ -61,6 +61,9 @@ export class RhythmComponent implements OnInit {
     this.tracks[this.selectedTrackIndex].addNote(new Note(timecode, duration));
   }
 
+  setBPM(bpm: number):void {
+    
+  }
 
 
   setSelectedTrackId(id: number | null): void {

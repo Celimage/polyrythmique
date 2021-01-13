@@ -1,0 +1,25 @@
+@use "~sass/vars"
+
+.tempo-root
+  background-color: vars.$LIGHT_GRAY
+  border-radius: 1.5rem
+  padding: 0.75rem 1rem
+
+  p
+   margin: 0 0 0.75rem 0
+   text-align: center
+
+  div
+    display: flex
+    justify-content: center
+    align-items: center
+
+    img
+      height: 1.5em
+
+    span
+      font-size: 1.3em
+
+    span::before
+      content: "-"
+      opacity: 0
