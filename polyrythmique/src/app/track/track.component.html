@@ -8,7 +8,9 @@
       src="../assets/images/mute.svg" alt="Plan muet" />
   </div>
   <div class="trackContent">
-    {{ track.getNotes().length }}
+    <!--{{ track.getNotes().length }}-->
+    <!--<img src="../../assets/images/rythms/4N.svg"/>-->
+    <img src="{{test.getImgPathAt(0)}}" />
   </div>
   <div [ngClass]="{'instrument': true, 'modify': modifyInstrument}">
     <span *ngIf="track.getInstrument() != ''; else placeholder" (click)="toggleModifyInstrument()">{{ track.getInstrument() }}</span>

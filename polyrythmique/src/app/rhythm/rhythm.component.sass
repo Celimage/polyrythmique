@@ -4,6 +4,8 @@ $TAP_BUTTON_SIZE: 8rem
 
 $CONTROLS_HEIGHT: 12rem
 
+$BUTTON_SIZE: 3rem
+
 :host
   display: flex
   flex-direction: column
@@ -33,21 +35,41 @@ section
   &>div
     flex-grow: 1
 
+  button
+    height: $BUTTON_SIZE
+    width: $BUTTON_SIZE
 
-#start-button, #tap-button
-  height: $TAP_BUTTON_SIZE
-  width: $TAP_BUTTON_SIZE
+    &>img
+      height: 100%
+      width: 100%
 
-  border-width: 0.75rem
-  border-style: solid
-  border-radius: 50%
+  #generals, #measure-and-track
+    width: calc(100% - 3.5rem)
+    // = 100% - $TAP_BUTTON_SIZE / 2 - 0.5rem
 
-  cursor: pointer
+  #generals
+    display: flex
+    justify-content: space-evenly
+    margin-right: 0.5rem
 
-#start-button
-  font-size: 1.8em
-  border-color: vars.$ORANGE
+  #start-button, #tap-button
+    height: $TAP_BUTTON_SIZE
+    width: $TAP_BUTTON_SIZE
 
-#tap-button
-  font-size: 2.4em
-  border-color: vars.$RED
+    border-width: 0.75rem
+    border-style: solid
+    border-radius: 50%
+    flex-shrink: 0
+
+  #start-button
+    font-size: 1.8em
+    border-color: vars.$ORANGE
+
+  #tap-button
+    font-size: 2.4em
+    border-color: vars.$RED
+
+  #measure-and-track
+    margin-left: 0.5rem
+    display: flex
+    justify-content: flex-end

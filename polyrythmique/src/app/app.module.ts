@@ -9,6 +9,10 @@ import { RhythmComponent } from './rhythm/rhythm.component';
 import { TrackComponent } from './track/track.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateTrackComponent } from './create-track/create-track.component';
+import { SignatureComponent } from './signature/signature.component';
+import { SaveMenuComponent } from './save-menu/save-menu.component';
+import { ExportMenuComponent } from './export-menu/export-menu.component';
+import { PlaybarComponent } from './playbar/playbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { CreateTrackComponent } from './create-track/create-track.component';
     RhythmComponent,
     TrackComponent,
     DashboardComponent,
-    CreateTrackComponent
+    CreateTrackComponent,
+    SignatureComponent,
+    SaveMenuComponent,
+    ExportMenuComponent,
+    PlaybarComponent
   ],
   imports: [
     BrowserModule,

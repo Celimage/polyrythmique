@@ -1,7 +1,9 @@
-import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild//, ElementRef
+ } from "@angular/core";
 
-import { Track } from "../track"
-import { Note } from "../note"
+import { Track } from "../classes/track";
+import { Note } from "../classes/note";
+import { NoteRepresentation } from "../classes/note-representation";
 
 @Component({
   selector: "app-track",
@@ -22,8 +24,9 @@ export class TrackComponent implements OnInit {
   isSelected: boolean = false;
   @Output() selectedTrack: EventEmitter<number | null> = new EventEmitter<number | null>();
 
-  @ViewChild('instruInput', { static: true }) intrumentInput: ElementRef;
+  //@ViewChild('instruInput', { static: true }) intrumentInput: ElementRef;
 
+  test: NoteRepresentation = new NoteRepresentation(["8N"], null);
 
 
   constructor() { }
@@ -75,9 +78,9 @@ export class TrackComponent implements OnInit {
       this.track.setInstrument(this.modifiableInstrument);
     } else {
         // The timeout allow the input to load before putting it focus
-      setTimeout(()=>{
+      /*setTimeout(()=>{
         this.intrumentInput.nativeElement.focus();
-      }, 0);
+      }, 0);*/
     }
 
       // TODO: change the sound track's behaviour (with the musical librairy part)

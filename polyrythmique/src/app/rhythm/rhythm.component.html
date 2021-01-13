@@ -7,12 +7,38 @@
 </section>
 
 <section id="controls">
-  <div>
+  <div id="generals">
+    <div>
+      <app-save-menu></app-save-menu>
 
+      <app-export-menu></app-export-menu>
+    </div>
+
+    <div>
+      <app-playbar></app-playbar>
+
+      <div>
+        <button><img src="../../assets/images/icons/anacrusis.svg" alt="Anacrouse" /></button>
+        <button><img src="../../assets/images/icons/metronome-sound.svg" alt="Son du métronome" /></button>
+      </div>
+    </div>
+
+    <div>
+      <app-signature></app-signature>
+    </div>
   </div>
+
   <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{'disabled': !selectedTrackId}">START</button>
   <button *ngIf="recording" id="tap-button" (click)="addNote($event)" (mousedown)="startTap($event)" (mouseup)="endTap($event)">TAP</button>
-  <div>
+
+  <div id="measure-and-track">
+    <div id="measure" *ngIf="true">
+
+    </div>
+    <div id="track" *ngIf="selectedTrackId != null">
+      <button><img src="../../assets/images/icons/delete.svg" alt="Supprimer" /></button>
+      <button><img src="../../assets/images/icons/empty.svg" alt="Vider" /></button>
+    </div>
 
   </div>
 </section>

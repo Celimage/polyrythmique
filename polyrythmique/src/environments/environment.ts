@@ -4,8 +4,11 @@
 
 export const environment = {
   production: false,
-  
-  imgPathFromApp: "../assets/images"
+
+  pathsFromApp: {
+    img: "../assets/images/",
+    rythmsImg: "../assets/images/rythms/"
+  }
 };
 
 /*

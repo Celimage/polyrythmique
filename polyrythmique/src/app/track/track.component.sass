@@ -51,12 +51,23 @@ article
   position: relative
   justify-content: center
   width: $HEIGHT
+  //margin-right: $BORDER_WIDTH
 
   img
     @extend %absVertCenteredInteractive
 
 .trackContent
   flex-grow: 1
+  margin: 0 $BORDER_WIDTH
+  display: flex
+  align-items: center
+
+  img
+    display: inline-block
+    max-height: $HEIGHT
+    max-width: $HEIGHT
+    height: 80%
+    width: auto
 
 .instrument
   position: relative

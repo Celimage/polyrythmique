@@ -1,4 +1,5 @@
-import { NoteType } from "./note-type";
+import { BinaryNote } from "../enums/binary-note";
+import { TernaryNote } from "../enums/ternary-note";
 
 /**
  * This class is used to store notes
@@ -7,7 +8,9 @@ export class Note {
   private timecode: number;
   private duration: number;
 
-  private type: NoteType;
+  private type: BinaryNote | TernaryNote;
+
+  private isBinary: boolean = true;
 
 
   constructor(timecode: number, duration: number) {
@@ -34,8 +37,12 @@ export class Note {
   }
 
 
-  retrieveNoteType(): NoteType {
-    return NoteType._4N;
+  retrieveNoteType(): BinaryNote | TernaryNote {
+    if(this.isBinary) {
+      return BinaryNote._4N;
+    } else {
+      return TernaryNote._4N;
+    }
   }
 
 }

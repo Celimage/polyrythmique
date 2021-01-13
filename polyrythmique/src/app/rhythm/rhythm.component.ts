@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Track } from "../track";
-import { Note } from "../note";
+import { Track } from "../classes/track";
+import { Note } from "../classes/note";
+
 
 @Component({
   selector: 'app-rhythm',
@@ -39,7 +40,7 @@ export class RhythmComponent implements OnInit {
     }
   }
 
-  /*
+  /**
    * @ignore
    */
   addNote(evt: Event): void {
