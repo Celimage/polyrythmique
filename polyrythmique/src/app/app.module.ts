@@ -14,6 +14,7 @@ import { SaveMenuComponent } from './save-menu/save-menu.component';
 import { ExportMenuComponent } from './export-menu/export-menu.component';
 import { PlaybarComponent } from './playbar/playbar.component';
 import { TempoComponent } from './tempo/tempo.component';
+import { MetronomeComponent } from './metronome/metronome.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TempoComponent } from './tempo/tempo.component';
     SaveMenuComponent,
     ExportMenuComponent,
     PlaybarComponent,
-    TempoComponent
+    TempoComponent,
+    MetronomeComponent
   ],
   imports: [
     BrowserModule,

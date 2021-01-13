@@ -1,0 +1,45 @@
+$METRONOME_HEIGHT: 30rem
+$METRONOME_WIDTH: ($METRONOME_HEIGHT * 90) / 112.5
+
+.metronome
+    background-image: url("../../assets/images/metronome/metronome-base.svg")
+    background-size: contain
+    background-repeat: no-repeat
+    width: $METRONOME_WIDTH
+    height: $METRONOME_HEIGHT
+    position: relative
+
+#stick
+  position: absolute
+  left: 50%
+  height: ($METRONOME_HEIGHT * 0.8373333)
+  width: ($METRONOME_WIDTH * 0.1688888)
+  transform-origin: 50% 100%
+  transform: translateX(-50%)
+
+
+@mixin keyframes-animation($name)
+  @-webkit-keyframes #{$name}
+    @content
+
+  @keyframes #{$name}
+    @content
+
+@mixin prefix-property($name, $value)
+  -webkit-#{$name}: $value
+          #{$name}: $value
+
+@include keyframes-animation(rotating)
+  0%
+    @include prefix-property(transform, translateX(-50%) rotate(-45deg))
+  25%
+      @include prefix-property(transform, translateX(-50%) rotate(0deg) linear)
+  50%
+    @include prefix-property(transform, translateX(-50%) rotate(45deg))
+  75%
+    @include prefix-property(transform, translateX(-50%) rotate(0deg) linear)
+  100%
+    @include prefix-property(transform, translateX(-50%) rotate(-45deg))
+
+#stick
+  -webkit-animation: rotating 2s ease-in-out infinite
