@@ -13,6 +13,7 @@ import { SignatureComponent } from './signature/signature.component';
 import { SaveMenuComponent } from './save-menu/save-menu.component';
 import { ExportMenuComponent } from './export-menu/export-menu.component';
 import { PlaybarComponent } from './playbar/playbar.component';
+import { MetronomeComponent } from './metronome/metronome.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PlaybarComponent } from './playbar/playbar.component';
     SignatureComponent,
     SaveMenuComponent,
     ExportMenuComponent,
-    PlaybarComponent
+    PlaybarComponent,
+    MetronomeComponent
   ],
   imports: [
     BrowserModule,
