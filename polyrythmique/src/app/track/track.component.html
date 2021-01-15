@@ -13,10 +13,10 @@
     <img src="{{test.getImgPathAt(0)}}" />
   </div>
   <div [ngClass]="{'instrument': true, 'modify': modifyInstrument}">
-    <span *ngIf="track.getInstrument() != ''; else placeholder" (click)="toggleModifyInstrument()">{{ track.getInstrument() }}</span>
-    <ng-template #placeholder><span (click)="toggleModifyInstrument()">Défaut</span></ng-template>
-    <div>
-      <input [(ngModel)]="modifiableInstrument" value="track.getInstrument()" placeholder="instrument" #instruInput />
+      <span *ngIf="track.getInstrument() != '' && !modifyInstrument" (click)="toggleModifyInstrument()">{{ track.getInstrument() }}</span>
+      <span *ngIf="track.getInstrument() == '' &&!modifyInstrument" (click)="toggleModifyInstrument()">Défaut</span>
+    <div *ngIf="modifyInstrument">
+      <input [(ngModel)]="modifiableInstrument" value="track.getInstrument()" placeholder="instrument" class="button-focus" /><!--#instruInput-->
       <button (click)="toggleModifyInstrument()">➤</button>
     </div>
   </div>

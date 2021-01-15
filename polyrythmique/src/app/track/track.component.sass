@@ -79,11 +79,11 @@ article
     cursor: default
     width: 100%
     height: $INSTR_INPUT_HEIGHT
-    display: none
+    display: flex
 
     input
       flex-grow: 1
-      max-width: $INSTRUMENT_WIDTH - $INSTR_INPUT_HEIGHT
+      max-width: $INSTRUMENT_WIDTH - $INSTR_INPUT_HEIGHT - 1rem
       border-top-right-radius: 0
       border-bottom-right-radius: 0
     button
@@ -92,10 +92,3 @@ article
       background: vars.$DEEP_DARK_GRAY
       border-top-left-radius: 0
       border-bottom-left-radius: 0
-
-
-.instrument.modify
-  span
-    display: none
-  div
-    display: flex

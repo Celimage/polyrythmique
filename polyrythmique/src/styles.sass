@@ -62,10 +62,10 @@ button
   font-size: 1em
   cursor: pointer
 
-  &:focus
-    outline: none
-    -webkit-filter: drop-shadow(0 0 0.05rem rgba(255, 255, 255, .7))
-    filter: drop-shadow(0 0 0.1rem rgba(255, 255, 255, .7))
+button:focus, .button-focus:focus
+  outline: none
+  -webkit-filter: drop-shadow(0 0 0.05rem rgba(255, 255, 255, .7))
+  filter: drop-shadow(0 0 0.1rem rgba(255, 255, 255, .7))
 
 input
   display: block
