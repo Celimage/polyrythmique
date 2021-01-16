@@ -1,0 +1,5 @@
+<button (click)="toggleMode()">
+  <img src="../../assets/images/icons/metronome-sound.svg" alt="Métronome activé tout le long des enregistrements" *ngIf="mode == 0" />
+  <img src="../../assets/images/icons/metronome-sound-start.svg" alt="Métronome activé pendant les deux mesures à vide" *ngIf="mode == 1" />
+  <img src="../../assets/images/icons/metronome-mute.svg" alt="Métronome muet" *ngIf="mode == 2" />
+</button>

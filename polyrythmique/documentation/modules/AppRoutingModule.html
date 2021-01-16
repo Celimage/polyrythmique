@@ -75,10 +75,11 @@ import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 
 import { DashboardComponent } from &quot;./dashboard/dashboard.component&quot;;
 import { RhythmComponent } from &quot;./rhythm/rhythm.component&quot;;
+import { MetronomeComponent } from &quot;./metronome/metronome.component&quot;;
 
 const routes: Routes &#x3D; [{path: &quot;rhythm&quot;, component: RhythmComponent},
                         {path: &quot;rhythm-sound&quot;, component: RhythmComponent},
-                        {path: &quot;metronome&quot;, component: RhythmComponent},
+                        {path: &quot;metronome&quot;, component: MetronomeComponent},
                         {path: &quot;dashboard&quot;, component: DashboardComponent},
                         {path: &quot;&quot;, redirectTo: &quot;/dashboard&quot;, pathMatch: &quot;full&quot;},
                         {path: &quot;**&quot;, component: RhythmComponent}];

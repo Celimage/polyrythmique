@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Track } from "../classes/track";
 import { Note } from "../classes/note";
+import { Tempo } from "../classes/tempo";
+import { Signature } from "../classes/signature";
 
 
 @Component({
@@ -11,6 +13,10 @@ import { Note } from "../classes/note";
 })
 export class RhythmComponent implements OnInit {
   tracks: Track[] = new Array<Track>();
+
+  signature: Signature = new Signature(null, null);
+  tempo: Tempo = new Tempo(null, null);
+
 
   selectedTrackId: number | null = null;
   selectedTrackIndex: number = -1;
@@ -22,6 +28,9 @@ export class RhythmComponent implements OnInit {
   startTapVar: Date = new Date();
   endTapVar: Date = new Date();
 
+  /**
+   * @ignore
+   */
   constructor() { }
 
   ngOnInit(): void {
@@ -48,7 +57,11 @@ export class RhythmComponent implements OnInit {
   }
 
   startTap(evt: Event): void {
-    this.startTapVar = new Date();
+    let time = ((this.signature.getTop() * (this.tempo.getNoteNumber() / this.signature.getBottomNumber())) / this.tempo.getBPM()) * 120000;
+    let timer = setTimeout(function(startTapVar: Date) {
+      startTapVar = new Date();
+    }, time, this.startTapVar);
+
   }
 
   endTap(evt: Event): void {
@@ -61,8 +74,8 @@ export class RhythmComponent implements OnInit {
     this.tracks[this.selectedTrackIndex].addNote(new Note(timecode, duration));
   }
 
-  setBPM(bpm: number):void {
-    
+  setTempo(tempo: Tempo):void {
+    this.tempo = tempo;
   }
 
 

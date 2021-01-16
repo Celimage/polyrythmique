@@ -17,13 +17,13 @@
       <app-playbar></app-playbar>
       <div>
         <button class="anacrouse"><img src="../../assets/images/icons/anacrusis.svg" alt="Anacrouse" /></button>
-        <button><img src="../../assets/images/icons/metronome-sound.svg" alt="Son du métronome" /></button>
+        <app-metronome-sound [tempo]="tempo" [signature]="signature" [isPlaying]="recording"></app-metronome-sound>
       </div>
     </div>
 
     <div>
       <app-signature></app-signature>
-      <app-tempo (bpmOutput)="setBPM($event)"></app-tempo>
+      <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>
     </div>
   </div>
 

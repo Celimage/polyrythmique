@@ -15,6 +15,9 @@ import { ExportMenuComponent } from './export-menu/export-menu.component';
 import { PlaybarComponent } from './playbar/playbar.component';
 import { TempoComponent } from './tempo/tempo.component';
 import { MetronomeComponent } from './metronome/metronome.component';
+import { MeasureComponent } from './measure/measure.component';
+import { NoteComponent } from './note/note.component';
+import { MetronomeSoundComponent } from './metronome-sound/metronome-sound.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { MetronomeComponent } from './metronome/metronome.component';
     ExportMenuComponent,
     PlaybarComponent,
     TempoComponent,
-    MetronomeComponent
+    MetronomeComponent,
+    MeasureComponent,
+    NoteComponent,
+    MetronomeSoundComponent
   ],
   imports: [
     BrowserModule,

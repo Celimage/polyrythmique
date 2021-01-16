@@ -1055,10 +1055,10 @@ export class TrackComponent implements OnInit {
     &lt;img src&#x3D;&quot;{{test.getImgPathAt(0)}}&quot; /&gt;
   &lt;/div&gt;
   &lt;div [ngClass]&#x3D;&quot;{&#x27;instrument&#x27;: true, &#x27;modify&#x27;: modifyInstrument}&quot;&gt;
-    &lt;span *ngIf&#x3D;&quot;track.getInstrument() !&#x3D; &#x27;&#x27;; else placeholder&quot; (click)&#x3D;&quot;toggleModifyInstrument()&quot;&gt;{{ track.getInstrument() }}&lt;/span&gt;
-    &lt;ng-template #placeholder&gt;&lt;span (click)&#x3D;&quot;toggleModifyInstrument()&quot;&gt;Défaut&lt;/span&gt;&lt;/ng-template&gt;
-    &lt;div&gt;
-      &lt;input [(ngModel)]&#x3D;&quot;modifiableInstrument&quot; value&#x3D;&quot;track.getInstrument()&quot; placeholder&#x3D;&quot;instrument&quot; #instruInput /&gt;
+      &lt;span *ngIf&#x3D;&quot;track.getInstrument() !&#x3D; &#x27;&#x27; &amp;&amp; !modifyInstrument&quot; (click)&#x3D;&quot;toggleModifyInstrument()&quot;&gt;{{ track.getInstrument() }}&lt;/span&gt;
+      &lt;span *ngIf&#x3D;&quot;track.getInstrument() &#x3D;&#x3D; &#x27;&#x27; &amp;&amp;!modifyInstrument&quot; (click)&#x3D;&quot;toggleModifyInstrument()&quot;&gt;Défaut&lt;/span&gt;
+    &lt;div *ngIf&#x3D;&quot;modifyInstrument&quot;&gt;
+      &lt;input [(ngModel)]&#x3D;&quot;modifiableInstrument&quot; value&#x3D;&quot;track.getInstrument()&quot; placeholder&#x3D;&quot;instrument&quot; class&#x3D;&quot;button-focus&quot; /&gt;&lt;!--#instruInput--&gt;
       &lt;button (click)&#x3D;&quot;toggleModifyInstrument()&quot;&gt;➤&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -1151,11 +1151,11 @@ article
     cursor: default
     width: 100%
     height: $INSTR_INPUT_HEIGHT
-    display: none
+    display: flex
 
     input
       flex-grow: 1
-      max-width: $INSTRUMENT_WIDTH - $INSTR_INPUT_HEIGHT
+      max-width: $INSTRUMENT_WIDTH - $INSTR_INPUT_HEIGHT - 1rem
       border-top-right-radius: 0
       border-bottom-right-radius: 0
     button
@@ -1164,13 +1164,6 @@ article
       background: vars.$DEEP_DARK_GRAY
       border-top-left-radius: 0
       border-bottom-left-radius: 0
-
-
-.instrument.modify
-  span
-    display: none
-  div
-    display: flex
 </code></pre>
     </div>
 
@@ -1199,8 +1192,8 @@ article
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><article (dblclick)="selectTrack()">  <div class="soundPlan">    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 0"      src="../assets/images/sound.svg" alt="Plan normal (non muet, non solo)" />    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 1"      src="../assets/images/solo.svg" alt="Plan solo" />    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 2"      src="../assets/images/mute.svg" alt="Plan muet" />  </div>  <div class="trackContent">    <!--{{ track.getNotes().length }}-->    <!--<img src="../../assets/images/rythms/4N.svg"/>-->    <img src="{{test.getImgPathAt(0)}}" />  </div>  <div [ngClass]="{\'instrument\': true, \'modify\': modifyInstrument}">    <span *ngIf="track.getInstrument() != \'\'; else placeholder" (click)="toggleModifyInstrument()">{{ track.getInstrument() }}</span>    <ng-template #placeholder><span (click)="toggleModifyInstrument()">Défaut</span></ng-template>    <div>      <input [(ngModel)]="modifiableInstrument" value="track.getInstrument()" placeholder="instrument" #instruInput />      <button (click)="toggleModifyInstrument()">➤</button>    </div>  </div></article></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TrackComponent', 'selector': 'app-track'}];
+        var COMPONENT_TEMPLATE = '<div><article (dblclick)="selectTrack()">  <div class="soundPlan">    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 0"      src="../assets/images/sound.svg" alt="Plan normal (non muet, non solo)" />    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 1"      src="../assets/images/solo.svg" alt="Plan solo" />    <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 2"      src="../assets/images/mute.svg" alt="Plan muet" />  </div>  <div class="trackContent">    <!--{{ track.getNotes().length }}-->    <!--<img src="../../assets/images/rythms/4N.svg"/>-->    <img src="{{test.getImgPathAt(0)}}" />  </div>  <div [ngClass]="{\'instrument\': true, \'modify\': modifyInstrument}">      <span *ngIf="track.getInstrument() != \'\' && !modifyInstrument" (click)="toggleModifyInstrument()">{{ track.getInstrument() }}</span>      <span *ngIf="track.getInstrument() == \'\' &&!modifyInstrument" (click)="toggleModifyInstrument()">Défaut</span>    <div *ngIf="modifyInstrument">      <input [(ngModel)]="modifiableInstrument" value="track.getInstrument()" placeholder="instrument" class="button-focus" /><!--#instruInput-->      <button (click)="toggleModifyInstrument()">➤</button>    </div>  </div></article></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TrackComponent'};
 </script>

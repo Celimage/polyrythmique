@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
+import { Tempo } from "../classes/tempo";
 import { BasicNote } from "../enums/basic-note";
 
 @Component({
@@ -9,11 +10,9 @@ import { BasicNote } from "../enums/basic-note";
 })
 export class TempoComponent implements OnInit {
 
-  private note: BasicNote = BasicNote.QUARTER_NOTE;
-  private bpm: number = 60;
+  tempo: Tempo = new Tempo(null, null);
 
-  @Output() noteOutput: EventEmitter<BasicNote> = new EventEmitter<BasicNote>();
-  @Output() bpmOutput: EventEmitter<number> = new EventEmitter<number>();
+  @Output() tempoOutput: EventEmitter<Tempo> = new EventEmitter<Tempo>();
 
   /**
    * @ignore
@@ -23,31 +22,7 @@ export class TempoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-  getNote(): BasicNote {
-    return this.note;
+  setBPM() {
+    
   }
-
-  setNote(note: BasicNote): void {
-    this.note = note;
-    this.noteOutput.emit(note);
-  }
-  getBPM(): number {
-    return this.bpm;
-  }
-
-  setBPM(bpm: number): void {
-    if(bpm >= 1 && bpm % 1 == 0) {
-      this.bpm = bpm;
-      this.bpmOutput.emit(bpm);
-    }
-  }
-
-  getNoteImgPath(): string {
-    return BasicNote.getImgPath(this.note);
-  }
-  getNoteName(): string {
-    return BasicNote.getName(this.note);
-  }
-
 }

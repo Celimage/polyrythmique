@@ -1,11 +1,15 @@
 export class Metronome {
   private interval: number;
-  private timer: number;
+  private timer: number = 0;
+  private sound = new Audio(Metronome.Sound.TOC);
 
-  constructor(bpm: number){
+  constructor(bpm: number, soundPath: Metronome.Sound | null) {
     this.interval = bpm/60;
-    this.timer = 0;
-    this.start();
+    /*if(Metronome.Sound != null) {
+      this.sound = new Audio(soundPath);
+    } else {
+      this.sound = new Audio(Metronome.Sound.TOC);
+    }*/
   }
 
   start(): void {
@@ -25,9 +29,16 @@ export class Metronome {
   }
 
   private tick() {
-    this.timer = setInterval(function() {
-      console.log("TICK");
+    this.timer = setInterval(function(sound) {
+      sound.play();
+    }, this.interval *1000, this.sound);
+  }
+}
 
-    }, this.interval *1000);
+export namespace Metronome {
+  export enum Sound {
+    TOC = "../../assets/sounds/metronome/toc.wav",
+    CLOCK_1 = "../../assets/sounds/metronome/clock-1.wav",
+    CLOCK_2 = "../../assets/sounds/metronome/clock-2.wav"
   }
 }

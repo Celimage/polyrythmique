@@ -58,6 +58,9 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
+                            <a href="#BasicNote" title="src/app/enums/basic-note.ts"><b>BasicNote</b>&nbsp;&nbsp;&nbsp;(src/.../basic-note.ts)</a>
+                        </li>
+                        <li>
                             <a href="#BinaryNote" title="src/app/enums/binary-note.ts"><b>BinaryNote</b>&nbsp;&nbsp;&nbsp;(src/.../binary-note.ts)</a>
                         </li>
                         <li>
@@ -67,7 +70,7 @@
                             <a href="#NoteType" title="src/app/enums/note-type.ts"><b>NoteType</b>&nbsp;&nbsp;&nbsp;(src/.../note-type.ts)</a>
                         </li>
                         <li>
-                            <a href="#SigBottom" title="src/app/signature/signature.component.ts"><b>SigBottom</b>&nbsp;&nbsp;&nbsp;(src/.../signature.component.ts)</a>
+                            <a href="#Sound" title="src/app/classes/metronome.ts"><b>Sound</b>&nbsp;&nbsp;&nbsp;(src/.../metronome.ts)</a>
                         </li>
                         <li>
                             <a href="#TernaryNote" title="src/app/enums/ternary-note.ts"><b>TernaryNote</b>&nbsp;&nbsp;&nbsp;(src/.../ternary-note.ts)</a>
@@ -79,6 +82,69 @@
     </table>
 </section>
 
+    <h3>src/app/enums/basic-note.ts</h3>
+    <section>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="BasicNote"></a>
+                        <span class="name"><b>BasicNote</b><a href="#BasicNote"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;WHOLE_NOTE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>{&quot;number&quot;: 1, &quot;name&quot;: &quot;Whole note&quot;, &quot;img&quot;: &quot;whole-note.svg&quot;}</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;HALF_NOTE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>{&quot;number&quot;: 2, &quot;name&quot;: &quot;Half note&quot;, &quot;img&quot;: &quot;half-note.svg&quot;}</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;QUARTER_NOTE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>{&quot;number&quot;: 4, &quot;name&quot;: &quot;Quarter note&quot;, &quot;img&quot;: &quot;quarter-note.svg&quot;}</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;HEIGHT_NOTE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>{&quot;number&quot;: 8, &quot;name&quot;: &quot;Height note&quot;, &quot;img&quot;: &quot;height-note.svg&quot;}</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;SIXTEEN_NOTE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>{&quot;number&quot;: 16, &quot;name&quot;: &quot;Sixteen note&quot;, &quot;img&quot;: &quot;sixteen-note.svg&quot;}</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
     <h3>src/app/enums/binary-note.ts</h3>
     <section>
         <table class="table table-sm table-bordered">
@@ -1095,70 +1161,44 @@
             </tbody>
         </table>
 </section>
-    <h3>src/app/signature/signature.component.ts</h3>
+    <h3>src/app/classes/metronome.ts</h3>
     <section>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="SigBottom"></a>
-                        <span class="name"><b>SigBottom</b><a href="#SigBottom"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="Sound"></a>
+                        <span class="name"><b>Sound</b><a href="#Sound"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>Stock the possible values of the signature&#39;s <a href="SignatureComponent#bottom">bottom</a> attribute</p>
-</div>
-                        </td>
-                    </tr>
                         <tr>
                             <td class="col-md-4">
-                                &nbsp;WHOLE_NOTE
+                                &nbsp;TOC
                             </td>
                         </tr>
                         <tr>
                             <td class="col-md-4">
-                                <i>Value : </i><code>1</code>
+                                <i>Value : </i><code>../../assets/sounds/metronome/toc.wav</code>
                             </td>
                         </tr>
                         <tr>
                             <td class="col-md-4">
-                                &nbsp;HALF_NOTE
+                                &nbsp;CLOCK_1
                             </td>
                         </tr>
                         <tr>
                             <td class="col-md-4">
-                                <i>Value : </i><code>2</code>
+                                <i>Value : </i><code>../../assets/sounds/metronome/clock-1.wav</code>
                             </td>
                         </tr>
                         <tr>
                             <td class="col-md-4">
-                                &nbsp;QUARTER_NOTE
+                                &nbsp;CLOCK_2
                             </td>
                         </tr>
                         <tr>
                             <td class="col-md-4">
-                                <i>Value : </i><code>4</code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;HEIGHT_NOTE
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Value : </i><code>8</code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;SIXTEEN_NOTE
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Value : </i><code>16</code>
+                                <i>Value : </i><code>../../assets/sounds/metronome/clock-2.wav</code>
                             </td>
                         </tr>
             </tbody>

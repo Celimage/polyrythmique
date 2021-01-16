@@ -38,20 +38,20 @@ export enum BinaryNote {
   _16N_R      = 14
 }
 
-/*namespace BinaryNote {
+export namespace BinaryNote {
   export function getRepresentation(note: BinaryNote): NoteRepresentation | null {
     if(note == 1) {
       return new NoteRepresentation(["4N"], null);
     } else if(note == 2) {
-
+      return new NoteRepresentation(["4N", "4N", "4N"], {number: 3, useHook: true});
     } else if(note == 3) {
-
+      return new NoteRepresentation(["8N_L-L", "8N_L-LR", "8N_L-LR", "8N_L-R"], null);
     } else if(note == 4) {
-
+      return new NoteRepresentation(["8N_L-L", "8N_L-R"], null);
     } else if(note == 5) {
-
+      return new NoteRepresentation(["16N_L-L", "16N_L-R"], null);
     } else if(note == 6) {
-
+      return new NoteRepresentation(["16N_L-L", "8N_L-LR", "16N_L-R"], null);
     } else if(note == 7) {
 
     } else if(note == 8) {
@@ -71,7 +71,7 @@ export enum BinaryNote {
     }
     return null;
   }
-}*/
+}
 
 
 /*

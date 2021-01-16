@@ -254,6 +254,11 @@ export class PlaybarComponent implements OnInit {
   display: flex
   justify-content: space-between
 
+  &amp;&gt;button:first-child
+    margin-right: 0.75rem
+  &amp;&gt;button:nth-child(2)
+    margin-right: 0.5rem
+
   &amp;&gt;button:nth-child(1)&gt;img
     transform: rotateY(180deg)
 </code></pre>
@@ -285,7 +290,7 @@ export class PlaybarComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><button><img src="../../assets/images/icons/playbar/hop.svg" alt="Sauter à la mesure précédente" /></button><button *ngIf="true"><img src="../../assets/images/icons/playbar/play.svg" alt="Lancer" /></button><button *ngIf="false"><img src="../../assets/images/icons/playbar/pause.svg" alt="Pause" /></button><button><img src="../../assets/images/icons/playbar/hop.svg" alt="Sauter à la mesure suivante" /></button></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TrackComponent', 'selector': 'app-track'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PlaybarComponent'};
 </script>

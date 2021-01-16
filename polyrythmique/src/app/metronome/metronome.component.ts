@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tempo } from '../classes/tempo';
 import { Metronome } from '../classes/metronome';
 
 @Component({
@@ -12,15 +13,19 @@ import { Metronome } from '../classes/metronome';
  */
 export class MetronomeComponent implements OnInit {
 
+  bpm: number = 60;
+
   /**
     * The metronome
     */
-  runningMetronome: Metronome = new Metronome(60);
+  runningMetronome: Metronome;
 
   /**
   * @ignore
   */
-  constructor() { }
+  constructor() {
+    this.runningMetronome = new Metronome(this.bpm, null);
+  }
 
   /**
   * @ignore
@@ -50,7 +55,7 @@ export class MetronomeComponent implements OnInit {
   * Starts the metronome
   */
   start(){
-
+    this.runningMetronome.start();
   }
 
   /**
