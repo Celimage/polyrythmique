@@ -15,18 +15,18 @@ export class Signature {
   private bottom: BasicNote = BasicNote.QUARTER_NOTE;
 
   /**
-   * Create a signature object
+   * Create a signature object. If top and bottom are not compatible, both are set to default value.
    *
-   * @param {number | null} top The {@link SignatureComponent#top|top} of the signature
-   * @param {BasicNote | null} top The {@link SignatureComponent#bottom|bottom} of the signature
+   * @param {number} top (optional) The {@link SignatureComponent#top|top} of the signature
+   * @param {BasicNote} top (optional) The {@link SignatureComponent#bottom|bottom} of the signature
    */
-  constructor(top: number | null, bottom: BasicNote | null) {
-    if(top) {
-      this.top = top;
+  constructor(top: number = 4, bottom: BasicNote = BasicNote.QUARTER_NOTE) {
+    if(!this.isCompatible(top, bottom)) {
+      this.top = 4;
+      this.bottom = BasicNote.QUARTER_NOTE;
     }
-    if(bottom) {
-      this.bottom = bottom;
-    }
+    this.top = top;
+    this.bottom = bottom;
   }
 
   /**

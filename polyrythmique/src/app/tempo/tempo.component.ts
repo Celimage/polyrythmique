@@ -10,7 +10,7 @@ import { BasicNote } from "../enums/basic-note";
 })
 export class TempoComponent implements OnInit {
 
-  tempo: Tempo = new Tempo(null, null);
+  tempo: Tempo = new Tempo();
 
   @Output() tempoOutput: EventEmitter<Tempo> = new EventEmitter<Tempo>();
 
@@ -23,6 +23,6 @@ export class TempoComponent implements OnInit {
   }
 
   setBPM() {
-    
+
   }
 }

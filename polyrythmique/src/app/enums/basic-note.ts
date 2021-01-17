@@ -1,6 +1,8 @@
 import { environment } from "./../../environments/environment";
 
-
+/**
+ * The enum that stores the primal notes from the whole note to sixteen note
+ */
 export enum BasicNote {
   WHOLE_NOTE = "{\"number\": 1, \"name\": \"Whole note\", \"img\": \"whole-note.svg\"}",
   HALF_NOTE = "{\"number\": 2, \"name\": \"Half note\", \"img\": \"half-note.svg\"}",
@@ -9,22 +11,49 @@ export enum BasicNote {
   SIXTEEN_NOTE = "{\"number\": 16, \"name\": \"Sixteen note\", \"img\": \"sixteen-note.svg\"}"
 }
 
+/**
+ * The namespace associated to the BasicNote enum, used to store its functions
+ */
 export namespace BasicNote {
-  export function getJSON(note: BasicNote) {
+  /**
+   * Get the value of the BasicNote on its JSON form
+   *
+   * @param {BasicNote} note The note that we want the JSON value of
+   * @returns The JSON associated to the note. It's form is {number: {number}, name: {string}, img: {string}}, were img is the name of the image with it's extension, that doesn't include the path to the image
+   */
+  export function getJSON(note: BasicNote): any {
     return JSON.parse(note);
   }
 
-  export function getNumber(note: BasicNote) {
+  /**
+   * Get the number associated to the note
+   *
+   * @param {BasicNote} note The note that we want the number of
+   * @returns The number of the note, as the denominator of it's time duration. Whole note is 1, half note 2...
+   */
+  export function getNumber(note: BasicNote): number {
     let json = JSON.parse(note);
     return json.number;
   }
 
-  export function getName(note: BasicNote) {
+  /**
+   * Get the name of the note
+   *
+   * @param {BasicNote} note The note that we want the name of
+   * @returns The name of the note, in english, starting with a capital..
+   */
+  export function getName(note: BasicNote): string {
     let json = JSON.parse(note);
     return json.name;
   }
 
-  export function getImgPath(note: BasicNote) {
+  /**
+   * Get the path to the image of the note
+   *
+   * @param {BasicNote} note The note that we want the image path to
+   * @returns The complete path to the image of the note, from the app repertory
+   */
+  export function getImgPath(note: BasicNote): string {
     let json = JSON.parse(note);
     return environment.pathsFromApp.notesImg + json.img;
   }

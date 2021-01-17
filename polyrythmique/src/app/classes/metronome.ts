@@ -3,7 +3,7 @@ export class Metronome {
   private timer: number = 0;
   private sound = new Audio(Metronome.Sound.TOC);
 
-  constructor(bpm: number, soundPath: Metronome.Sound | null) {
+  constructor(bpm: number, soundPath: Metronome.Sound = Metronome.Sound.TOC) {
     this.interval = bpm/60;
     /*if(Metronome.Sound != null) {
       this.sound = new Audio(soundPath);
@@ -29,7 +29,7 @@ export class Metronome {
   }
 
   private tick() {
-    this.timer = setInterval(function(sound) {
+    this.timer = setInterval(function(sound: any) {
       sound.play();
     }, this.interval *1000, this.sound);
   }

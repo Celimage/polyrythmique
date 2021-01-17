@@ -1,25 +1,46 @@
 import { Note } from "./note";
 
 export class Track {
-  static nextId: number = 1;
+  /**
+   * The auto-increment value for the tracks' ids
+   */
+  private static nextId: number = 1;
 
   /**
-    0 -> "Normal" (not solo nor mute)
-    1 -> Solo
-    2 -> Mute
-  */
-  static PLANS = [0, 1, 2];
-
+   * The id of the track
+   */
   private id: number;
+  /**
+   * The instrument used for the sound of the track
+   */
   private instrument: string;
+  /**
+   * The sound plan of the track<br/>
+   * 0 -> "Normal" (not solo nor mute)
+   * 1 -> Solo
+   * 2 -> Mute
+   */
   private plan: number;
+  /**
+   * The notes inside the track
+   */
   private notes: Note[];
 
+  /**
+   * Create a new track whose attributes corresponds to the parameters. Its id is auto-incremented
+   *
+   * @param {string} instrument (optional) The {@link Track#instrument|instrument} of the track
+   * @param {number} plan (optional) The {@link Track#plan|plan sound} of the track. Must be 0, 1 or 2. If incorrect set to 0
+   * @param {Note[]} notes (optional) The {@link Track#notes|notes} of the track.
+   */
   constructor(instrument: string = "", plan: number = 0, notes: Note[] = new Array<Note>()) {
     this.id = Track.nextId;
     ++Track.nextId;
 
     this.instrument = instrument;
+    if(plan < 0 || plan > 2 || plan % 1 != 0) {
+      plan = 0;
+    }
     this.plan = plan;
     this.notes = notes;
   }

@@ -24,7 +24,7 @@ export class MetronomeComponent implements OnInit {
   * @ignore
   */
   constructor() {
-    this.runningMetronome = new Metronome(this.bpm, null);
+    this.runningMetronome = new Metronome(this.bpm);
   }
 
   /**

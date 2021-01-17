@@ -7,11 +7,11 @@ export class Tempo {
   /**
    * The note that is beat. See {@link BasicNote|BasicNote} for more details
    */
-  private note: BasicNote = BasicNote.QUARTER_NOTE;
+  private note: BasicNote;
   /**
    * The BPM or Beat Per Minute
    */
-  private bpm: number = 60;
+  private bpm: number;
 
   /**
    * Create a tempo object
@@ -19,13 +19,9 @@ export class Tempo {
    * @param {BasicNote|null} note The {@link Tempo#note|note} of the new tempo
    * @param {number|null} bpm The {@link Tempo#bpm|BPM} of the new tempo
    */
-  constructor(note: BasicNote | null, bpm: number | null) {
-    if(note) {
-      this.note = note;
-    }
-    if(bpm) {
-      this.bpm = bpm;
-    }
+  constructor(note: BasicNote = BasicNote.QUARTER_NOTE, bpm: number = 60) {
+    this.note = note;
+    this.bpm = bpm;
   }
 
   /**

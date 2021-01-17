@@ -14,8 +14,8 @@ import { Signature } from "../classes/signature";
 export class RhythmComponent implements OnInit {
   tracks: Track[] = new Array<Track>();
 
-  signature: Signature = new Signature(null, null);
-  tempo: Tempo = new Tempo(null, null);
+  signature: Signature = new Signature();
+  tempo: Tempo = new Tempo();
 
 
   selectedTrackId: number | null = null;

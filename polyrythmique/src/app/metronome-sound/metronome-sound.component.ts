@@ -27,11 +27,11 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
   /**
    * The tempo used for the sound. Get from it's parent component and updated with the parent's binded attribute
    */
-  @Input("tempo") tempo: Tempo = new Tempo(null, null);
+  @Input("tempo") tempo: Tempo = new Tempo();
   /**
    * The signature used for the sound. Get from it's parent component and updated with the parent's binded attribute
    */
-  @Input("signature") signature: Signature = new Signature(null, null);
+  @Input("signature") signature: Signature = new Signature();
   /**
    * Whether or not the sound is playing. Used to know when to start the sound. Get from it's parent component and updated with the parent's binded attribute
    */
@@ -46,7 +46,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
    * @ignore()
    */
   constructor() {
-    this.metronome = new Metronome(this.tempo.getBPM(), null);
+    this.metronome = new Metronome(this.tempo.getBPM());
   }
   /**
    * @ignore()
@@ -64,7 +64,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
     for(const propName in changes) {
       if(changes.hasOwnProperty(propName)) {
         if(propName === "tempo") {
-          this.metronome = new Metronome(this.tempo.getBPM(), null);
+          this.metronome = new Metronome(this.tempo.getBPM());
         } else if(propName === "isPlaying") {
           if(changes["isPlaying"].currentValue) {
             this.playMetronome();
