@@ -1,3 +1,4 @@
+import { Measure } from "./measure";
 import { Note } from "./note";
 
 export class Track {
@@ -21,6 +22,12 @@ export class Track {
    * 2 -> Mute
    */
   private plan: number;
+
+  /**
+   *
+   */
+ private measures: Measure[];
+
   /**
    * The notes inside the track
    */
@@ -33,8 +40,11 @@ export class Track {
    * @param {number} plan (optional) The {@link Track#plan|plan sound} of the track. Must be 0, 1 or 2. If incorrect set to 0
    * @param {Note[]} notes (optional) The {@link Track#notes|notes} of the track.
    */
-  constructor(instrument: string = "", plan: number = 0, notes: Note[] = new Array<Note>()) {
+  constructor(instrument: string = "", plan: number = 0, measures: Measure[] = new Array<Measure>(), notes: Note[] = new Array<Note>()) {
     this.id = Track.nextId;
+    measures.push(new Measure(this.id));
+    measures.push(new Measure(this.id));
+    measures.push(new Measure(this.id));
     ++Track.nextId;
 
     this.instrument = instrument;
@@ -42,6 +52,7 @@ export class Track {
       plan = 0;
     }
     this.plan = plan;
+    this.measures = measures;
     this.notes = notes;
   }
 
@@ -60,8 +71,25 @@ export class Track {
     return this.plan;
   }
   setPlan(plan: number): void {
-    this.plan = plan;
+    if(plan >= 0 && plan <= 2 && plan % 1 == 0) {
+      this.plan = plan;
+    }
   }
+
+  planToString(): string {
+    if(this.plan == 0) {
+      return "normal";
+    } else if(this.plan == 1) {
+      return "solo";
+    } else {
+      return "mute";
+    }
+  }
+
+  getMeasures(): Measure[] {
+    return this.measures;
+  }
+
 
   getNotes(): Note[] {
     return this.notes;
@@ -98,5 +126,18 @@ export class Track {
         this.notes.splice(i, 1);
       }
     }
+  }
+
+  toString(): string {
+    let measuresStr: string = "";
+    for(let aMeasure of this.measures) {
+      measuresStr = measuresStr + aMeasure.toString() + ",";
+    }
+    measuresStr = measuresStr.slice(0, -1);
+    return "{\"id\": " + this.id.toString() +
+              ", \"plan\": {\"solo\": " + (this.plan == 1) +
+                          ", \"muet\": " + (this.plan == 2) +
+              "}, \"instrument\": " + this.instrument +
+              ", \"measures\": [" + measuresStr + "]}";
   }
 }
