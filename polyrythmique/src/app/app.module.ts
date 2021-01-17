@@ -18,6 +18,8 @@ import { MetronomeComponent } from './metronome/metronome.component';
 import { MeasureComponent } from './measure/measure.component';
 import { NoteComponent } from './note/note.component';
 import { MetronomeSoundComponent } from './metronome-sound/metronome-sound.component';
+import { SoundPlayerComponent } from './sound-player/sound-player.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { MetronomeSoundComponent } from './metronome-sound/metronome-sound.compo
     MetronomeComponent,
     MeasureComponent,
     NoteComponent,
-    MetronomeSoundComponent
+    MetronomeSoundComponent,
+    SoundPlayerComponent
   ],
   imports: [
     BrowserModule,

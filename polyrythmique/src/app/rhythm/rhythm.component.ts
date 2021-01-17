@@ -4,6 +4,7 @@ import { Track } from "../classes/track";
 import { Note } from "../classes/note";
 import { Tempo } from "../classes/tempo";
 import { Signature } from "../classes/signature";
+import {EventEmitter, Output, Input} from '@angular/core';
 
 
 @Component({
@@ -27,6 +28,10 @@ export class RhythmComponent implements OnInit {
   startRecord: Date = new Date();
   startTapVar: Date = new Date();
   endTapVar: Date = new Date();
+
+  @Input() playTracks: boolean = false;
+//  @Input() finishedPlayingTracks: boolean = true;
+  public isPlayingTracks: boolean = false;
 
   /**
    * @ignore
@@ -139,4 +144,14 @@ export class RhythmComponent implements OnInit {
       }
     }
   }
+
+playTheTracks(){
+  console.log("TRACKS");
+  this.isPlayingTracks = true;
+}
+
+toggleIsPlayingTracks(){
+  this.isPlayingTracks = false;
+}
+
 }

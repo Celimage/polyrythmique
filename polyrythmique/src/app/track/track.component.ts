@@ -1,9 +1,11 @@
-import { Component, OnInit, Input, EventEmitter, Output, ViewChild//, ElementRef
+import { Component, OnInit, OnChanges, SimpleChange, Input, EventEmitter, Output, ViewChild//, ElementRef
  } from "@angular/core";
 
 import { Track } from "../classes/track";
 import { Note } from "../classes/note";
 import { NoteRepresentation } from "../classes/note-representation";
+//import { SoundPlayer } from "../classes/sound-player";
+import { SoundPlayerComponent } from "../sound-player/sound-player.component";
 
 @Component({
   selector: "app-track",
@@ -15,6 +17,13 @@ export class TrackComponent implements OnInit {
 
   modifiableInstrument: string = "";
   modifyInstrument = false;
+
+//  soundPlayer: SoundPlayer = new SoundPlayer("exampleout.mid.wav");
+  @Input() isPlaying: boolean = false;
+  @Input() trigger: boolean = false;
+  @Output() playTrack: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() finishedPlaying: EventEmitter<boolean> = new EventEmitter<boolean>();
+  //private soundPlayer: SoundPlayerComponent = new SoundPlayerComponent("exampleout.mid.wav");
 
     // Must be between 0 (mute) and 1 (max)
   volume: number = 1;
@@ -33,6 +42,23 @@ export class TrackComponent implements OnInit {
 
   ngOnInit(): void {
     this.modifiableInstrument = this.track.getInstrument();
+    //this.soundPlayer.play();
+    //this.soundPlayer = new SoundPlayer("exampleout.mid.wav");
+  /*  this.soundPlayer.on("ended", (err:any) => {
+      console.log("TEST");
+
+    });*/
+    this.playTrack.emit(true);
+
+
+  }
+
+  ngOnChanges(changes: { [property: string]: SimpleChange }){
+     let change: SimpleChange = changes['trigger'];
+     console.log("PLS");
+     if(this.trigger == true){
+       this.isPlaying = true;
+     }
   }
 
   changeSoundPlan(): void {
@@ -98,5 +124,14 @@ export class TrackComponent implements OnInit {
   getId(): number {
     return this.track.getId();
   }
+  endOfTrack(event: any){
+    console.log("TEST");
+    this.isPlaying = false;
+    this.finishedPlaying.emit(true);
+  }
 
+  playAllTracks(){
+    console.log("PLS");
+    this.playTrack.emit(true);
+  }
 }

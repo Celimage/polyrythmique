@@ -1,4 +1,7 @@
 <article (dblclick)="selectTrack()">
+
+  <app-sound-player (finishedPlayingTrack)="endOfTrack($event)" [isPlaying]="isPlaying" [soundName]="'exampleout.mid.wav'"></app-sound-player>
+
   <div class="soundPlan">
     <img (click)="changeSoundPlan()" *ngIf="track.getPlan() == 0"
       src="../assets/images/sound.svg" alt="Plan normal (non muet, non solo)" />
