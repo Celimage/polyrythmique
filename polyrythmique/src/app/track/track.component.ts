@@ -20,9 +20,9 @@ export class TrackComponent implements OnInit {
 
 //  soundPlayer: SoundPlayer = new SoundPlayer("exampleout.mid.wav");
   @Input() isPlaying: boolean = false;
-  @Input() trigger: boolean = false;
-  @Output() playTrack: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() finishedPlaying: EventEmitter<boolean> = new EventEmitter<boolean>();
+  //@Input() trigger: boolean = false;
+  @Output() isPlayingOutput: EventEmitter<boolean> = new EventEmitter<boolean>();
+  //@Output() finishedPlaying: EventEmitter<boolean> = new EventEmitter<boolean>();
   //private soundPlayer: SoundPlayerComponent = new SoundPlayerComponent("exampleout.mid.wav");
 
     // Must be between 0 (mute) and 1 (max)
@@ -48,16 +48,16 @@ export class TrackComponent implements OnInit {
       console.log("TEST");
 
     });*/
-    this.playTrack.emit(true);
+    //this.isPlayingOutput.emit(true);
 
 
   }
 
   ngOnChanges(changes: { [property: string]: SimpleChange }){
-     let change: SimpleChange = changes['trigger'];
+     let change: SimpleChange = changes['isPlaying'];
      console.log("PLS");
-     if(this.trigger == true){
-       this.isPlaying = true;
+     if(this.isPlaying){
+       this.isPlayingOutput.emit(change.currentValue);
      }
   }
 
@@ -127,11 +127,11 @@ export class TrackComponent implements OnInit {
   endOfTrack(event: any){
     console.log("TEST");
     this.isPlaying = false;
-    this.finishedPlaying.emit(true);
+    this.isPlayingOutput.emit(false);
   }
 
   playAllTracks(){
     console.log("PLS");
-    this.playTrack.emit(true);
+    this.isPlayingOutput.emit(true);
   }
 }

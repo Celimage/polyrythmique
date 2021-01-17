@@ -150,8 +150,8 @@ playTheTracks(){
   this.isPlayingTracks = true;
 }
 
-toggleIsPlayingTracks(){
-  this.isPlayingTracks = false;
+setIsPlayingTracks(bool: boolean){
+  this.isPlayingTracks = bool;
 }
 
 }
