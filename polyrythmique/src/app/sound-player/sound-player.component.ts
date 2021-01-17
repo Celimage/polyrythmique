@@ -35,6 +35,8 @@ export class SoundPlayerComponent implements OnInit {
      let change: SimpleChange = changes['isPlaying'];
      if(this.isPlaying == true){
        this.playSound();
+     } else {
+       this.pause();
      }
   }
 
@@ -42,13 +44,8 @@ export class SoundPlayerComponent implements OnInit {
   * Play the audio
   */
   playSound() {
-    console.log("TEST");
-
     if(this.sound){
-  //    this.isPlaying = true;
       this.sound.play();
-    }else{
-
     }
   }
 

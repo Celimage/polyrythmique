@@ -14,8 +14,7 @@ export class PlaybarComponent implements OnInit {
   @Output() private playTracks: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() isPlaying: boolean = false;
 
-  ngOnChanges(changes: { [property: string]: SimpleChange }){
-     let change: SimpleChange = changes['isPlaying'];
+  ngOnChanges(changes: SimpleChange){
   }
   /**
    * @ignore
@@ -28,10 +27,8 @@ export class PlaybarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  launchAllTracks(){
-    console.log("PLAY");
-    this.playTracks.emit(true);
-    this.isPlaying = true;
+  toggleIsPlaying(): void {
+    this.isPlaying = !this.isPlaying;
+    this.playTracks.emit(this.isPlaying);
   }
-
 }

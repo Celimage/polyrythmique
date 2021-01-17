@@ -42,11 +42,6 @@ export class Track {
    */
   constructor(instrument: string = "", plan: number = 0, measures: Measure[] = new Array<Measure>(), notes: Note[] = new Array<Note>()) {
     this.id = Track.nextId;
-    console.log("YO")
-    measures.push(new Measure(this.id));
-    measures.push(new Measure(this.id));
-    measures.push(new Measure(this.id));
-    measures.push(new Measure(this.id));
     ++Track.nextId;
 
     this.instrument = instrument;

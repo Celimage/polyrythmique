@@ -14,7 +14,7 @@
     </div>
 
     <div>
-      <app-playbar [isPlaying]="isPlayingTracks" (playTracks)="playTheTracks()"></app-playbar>
+      <app-playbar [isPlaying]="isPlayingTracks" (playTracks)="setIsPlayingTracks($event)"></app-playbar>
       <div>
         <button class="anacrouse disabled"><img src="../../assets/images/icons/anacrusis.svg" alt="Anacrouse" /></button>
         <app-metronome-sound [tempo]="tempo" [signature]="signature" [isPlaying]="recording"></app-metronome-sound>
