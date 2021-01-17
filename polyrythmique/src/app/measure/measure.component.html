@@ -1,3 +1,3 @@
-<div>
+<div [style.aspectRatio]="getWidth() / 77"><!--[style.width]="getWidth() +'rem'"-->
   <app-note *ngFor="let note of measure.getNotes()" [note]="note"></app-note>
 </div>

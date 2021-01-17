@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChange, Input, EventEmitter, Output, ViewChild//, ElementRef
+import { Component, OnInit, OnChanges, SimpleChanges, Input, EventEmitter, Output, ViewChild//, ElementRef
  } from "@angular/core";
 
 import { Track } from "../classes/track";
@@ -7,12 +7,16 @@ import { NoteRepresentation } from "../classes/note-representation";
 //import { SoundPlayer } from "../classes/sound-player";
 import { SoundPlayerComponent } from "../sound-player/sound-player.component";
 
+
+import { Signature } from "../classes/signature";
+import { Tempo } from "../classes/tempo";
+
 @Component({
   selector: "app-track",
   templateUrl: "./track.component.html",
   styleUrls: ["./track.component.sass"]
 })
-export class TrackComponent implements OnInit {
+export class TrackComponent implements OnInit, OnChanges {
   @Input() track: Track = new Track();
 
   modifiableInstrument: string = "";
@@ -32,6 +36,9 @@ export class TrackComponent implements OnInit {
 
   //@ViewChild('instruInput', { static: true }) intrumentInput: ElementRef;
 
+  @Input() signature: Signature = new Signature();
+  @Input() tempo: Tempo = new Tempo();
+
   test: NoteRepresentation = new NoteRepresentation(["8N"], null);
 
 
@@ -41,8 +48,7 @@ export class TrackComponent implements OnInit {
     this.modifiableInstrument = this.track.getInstrument();
   }
 
-  ngOnChanges(changes: SimpleChange): void{
-  }
+  ngOnChanges(changes: SimpleChanges): void { }
 
   changeSoundPlan(): void {
       // Change the number of the selected sound plan

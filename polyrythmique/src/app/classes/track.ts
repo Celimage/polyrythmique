@@ -42,6 +42,21 @@ export class Track {
    */
   constructor(instrument: string = "", plan: number = 0, measures: Measure[] = new Array<Measure>(), notes: Note[] = new Array<Note>()) {
     this.id = Track.nextId;
+    this.measures = measures;
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
     ++Track.nextId;
 
     this.instrument = instrument;
@@ -49,7 +64,7 @@ export class Track {
       plan = 0;
     }
     this.plan = plan;
-    this.measures = measures;
+    //this.measures = measures;
     this.notes = notes;
   }
 

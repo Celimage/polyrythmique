@@ -19,6 +19,7 @@ $BORDER_WIDTH: 0.25rem
 :host
   display: block
   width: 100%
+  max-width: 100%
 
   &.selected>article
     @include create-gradient(border-image-source, vars.$TRANSPARENT_ORANGE, vars.$ORANGE)
@@ -34,6 +35,7 @@ article
   display: flex
   height: $HEIGHT
   width: 100%
+  max-width: 100%
   @include create-gradient(background-image, vars.$TRANSPARENT_MIDDLE_DARK_GRAY, vars.$MIDDLE_DARK_GRAY)
   margin: 0.75rem 0
   padding: 0 0.5rem
@@ -51,6 +53,7 @@ article
   position: relative
   justify-content: center
   width: $HEIGHT
+  flex-shrink: 0
   //margin-right: $BORDER_WIDTH
 
 
@@ -62,10 +65,19 @@ article
   margin: 0 $BORDER_WIDTH
   display: flex
   align-items: center
+  overflow-x: auto
+  scroll-behavior: smooth
+  box-sizing: border-box
+
+  &::-webkit-scrollbar
+    height: 0px
+    width: 0px
+    background: transparent
 
   .content-wrapper
-    flex-grow: 1
+    //flex-grow: 1
     height: 80%
+    //max-width: 100%
     display: flex
     justify-content: flex-start
     align-items: center
@@ -83,6 +95,7 @@ article
     width: auto
 
 .instrument
+  flex-shrink: 0
   position: relative
   min-width: $INSTRUMENT_WIDTH
 

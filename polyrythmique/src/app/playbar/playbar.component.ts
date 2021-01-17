@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {EventEmitter, Output, Input, OnChanges, SimpleChange} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-playbar',
@@ -9,12 +8,12 @@ import {EventEmitter, Output, Input, OnChanges, SimpleChange} from '@angular/cor
 /**
  * TODO
  */
-export class PlaybarComponent implements OnInit {
+export class PlaybarComponent implements OnInit, OnChanges {
 
   @Output() private playTracks: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() isPlaying: boolean = false;
 
-  ngOnChanges(changes: SimpleChange){
+  ngOnChanges(changes: SimpleChanges){
   }
   /**
    * @ignore

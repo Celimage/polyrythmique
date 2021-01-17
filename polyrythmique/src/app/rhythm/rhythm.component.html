@@ -1,7 +1,7 @@
 <h1 class="hide">Créer une polyrythmie</h1>
 
 <section id="tracks">
-  <app-track *ngFor="let track of tracks" [track]="track" [isPlaying]="isPlayingTracks" (selectedTrack)="setSelectedTrackId($event)" (isPlayingOutput)="setIsPlayingTracks($event)"
+  <app-track *ngFor="let track of tracks" [track]="track" [isPlaying]="isPlayingTracks" [signature]="signature" [tempo]="tempo" (selectedTrack)="setSelectedTrackId($event)" (isPlayingOutput)="setIsPlayingTracks($event)"
             [ngClass]="{'selected' : track.getId() == selectedTrackId, 'recording' : recording && track.getId() == selectedTrackId}"></app-track>
   <app-create-track (create)="addTrack($event)"></app-create-track>
 </section>
