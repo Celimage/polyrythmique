@@ -43,7 +43,8 @@ export enum BinaryNote {
  */
 export namespace BinaryNote {
   /**
-   * Get the {@link NoteRepresentation|representation} of the {@link BinaryNote|binary note}.
+   * Get the {@link NoteRepresentation|representation} of the {@link BinaryNote|binary note}.<br/>
+   * TO COMPLETE
    *
    * @param {BinaryNote} note The note we wants the representation of
    * @returns The {@link NoteRepresentation|NoteRepresentation} object associated to the {@link BinaryNote|binary note}. Returns null  if the parameter is not valid.

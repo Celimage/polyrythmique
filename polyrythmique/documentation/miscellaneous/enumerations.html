@@ -67,9 +67,6 @@
                             <a href="#Intrument" title="src/app/enums/instrument.ts"><b>Intrument</b>&nbsp;&nbsp;&nbsp;(src/.../instrument.ts)</a>
                         </li>
                         <li>
-                            <a href="#NoteType" title="src/app/enums/note-type.ts"><b>NoteType</b>&nbsp;&nbsp;&nbsp;(src/.../note-type.ts)</a>
-                        </li>
-                        <li>
                             <a href="#Sound" title="src/app/classes/metronome.ts"><b>Sound</b>&nbsp;&nbsp;&nbsp;(src/.../metronome.ts)</a>
                         </li>
                         <li>
@@ -92,6 +89,12 @@
                         <span class="name"><b>BasicNote</b><a href="#BasicNote"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>The enum that stores the primal notes from the whole note to sixteen note</p>
+</div>
+                        </td>
+                    </tr>
                         <tr>
                             <td class="col-md-4">
                                 &nbsp;WHOLE_NOTE
@@ -964,198 +967,6 @@
                         <tr>
                             <td class="col-md-4">
                                 &nbsp;GUNSHOT
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-</section>
-    <h3>src/app/enums/note-type.ts</h3>
-    <section>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="NoteType"></a>
-                        <span class="name"><b>NoteType</b><a href="#NoteType"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>This enum list every note type that can be visually created.</p>
-<p>VALUES NOTATION :<br />
-   All values start by _ due to the fact that a value cannot start by a number.</p>
-<p>   R -&gt; rest
-   D -&gt; dotted</p>
-<p>   TR -&gt; triplet
-   DU -&gt; duplet</p>
-<p>   1N -&gt; whole note
-   2N -&gt; half note
-   4N -&gt; quarter note
-   8N -&gt; eight note
-   16N -&gt; sixteenth note</p>
-<p>   A number not followed by a N but by an _ specify the number of linked notes after it
-   following themselves. ex : <em>2</em>8N = two eight note or eight note eight note.</p>
-</div>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_4N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_2_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_8N_R
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_16N_R
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_4N_TR
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_4_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_2_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_16N_8N_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_8N_2_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_2_16N_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_4_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_8N_TR
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_1N_R
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_2N_R
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_4N_R
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_D_4N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_3_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_6_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_8N_4_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_4_16N_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_8N_2_16N_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_8N_16N_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_2_8N_2_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_2_16N_2_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_D_8N_3_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_3_16N_D_8N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_2_16N_8N_2_16N
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_DU
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_D_2N_R
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_D_4N_R
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                &nbsp;_D_8N_R
                             </td>
                         </tr>
             </tbody>

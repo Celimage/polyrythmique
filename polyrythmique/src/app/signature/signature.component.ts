@@ -9,6 +9,7 @@ import { Signature } from "../classes/signature";
   styleUrls: ['./signature.component.sass']
 })
 /**
+ * TODO. Kind of similar to {@link TempoComponent|TempoComponent}<br/>
  * Used to define the signature of a project or measure
  */
 export class SignatureComponent implements OnInit {

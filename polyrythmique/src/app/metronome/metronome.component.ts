@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tempo } from '../classes/tempo';
 import { Metronome } from '../classes/metronome';
+import { BasicNote } from '../enums/basic-note';
 
 @Component({
   selector: 'app-metronome',
@@ -12,19 +13,31 @@ import { Metronome } from '../classes/metronome';
  * Used to define the Metronome
  */
 export class MetronomeComponent implements OnInit {
-
-  bpm: number = 60;
+  /**
+   * The BPM (Beat Per Minute) of the metronome
+   */
+  tempo: Tempo = new Tempo(BasicNote.QUARTER_NOTE, 60);
 
   /**
-    * The metronome
-    */
+   * The sound of the metronome. See the {@link Metronome#sound|metronome's sound attribute} for more
+   */
+  sound: Metronome.Sound = Metronome.Sound.TOC;
+
+  /**
+   * Whether or not the metronome is running (is being play)
+   */
+  isRunning: boolean = false;
+
+  /**
+   * The metronome
+   */
   runningMetronome: Metronome;
 
   /**
   * @ignore
   */
   constructor() {
-    this.runningMetronome = new Metronome(this.bpm);
+    this.runningMetronome = new Metronome(this.tempo.getBPM());
   }
 
   /**
@@ -34,35 +47,54 @@ export class MetronomeComponent implements OnInit {
   }
 
   /**
-  * Set the bpm at which the metronome beats
+  * Set the BPM at which the metronome beats
   *
   *@param {number} bpm The beat per minute ratio the metronome will beat at
   */
-  setMetronomeBpm(bpm: number){
-    this.runningMetronome.setBpm(bpm);
+  setBPM(bpm: number): void {
+    if(this.isRunning) {
+      this.stop();
+    }
+    this.tempo.setBPM(bpm);
+    this.runningMetronome.setBPM(bpm);
   }
 
   /**
-  * Get the bpm at which the metronome beats
+    * Set the {@link MetronomeCOmponent#tempo|tempo} of the metronome
+    *
+    *@param {Tempo} tempo The new tempo of the metronome
+    */
+  setTempo(tempo: Tempo): void {
+    if(this.isRunning) {
+      this.stop();
+    }
+    this.tempo = tempo;
+    this.runningMetronome.setBPM(this.tempo.getBPM());
+  }
+
+  /**
+  * Get the BPM at which the metronome beats
   *
-  *@return {number} The time it takes for the metronome to tick twice (in sec)
+  * @returns {number} The time it takes for the metronome to tick twice (in sec)
   */
-  getMetronomeMovementLengthInSec(){
-    return this.runningMetronome.getBpm()/30;
+  getMetronomeMovementLengthInSec(): number {
+    return 1 / (this.tempo.getBPM() / 120);
   }
 
   /**
   * Starts the metronome
   */
-  start(){
+  start(): void{
+    this.isRunning = true;
     this.runningMetronome.start();
   }
 
   /**
   * Stops the metronome
   */
-  stop(){
-
+  stop(): void{
+    this.isRunning = false;
+    this.runningMetronome.stop();
   }
 
 }

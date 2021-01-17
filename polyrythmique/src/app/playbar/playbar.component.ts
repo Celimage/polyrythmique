@@ -6,6 +6,9 @@ import {EventEmitter, Output, Input, OnChanges, SimpleChange} from '@angular/cor
   templateUrl: './playbar.component.html',
   styleUrls: ['./playbar.component.sass']
 })
+/**
+ * TODO
+ */
 export class PlaybarComponent implements OnInit {
 
   @Output() private playTracks: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -14,10 +17,14 @@ export class PlaybarComponent implements OnInit {
   ngOnChanges(changes: { [property: string]: SimpleChange }){
      let change: SimpleChange = changes['isPlaying'];
   }
-
+  /**
+   * @ignore
+   */
   constructor() {
   }
-
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 

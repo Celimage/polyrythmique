@@ -1,5 +1,7 @@
 import { browser, by, element } from 'protractor';
-
+/**
+ * @ignore
+ */
 export class AppPage {
   async navigateTo(): Promise<unknown> {
     return browser.get(browser.baseUrl);

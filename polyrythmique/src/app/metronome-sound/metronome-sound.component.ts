@@ -25,6 +25,11 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
   mode: number = 0;
 
   /**
+   * The sound of the metronome. See the {@link Metronome#sound|metronome's sound attribute} for more
+   */
+  sound: Metronome.Sound = Metronome.Sound.TOC;
+
+  /**
    * The tempo used for the sound. Get from it's parent component and updated with the parent's binded attribute
    */
   @Input("tempo") tempo: Tempo = new Tempo();
@@ -46,7 +51,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
    * @ignore()
    */
   constructor() {
-    this.metronome = new Metronome(this.tempo.getBPM());
+    this.metronome = new Metronome(this.tempo.getBPM(), this.sound);
   }
   /**
    * @ignore()
@@ -64,7 +69,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
     for(const propName in changes) {
       if(changes.hasOwnProperty(propName)) {
         if(propName === "tempo") {
-          this.metronome = new Metronome(this.tempo.getBPM());
+          this.metronome = new Metronome(this.tempo.getBPM(), this.sound);
         } else if(propName === "isPlaying") {
           if(changes["isPlaying"].currentValue) {
             this.playMetronome();
@@ -88,18 +93,16 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
   /**
    * Play the metronome for an undetermined time, two measure or not at all according to the {@link MetronomeSoundComponent#mode|mode} of the componenet
    */
-  playMetronome(): void {
-    if(this.mode != 2) {
+  async playMetronome(): Promise<any> {
+    if(this.mode == 0) {
       this.metronome.start();
-      if(this.mode == 1) {
-          // The time of two measures (* 60000 to get it in ms (12000 = 60000 * 2))
-        let time = ((this.signature.getTop() * (this.tempo.getNoteNumber() / this.signature.getBottomNumber())) / this.tempo.getBPM()) * 120000;
-        let timer = setTimeout(function(metronome: Metronome, isPlaying: boolean) {
-          metronome.stop();
-          isPlaying = false;
-        }, time, this.metronome, this.isPlaying);
-      }
+    } else if(this.mode == 1) {
+        // The number of tick in two measures
+      let nbTick = (this.signature.getTop() * (this.tempo.getNoteNumber() / this.signature.getBottomNumber())) * 2;
+      await this.metronome.startFor(nbTick);
+      this.isPlaying = false;
     }
+    return true;
   }
 
   /**

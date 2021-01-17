@@ -57,4 +57,37 @@ export namespace BasicNote {
     let json = JSON.parse(note);
     return environment.pathsFromApp.notesImg + json.img;
   }
+
+  /*export function length(): number {
+
+  }*/
+
+  /**
+   * Get all the BasicNote values<br/>
+   * TO CHANGE FOR SOMETHING DYNAMIC
+   *
+   * @returns All the possible BasicNote's values
+   */
+  export function values(): BasicNote[] {
+    /*let result = new Array<BasicNote>();
+
+      console.log(BasicNote);
+    for (var note in BasicNote) {
+      console.log(note);
+      result.push(BasicNote.note);
+   }
+   console.log(result);
+   return result;*/
+   return [
+     BasicNote.WHOLE_NOTE,
+     BasicNote.HALF_NOTE,
+     BasicNote.QUARTER_NOTE,
+     BasicNote.HEIGHT_NOTE,
+     BasicNote.SIXTEEN_NOTE
+   ]
+
+   /*let all = Object.values(BasicNote);
+   all.splice(5, 5);
+   return all;*/
+  }
 }

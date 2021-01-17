@@ -1,7 +1,15 @@
 <div class="tempo-root">
   <p>Tempo</p>
   <div>
-    <img src="{{ tempo.getNoteImgPath() }}" alt="{{ tempo.getNoteName() }}" />
-    <span>= <span>{{ tempo.getBPM() }}</span></span>
+    <img src="{{ tempo.getNoteImgPath() }}" alt="{{ tempo.getNoteName() }}" *ngIf="!isModifyingNote" (click)="toggleModifyNote()" />
+    <span>= <span *ngIf="!isModifyingBPM" (click)="toggleModifyBPM()">{{ tempo.getBPM() }}</span></span>
+
+    <div *ngIf="isModifyingBPM">
+      <input [(ngModel)]="modifiableBPM" value="tempo.getBPM()" placeholder="30" type="number" min="1" class="button-focus" />
+      <button (click)="toggleModifyBPM()">➤</button>
+    </div>
+  </div>
+  <div class="selectNote" *ngIf="isModifyingNote">
+    <img *ngFor="let note of getBasicNoteList()" src="{{getImgPath(note)}}" alt="{{getName(note)}}" (click)="setNote(note)" />
   </div>
 </div>

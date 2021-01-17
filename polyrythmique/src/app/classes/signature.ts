@@ -10,15 +10,15 @@ export class Signature {
   private top: number = 4;
 
   /**
-   * The note used as time base. See {@link BasicNote|BasicNote} for more
+   * The note used as time base
    */
   private bottom: BasicNote = BasicNote.QUARTER_NOTE;
 
   /**
-   * Create a signature object. If top and bottom are not compatible, both are set to default value.
+   * Create a signature object. If {@link SignatureComponent#top|top} and {@link SignatureComponent#bottom|bottom} are not compatible, both are set to default value.
    *
-   * @param {number} top (optional) The {@link SignatureComponent#top|top} of the signature
-   * @param {BasicNote} top (optional) The {@link SignatureComponent#bottom|bottom} of the signature
+   * @param {number} top (optional) The top of the signature
+   * @param {BasicNote} top (optional) The bottom of the signature
    */
   constructor(top: number = 4, bottom: BasicNote = BasicNote.QUARTER_NOTE) {
     if(!this.isCompatible(top, bottom)) {
@@ -32,7 +32,7 @@ export class Signature {
   /**
    * Get the {@link SignatureComponent#top|top}'s value
    *
-   * @returns The {@link SignatureComponent#top|top} of the signature
+   * @returns The top of the signature
    */
   getTop(): number {
     return this.top;
@@ -40,7 +40,7 @@ export class Signature {
   /**
    * Set the {@link SignatureComponent#top|top}'s value
    *
-   * @param {number} top The new {@link SignatureComponent#top|top} of the signature
+   * @param {number} top The new top of the signature
    */
   setTop(top: number): void {
     if(this.isCompatible(top, this.bottom)) {
@@ -51,7 +51,7 @@ export class Signature {
   /**
    * Get the {@link SignatureComponent#bottom|bottom}'s value
    *
-   * @returns The {@link SignatureComponent#bottom|bottom} of the signature
+   * @returns The bottom of the signature
    */
   getBottom(): BasicNote {
     return this.bottom;
@@ -60,7 +60,7 @@ export class Signature {
   /**
    * Set the {@link SignatureComponent#bottom|bottom}'s value
    *
-   * @param {BasicNote} bottom The new {@link SignatureComponent#bottom|bottom} of the signature
+   * @param {BasicNote} bottom The new bottom of the signature
    */
   setBottom(bottom: BasicNote): void {
     if(this.isCompatible(this.top, bottom)) {
@@ -93,9 +93,9 @@ export class Signature {
   }
 
   /**
-   * Get the {@link BasicNote#number|number} associated to the {@link BasicNote|note} of the {@link SignatureComponent#bottom|bottom} of the signature
+   * Get the {@link BasicNote#getNumber|number} associated to the {@link BasicNote|note} of the {@link SignatureComponent#bottom|bottom} of the signature
    *
-   * @returns The {@link BasicNote#number|number} of the signature's bottom
+   * @returns The number of the signature's bottom
    */
   getBottomNumber(): number {
     return BasicNote.getNumber(this.bottom);
@@ -104,7 +104,7 @@ export class Signature {
   /**
    * Get the {@link BasicNote#name|name} associated to the {@link BasicNote|note} of the {@link SignatureComponent#bottom|bottom} of the signature
    *
-   * @returns The {@link BasicNote#name|name} of the signature's bottom
+   * @returns The name of the signature's bottom
    */
   getBottomName(): string {
     return BasicNote.getName(this.bottom);
@@ -113,7 +113,7 @@ export class Signature {
   /**
    * Get the {@link BasicNote#imgPath|image path} associated to the {@link BasicNote|note} of the {@link SignatureComponent#bottom|bottom} of the signature
    *
-   * @returns The {@link BasicNote#imgPath|image path} of the signature's bottom
+   * @returns The image path of the signature's bottom
    */
   getBottomImgPath(): string {
     return BasicNote.getImgPath(this.bottom);
