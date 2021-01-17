@@ -45,4 +45,8 @@ export class Note {
     }
   }
 
+  toString(): String {
+    return "{\"timecode\":"+this.timecode+",\"duration\":"+this.duration+"}";
+  }
+
 }
