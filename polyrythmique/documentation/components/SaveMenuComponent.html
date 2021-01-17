@@ -117,102 +117,13 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
 
 
-        </tbody>
-    </table>
-</section>
-
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/save-menu/save-menu.component.ts:8</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
 
-
-
-
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/save-menu/save-menu.component.ts:12</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
 </div>
 
@@ -225,10 +136,17 @@
   templateUrl: &#x27;./save-menu.component.html&#x27;,
   styleUrls: [&#x27;./save-menu.component.sass&#x27;]
 })
+/**
+ * TODO
+ */
 export class SaveMenuComponent implements OnInit {
-
+  /**
+   * @ignore
+   */
   constructor() { }
-
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 
@@ -238,7 +156,7 @@ export class SaveMenuComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;dropdown-menu&quot;&gt;
-  &lt;button&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/save.svg&quot; alt&#x3D;&quot;Menu de sauvegarde&quot; /&gt;&lt;/button&gt;
+  &lt;button class&#x3D;&quot;disabled&quot;&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/save.svg&quot; alt&#x3D;&quot;Menu de sauvegarde&quot; /&gt;&lt;/button&gt;
   &lt;div class&#x3D;&quot;dropdown-list&quot;&gt;
     &lt;button&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/save.svg&quot; alt&#x3D;&quot;Sauvegarder&quot; /&gt;&lt;/button&gt;
     &lt;button&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/save-under.svg&quot; alt&#x3D;&quot;Sauvegarder sous&quot; /&gt;&lt;/button&gt;
@@ -280,7 +198,7 @@ export class SaveMenuComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="dropdown-menu">  <button><img src="../../assets/images/icons/save.svg" alt="Menu de sauvegarde" /></button>  <div class="dropdown-list">    <button><img src="../../assets/images/icons/save.svg" alt="Sauvegarder" /></button>    <button><img src="../../assets/images/icons/save-under.svg" alt="Sauvegarder sous" /></button>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="dropdown-menu">  <button class="disabled"><img src="../../assets/images/icons/save.svg" alt="Menu de sauvegarde" /></button>  <div class="dropdown-list">    <button><img src="../../assets/images/icons/save.svg" alt="Sauvegarder" /></button>    <button><img src="../../assets/images/icons/save-under.svg" alt="Sauvegarder sous" /></button>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SaveMenuComponent'};

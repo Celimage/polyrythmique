@@ -131,9 +131,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
                                 <a href="#setActive">setActive</a>
                             </li>
                         </ul>
@@ -162,24 +159,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/main-menu/main-menu.component.ts:12</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
     <section>
     <h3 id="inputs">Inputs</h3>
@@ -204,12 +183,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/main-menu/main-menu.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/main-menu/main-menu.component.ts:18</a></div>
                             </td>
                         </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>The number of the active tab</p>
+                        <div class="io-description"><p>The number of the active tab<br/>
+               1 -&gt; rhythm<br/>
+               2 -&gt; rhythm-sound<br/>
+               3 -&gt; metronome</p>
 </div>
                     </td>
                 </tr>
@@ -224,45 +206,6 @@
     <h3 id="methods">
         Methods
     </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/main-menu/main-menu.component.ts:16</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -285,14 +228,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/main-menu/main-menu.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/main-menu/main-menu.component.ts:34</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Change the active tab</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -302,6 +247,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -316,6 +262,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The number of the tab to set as active</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -346,17 +296,32 @@
   templateUrl: &#x27;./main-menu.component.html&#x27;,
   styleUrls: [&#x27;./main-menu.component.sass&#x27;]
 })
+/**
+ * The main menu of the application.
+ */
 export class MainMenuComponent implements OnInit {
   /**
-    The number of the active tab
-  */
+   * The number of the active tab&lt;br/&gt;
+   *               1 -&gt; rhythm&lt;br/&gt;
+   *               2 -&gt; rhythm-sound&lt;br/&gt;
+   *               3 -&gt; metronome
+   */
   @Input() active: number &#x3D; 1;
 
+  /**
+   * @ignore
+   */
   constructor() { }
-
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 
+  /**
+   * Change the active tab
+   * @param {number} active The number of the tab to set as active
+   */
   setActive(active: number): void {
     this.active &#x3D; active;
   }

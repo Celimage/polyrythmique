@@ -152,7 +152,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(top: number | null, bottom: <a href="../classes/Note.html">BasicNote | null</a>)</code>
+<code>constructor(top: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, bottom: <a href="../classes/Note.html">BasicNote</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -163,7 +163,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Create a signature object</p>
+                            <div class="io-description"><p>Create a signature object. If <a href="SignatureComponent#top">top</a> and <a href="SignatureComponent#bottom">bottom</a> are not compatible, both are set to default value.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -181,7 +181,7 @@
                                                         <td>top</td>
                                                   
                                                         <td>
-                                                                    <code>number | null</code>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -189,7 +189,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>The {</p>
+                                                                <code><p>(optional) The top of the signature</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -197,7 +197,7 @@
                                                         <td>bottom</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/Note.html" target="_self" >BasicNote | null</a></code>
+                                                                        <code><a href="../classes/Note.html" target="_self" >BasicNote</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -253,7 +253,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>The note used as time base. See <a href="../miscellaneous/enumerations.html#BasicNote">BasicNote</a> for more</p>
+                        <div class="io-description"><p>The note used as time base</p>
 </div>
                     </td>
                 </tr>
@@ -346,7 +346,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>The {</p>
+                        <p>The bottom of the signature</p>
 
                     </div>
                 </td>
@@ -393,7 +393,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>The {</p>
+                        <p>The image path of the signature&#39;s bottom</p>
 
                     </div>
                 </td>
@@ -440,7 +440,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>The {</p>
+                        <p>The name of the signature&#39;s bottom</p>
 
                     </div>
                 </td>
@@ -477,7 +477,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Get the <a href="BasicNote#number">number</a> associated to the <a href="../miscellaneous/enumerations.html#BasicNote">note</a> of the <a href="SignatureComponent#bottom">bottom</a> of the signature</p>
+                    <div class="io-description"><p>Get the <a href="BasicNote#getNumber">number</a> associated to the <a href="../miscellaneous/enumerations.html#BasicNote">note</a> of the <a href="SignatureComponent#bottom">bottom</a> of the signature</p>
 </div>
 
                     <div>
@@ -487,7 +487,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>The {</p>
+                        <p>The number of the signature&#39;s bottom</p>
 
                     </div>
                 </td>
@@ -534,7 +534,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>The {</p>
+                        <p>The top of the signature</p>
 
                     </div>
                 </td>
@@ -686,7 +686,7 @@ NOT FINISHED</p>
 
 
                                     <td>
-                                        <p>The new {</p>
+                                        <p>The new bottom of the signature</p>
 
                                     </td>
                                 </tr>
@@ -763,7 +763,7 @@ NOT FINISHED</p>
 
 
                                     <td>
-                                        <p>The new {</p>
+                                        <p>The new top of the signature</p>
 
                                     </td>
                                 </tr>
@@ -890,29 +890,29 @@ export class Signature {
   private top: number &#x3D; 4;
 
   /**
-   * The note used as time base. See {@link BasicNote|BasicNote} for more
+   * The note used as time base
    */
   private bottom: BasicNote &#x3D; BasicNote.QUARTER_NOTE;
 
   /**
-   * Create a signature object
+   * Create a signature object. If {@link SignatureComponent#top|top} and {@link SignatureComponent#bottom|bottom} are not compatible, both are set to default value.
    *
-   * @param {number | null} top The {@link SignatureComponent#top|top} of the signature
-   * @param {BasicNote | null} top The {@link SignatureComponent#bottom|bottom} of the signature
+   * @param {number} top (optional) The top of the signature
+   * @param {BasicNote} top (optional) The bottom of the signature
    */
-  constructor(top: number | null, bottom: BasicNote | null) {
-    if(top) {
-      this.top &#x3D; top;
+  constructor(top: number &#x3D; 4, bottom: BasicNote &#x3D; BasicNote.QUARTER_NOTE) {
+    if(!this.isCompatible(top, bottom)) {
+      this.top &#x3D; 4;
+      this.bottom &#x3D; BasicNote.QUARTER_NOTE;
     }
-    if(bottom) {
-      this.bottom &#x3D; bottom;
-    }
+    this.top &#x3D; top;
+    this.bottom &#x3D; bottom;
   }
 
   /**
    * Get the {@link SignatureComponent#top|top}&#x27;s value
    *
-   * @returns The {@link SignatureComponent#top|top} of the signature
+   * @returns The top of the signature
    */
   getTop(): number {
     return this.top;
@@ -920,7 +920,7 @@ export class Signature {
   /**
    * Set the {@link SignatureComponent#top|top}&#x27;s value
    *
-   * @param {number} top The new {@link SignatureComponent#top|top} of the signature
+   * @param {number} top The new top of the signature
    */
   setTop(top: number): void {
     if(this.isCompatible(top, this.bottom)) {
@@ -931,7 +931,7 @@ export class Signature {
   /**
    * Get the {@link SignatureComponent#bottom|bottom}&#x27;s value
    *
-   * @returns The {@link SignatureComponent#bottom|bottom} of the signature
+   * @returns The bottom of the signature
    */
   getBottom(): BasicNote {
     return this.bottom;
@@ -940,7 +940,7 @@ export class Signature {
   /**
    * Set the {@link SignatureComponent#bottom|bottom}&#x27;s value
    *
-   * @param {BasicNote} bottom The new {@link SignatureComponent#bottom|bottom} of the signature
+   * @param {BasicNote} bottom The new bottom of the signature
    */
   setBottom(bottom: BasicNote): void {
     if(this.isCompatible(this.top, bottom)) {
@@ -973,9 +973,9 @@ export class Signature {
   }
 
   /**
-   * Get the {@link BasicNote#number|number} associated to the {@link BasicNote|note} of the {@link SignatureComponent#bottom|bottom} of the signature
+   * Get the {@link BasicNote#getNumber|number} associated to the {@link BasicNote|note} of the {@link SignatureComponent#bottom|bottom} of the signature
    *
-   * @returns The {@link BasicNote#number|number} of the signature&#x27;s bottom
+   * @returns The number of the signature&#x27;s bottom
    */
   getBottomNumber(): number {
     return BasicNote.getNumber(this.bottom);
@@ -984,7 +984,7 @@ export class Signature {
   /**
    * Get the {@link BasicNote#name|name} associated to the {@link BasicNote|note} of the {@link SignatureComponent#bottom|bottom} of the signature
    *
-   * @returns The {@link BasicNote#name|name} of the signature&#x27;s bottom
+   * @returns The name of the signature&#x27;s bottom
    */
   getBottomName(): string {
     return BasicNote.getName(this.bottom);
@@ -993,7 +993,7 @@ export class Signature {
   /**
    * Get the {@link BasicNote#imgPath|image path} associated to the {@link BasicNote|note} of the {@link SignatureComponent#bottom|bottom} of the signature
    *
-   * @returns The {@link BasicNote#imgPath|image path} of the signature&#x27;s bottom
+   * @returns The image path of the signature&#x27;s bottom
    */
   getBottomImgPath(): string {
     return BasicNote.getImgPath(this.bottom);

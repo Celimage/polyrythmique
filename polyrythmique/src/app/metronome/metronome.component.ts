@@ -23,6 +23,9 @@ export class MetronomeComponent implements OnInit {
    */
   sound: Metronome.Sound = Metronome.Sound.TOC;
 
+  /**
+   * Whether or not the metronome is running (is being play)
+   */
   isRunning: boolean = false;
 
   /**
@@ -44,7 +47,7 @@ export class MetronomeComponent implements OnInit {
   }
 
   /**
-  * Set the bpm at which the metronome beats
+  * Set the BPM at which the metronome beats
   *
   *@param {number} bpm The beat per minute ratio the metronome will beat at
   */
@@ -56,6 +59,11 @@ export class MetronomeComponent implements OnInit {
     this.runningMetronome.setBPM(bpm);
   }
 
+  /**
+    * Set the {@link MetronomeCOmponent#tempo|tempo} of the metronome
+    *
+    *@param {Tempo} tempo The new tempo of the metronome
+    */
   setTempo(tempo: Tempo): void {
     if(this.isRunning) {
       this.stop();
@@ -65,7 +73,7 @@ export class MetronomeComponent implements OnInit {
   }
 
   /**
-  * Get the bpm at which the metronome beats
+  * Get the BPM at which the metronome beats
   *
   * @returns {number} The time it takes for the metronome to tick twice (in sec)
   */

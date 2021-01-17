@@ -63,7 +63,8 @@ export namespace BasicNote {
   }*/
 
   /**
-   * Get all the BasicNote values
+   * Get all the BasicNote values<br/>
+   * TO CHANGE FOR SOMETHING DYNAMIC
    *
    * @returns All the possible BasicNote's values
    */

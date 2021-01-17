@@ -133,9 +133,6 @@
                             <li>
                                 <a href="#createTrack">createTrack</a>
                             </li>
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -162,24 +159,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/create-track/create-track.component.ts:10</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
 
     <section>
@@ -200,9 +179,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/create-track/create-track.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/create-track/create-track.component.ts:15</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The attribute used to emit the signal to create a track to its parent element</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -235,53 +220,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/create-track/create-track.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/create-track/create-track.component.ts:31</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/create-track/create-track.component.ts:14</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
+                    <div class="io-description"><p>Send to its parent element create = true</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -304,15 +252,29 @@
   templateUrl: &#x27;./create-track.component.html&#x27;,
   styleUrls: [&#x27;./create-track.component.sass&#x27;]
 })
+/**
+ * This compoenent is used to show and receive events for creating a new track
+ */
 export class CreateTrackComponent implements OnInit {
-
+  /**
+   * The attribute used to emit the signal to create a track to its parent element
+   */
   @Output() create: EventEmitter&lt;boolean&gt; &#x3D; new EventEmitter&lt;boolean&gt;();
 
+  /**
+   * @ignore
+   */
   constructor() { }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 
+  /**
+   * Send to its parent element create &#x3D; true
+   */
   createTrack(): void {
     this.create.emit(true);
   }

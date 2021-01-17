@@ -1004,7 +1004,7 @@ export class NoteRepresentation {
    * let quarterNoteRep: NoteRepresentation &#x3D; new NoteRepresentation([&quot;4N&quot;], null);
    * let quarterNoteTripletRep: NoteRepresentation &#x3D; new NoteRepresentation([&quot;4N&quot;], {&quot;number&quot;: 3, &quot;useHook&quot;: true});
    */
-  constructor(imgsNames: string[], addOn: AddOnJson | null) {
+  constructor(imgsNames: string[], addOn: AddOnJson | null &#x3D; null) {
     for(let i &#x3D; 0 ; i &lt; imgsNames.length ; ++i) {
       this.imgsPaths.push(this.convertImgNameToPath(imgsNames[i]));
     }

@@ -72,6 +72,9 @@
                         <li>
                             <a href="#getRepresentation" title="src/app/enums/binary-note.ts"><b>getRepresentation</b>&nbsp;&nbsp;&nbsp;(src/.../binary-note.ts)</a>
                         </li>
+                        <li>
+                            <a href="#values" title="src/app/enums/basic-note.ts"><b>values</b>&nbsp;&nbsp;&nbsp;(src/.../basic-note.ts)</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -105,6 +108,8 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the path to the image of the note</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -113,6 +118,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -124,11 +130,23 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The note that we want the image path to</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The complete path to the image of the note, from the app repertory</p>
+
                     </div>
                 </td>
             </tr>
@@ -158,6 +176,8 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the value of the BasicNote on its JSON form</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -166,6 +186,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -177,11 +198,23 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The note that we want the JSON value of</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The JSON associated to the note. It&#39;s form is {number: {number}, name: {string}, img: {string}}, were img is the name of the image with it&#39;s extension, that doesn&#39;t include the path to the image</p>
+
                     </div>
                 </td>
             </tr>
@@ -211,6 +244,8 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the name of the note</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -219,6 +254,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -230,11 +266,23 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The note that we want the name of</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The name of the note, in english, starting with a capital..</p>
+
                     </div>
                 </td>
             </tr>
@@ -264,6 +312,8 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the number associated to the note</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -272,6 +322,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -283,11 +334,65 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The note that we want the number of</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The number of the note, as the denominator of it&#39;s time duration. Whole note is 1, half note 2...</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="values"></a>
+                    <span class="name">
+                        <b>
+                            values
+                        </b>
+                        <a href="#values"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>values()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get all the BasicNote values<br/>
+TO CHANGE FOR SOMETHING DYNAMIC</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Note.html" target="_self" >BasicNote[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>All the possible BasicNote&#39;s values</p>
+
                     </div>
                 </td>
             </tr>
@@ -319,6 +424,9 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the <a href="../classes/NoteRepresentation.html">representation</a> of the <a href="../miscellaneous/enumerations.html#BinaryNote">binary note</a>.<br/>
+TO COMPLETE</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -327,6 +435,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -338,6 +447,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The note we wants the representation of</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -349,7 +462,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>The {</p>
+
                     </div>
                 </td>
             </tr>
