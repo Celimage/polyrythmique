@@ -47,16 +47,19 @@ article
   &>div
     height: 100%
 
-.soundPlan
+.sound-plan
   position: relative
   justify-content: center
   width: $HEIGHT
   //margin-right: $BORDER_WIDTH
+  .content-wrapper
+    display: flex
+    
 
   img
     @extend %absVertCenteredInteractive
 
-.trackContent
+.track-content
   flex-grow: 1
   margin: 0 $BORDER_WIDTH
   display: flex
