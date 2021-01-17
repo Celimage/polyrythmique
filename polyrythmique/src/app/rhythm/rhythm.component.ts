@@ -154,4 +154,22 @@ toggleIsPlayingTracks(){
   this.isPlayingTracks = false;
 }
 
+  toString(): String {
+    let rythmStr: String = "";
+    rythmStr += "{";
+    rythmStr += this.tempo.toString()+",";
+    //Anacrouse wuold go there
+    rythmStr += this.signature.toString()+",";
+    //Number of "mesures" would go there
+    //A json array of modiified "mesures" would go there
+    rythmStr += "\"Tracks\":[";
+    for(let aTrack of this.tracks) {
+      rythmStr += aTrack.toString() + ",";
+    }
+    rythmStr = rythmStr.slice(0, -1);
+    rythmStr += "]}";
+
+    return rythmStr;
+  }
+
 }
