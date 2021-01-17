@@ -1,15 +1,39 @@
+@use "../styles/menu-parts"
+
 $METRONOME_HEIGHT: 30rem
 $METRONOME_WIDTH: ($METRONOME_HEIGHT * 90) / 112.5
+
+:host
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.controls
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+  font-size: 1.5em
+  margin-bottom: 5rem
+
+  &>span
+    font-size: 1.2em
+
+  button, img
+    width: 5rem
+    height: 5rem
+
 
 .metronome
     background-image: url("../../assets/images/metronome/metronome-base.svg")
     background-size: contain
     background-repeat: no-repeat
+    background-position: center
+    margin: auto
     width: $METRONOME_WIDTH
     height: $METRONOME_HEIGHT
     position: relative
 
-#stick
+.metronome>img
   position: absolute
   left: 50%
   height: ($METRONOME_HEIGHT * 0.8373333)
@@ -41,5 +65,5 @@ $METRONOME_WIDTH: ($METRONOME_HEIGHT * 90) / 112.5
   100%
     @include prefix-property(transform, translateX(-50%) rotate(-45deg))
 
-#stick
-  -webkit-animation: rotating 2s ease-in-out infinite
+/*.metronome.run>img
+  -webkit-animation: rotating 2s ease-in-out infinite*/

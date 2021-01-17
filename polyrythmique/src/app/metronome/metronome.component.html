@@ -1,6 +1,15 @@
-<body>
-    <div class="metronome ">
-      <img src="../../assets/images/metronome/metronome-stick.svg" alt="Aiguillle du métronome" id="stick" [style.animation]="'rotating '+ getMetronomeMovementLengthInSec() +'s ease-in-out infinite'" />
+<div  [ngClass]="{'metronome': true, 'run': isRunning}">
+  <img src="../../assets/images/metronome/metronome-stick.svg" alt="Aiguillle du métronome" [style.animation]="'rotating '+ getMetronomeMovementLengthInSec() +'s ease-in-out infinite'" *ngIf="isRunning" />
+  <img src="../../assets/images/metronome/metronome-stick.svg" alt="Aiguillle du métronome" *ngIf="!isRunning" />
+</div>
 
-    </div>
-</body>
+<div class="controls">
+  <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>
+
+  <div class="play">
+    <button *ngIf="!isRunning"><img src="../../assets/images/icons/playbar/play.svg" (click)="start()" alt="Lancer" /></button>
+    <button *ngIf="isRunning"><img src="../../assets/images/icons/playbar/pause.svg" (click)="stop()" alt="Pause" /></button>
+  </div>
+
+  <span>{{ runningMetronome.getSoundName() }}</span>
+</div>
