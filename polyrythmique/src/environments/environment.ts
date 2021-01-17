@@ -8,7 +8,8 @@ export const environment = {
   pathsFromApp: {
     img: "../assets/images/",
     rythmsImg: "../assets/images/rythms/",
-    notesImg: "../assets/images/notes/"
+    notesImg: "../assets/images/notes/",
+    sounds: "../assets/sounds/"
   }
 };
 
