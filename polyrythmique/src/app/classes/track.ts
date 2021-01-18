@@ -42,9 +42,21 @@ export class Track {
    */
   constructor(instrument: string = "", plan: number = 0, measures: Measure[] = new Array<Measure>(), notes: Note[] = new Array<Note>()) {
     this.id = Track.nextId;
-    measures.push(new Measure(this.id));
-    measures.push(new Measure(this.id));
-    measures.push(new Measure(this.id));
+    this.measures = measures;
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
+    this.measures.push(new Measure(this.id));
     ++Track.nextId;
 
     this.instrument = instrument;
@@ -52,7 +64,7 @@ export class Track {
       plan = 0;
     }
     this.plan = plan;
-    this.measures = measures;
+    //this.measures = measures;
     this.notes = notes;
   }
 
@@ -129,6 +141,18 @@ export class Track {
   }
 
   toString(): string {
+    let notesStr: string = "";
+    for(let aNote of this.notes) { // this.measures.getNotes()
+      notesStr = notesStr + aNote.toString() + ",";
+    }
+    notesStr = notesStr.slice(0, -1);
+    return "{\"id\": " + this.id.toString() +
+              ", \"plan\": {\"solo\": " + (this.plan == 1) +
+                          ", \"muet\": " + (this.plan == 2) +
+              "}, \"instrument\": " + this.instrument +
+              ", \"notes\": [" + notesStr + "]}";
+  }
+  /*toString(): string {
     let measuresStr: string = "";
     for(let aMeasure of this.measures) {
       measuresStr = measuresStr + aMeasure.toString() + ",";
@@ -139,5 +163,5 @@ export class Track {
                           ", \"muet\": " + (this.plan == 2) +
               "}, \"instrument\": " + this.instrument +
               ", \"measures\": [" + measuresStr + "]}";
-  }
+  }*/
 }

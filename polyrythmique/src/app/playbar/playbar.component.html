@@ -1,4 +1,4 @@
 <button><img src="../../assets/images/icons/playbar/hop.svg" alt="Sauter à la mesure précédente" /></button>
-<button *ngIf="!isPlaying"><img src="../../assets/images/icons/playbar/play.svg" alt="Lancer" (click)="launchAllTracks()"/></button>
-<button *ngIf="isPlaying"><img src="../../assets/images/icons/playbar/pause.svg" alt="Pause" /></button>
+<button *ngIf="!isPlaying"><img src="../../assets/images/icons/playbar/play.svg" alt="Lancer" (click)="toggleIsPlaying()"/></button>
+<button *ngIf="isPlaying"><img src="../../assets/images/icons/playbar/pause.svg" alt="Pause" (click)="toggleIsPlaying()" /></button>
 <button><img src="../../assets/images/icons/playbar/hop.svg" alt="Sauter à la mesure suivante" /></button>

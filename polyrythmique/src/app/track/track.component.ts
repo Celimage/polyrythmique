@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChange, Input, EventEmitter, Output, ViewChild//, ElementRef
+import { Component, OnInit, OnChanges, SimpleChanges, Input, EventEmitter, Output, ViewChild//, ElementRef
  } from "@angular/core";
 
 import { Track } from "../classes/track";
@@ -7,12 +7,16 @@ import { NoteRepresentation } from "../classes/note-representation";
 //import { SoundPlayer } from "../classes/sound-player";
 import { SoundPlayerComponent } from "../sound-player/sound-player.component";
 
+
+import { Signature } from "../classes/signature";
+import { Tempo } from "../classes/tempo";
+
 @Component({
   selector: "app-track",
   templateUrl: "./track.component.html",
   styleUrls: ["./track.component.sass"]
 })
-export class TrackComponent implements OnInit {
+export class TrackComponent implements OnInit, OnChanges {
   @Input() track: Track = new Track();
 
   modifiableInstrument: string = "";
@@ -20,10 +24,7 @@ export class TrackComponent implements OnInit {
 
 //  soundPlayer: SoundPlayer = new SoundPlayer("exampleout.mid.wav");
   @Input() isPlaying: boolean = false;
-  @Input() trigger: boolean = false;
-  @Output() playTrack: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() finishedPlaying: EventEmitter<boolean> = new EventEmitter<boolean>();
-  //private soundPlayer: SoundPlayerComponent = new SoundPlayerComponent("exampleout.mid.wav");
+  @Output() isPlayingOutput: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     // Must be between 0 (mute) and 1 (max)
   volume: number = 1;
@@ -35,6 +36,9 @@ export class TrackComponent implements OnInit {
 
   //@ViewChild('instruInput', { static: true }) intrumentInput: ElementRef;
 
+  @Input() signature: Signature = new Signature();
+  @Input() tempo: Tempo = new Tempo();
+
   test: NoteRepresentation = new NoteRepresentation(["8N"], null);
 
 
@@ -42,24 +46,9 @@ export class TrackComponent implements OnInit {
 
   ngOnInit(): void {
     this.modifiableInstrument = this.track.getInstrument();
-    //this.soundPlayer.play();
-    //this.soundPlayer = new SoundPlayer("exampleout.mid.wav");
-  /*  this.soundPlayer.on("ended", (err:any) => {
-      console.log("TEST");
-
-    });*/
-    this.playTrack.emit(true);
-
-
   }
 
-  ngOnChanges(changes: { [property: string]: SimpleChange }){
-     let change: SimpleChange = changes['trigger'];
-     console.log("PLS");
-     if(this.trigger == true){
-       this.isPlaying = true;
-     }
-  }
+  ngOnChanges(changes: SimpleChanges): void { }
 
   changeSoundPlan(): void {
       // Change the number of the selected sound plan
@@ -125,13 +114,8 @@ export class TrackComponent implements OnInit {
     return this.track.getId();
   }
   endOfTrack(event: any){
-    console.log("TEST");
     this.isPlaying = false;
-    this.finishedPlaying.emit(true);
+    this.isPlayingOutput.emit(false);
   }
 
-  playAllTracks(){
-    console.log("PLS");
-    this.playTrack.emit(true);
-  }
 }

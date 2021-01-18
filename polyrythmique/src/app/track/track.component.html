@@ -12,7 +12,7 @@
   </div>
   <div class="track-content">
     <div class="content-wrapper">
-      <app-measure *ngFor="let aMeasure of track.getMeasures()"></app-measure>
+      <app-measure *ngFor="let measure of track.getMeasures()" [measure]="measure" [signature]="signature" [tempo]="tempo"></app-measure>
     </div>
     <!--{{ track.getNotes().length }}-->
     <!--<img src="../../assets/images/rythms/4N.svg"/>-->

@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges, OnChanges, EventEmitter, Output, Input } from '@angular/core';
 
 import { environment } from "./../../environments/environment";
-import {EventEmitter, Output, Input, OnChanges, SimpleChange} from '@angular/core';
 
 @Component({
   selector: 'app-sound-player',
   templateUrl: './sound-player.component.html',
   styleUrls: ['./sound-player.component.sass']
 })
-export class SoundPlayerComponent implements OnInit {
+export class SoundPlayerComponent implements OnInit, OnChanges {
 
   private sound: any;
 
@@ -31,10 +30,19 @@ export class SoundPlayerComponent implements OnInit {
       //this.sound.play();
   }
 
-  ngOnChanges(changes: { [property: string]: SimpleChange }){
-     let change: SimpleChange = changes['isPlaying'];
-     if(this.isPlaying == true){
-       this.playSound();
+  ngOnChanges(changes: SimpleChanges){
+     for(const propName in changes) {
+       if(changes.hasOwnProperty(propName)) {
+         if(propName === "isPlaying") {
+           if(changes["isPlaying"].currentValue) {
+             this.playSound();
+           } else {
+             if(changes["isPlaying"].previousValue) {
+               this.pause();
+             }
+           }
+         }
+       }
      }
   }
 
@@ -42,13 +50,8 @@ export class SoundPlayerComponent implements OnInit {
   * Play the audio
   */
   playSound() {
-    console.log("TEST");
-
     if(this.sound){
-  //    this.isPlaying = true;
       this.sound.play();
-    }else{
-
     }
   }
 
