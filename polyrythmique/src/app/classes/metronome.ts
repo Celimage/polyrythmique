@@ -17,13 +17,14 @@ export class Metronome {
    * The audio player for the metronome. The sound is one of those defined in the {@link Metronome.Sound|metronome sound enum}
    */
   private sound;
-
+  private soundName;
   /**
    * Create a metronome which beats the given BPM with the specified sound
    */
   constructor(bpm: number, soundPath: Metronome.Sound = Metronome.Sound.TOC) {
     this.interval = 1 / (bpm / 60);
     this.sound = new Audio(soundPath);
+    this.soundName = Sound.getSoundNameByPath(soundPath);
   }
 
   /**
@@ -74,11 +75,13 @@ export class Metronome {
     this.interval = 1 / (bpm / 60);
   }
 
-  getSoundName(): string {
-    return "Toc";
+  getSoundName(): String {
+    return this.soundName;
   }
-  setSound(sound: Metronome.Sound): void {
 
+  setSound(sound: Metronome.Sound): void {
+    this.sound = new Audio(sound);
+    this.soundName = Sound.getSoundNameByPath(sound);
   }
 
   /**
@@ -105,3 +108,30 @@ export namespace Metronome {
     CLOCK_2 = "../../assets/sounds/metronome/clock-2.wav"
   }
 }
+  export namespace Sound {
+    export function values(): string[] {
+      return ["TOC","CLOCK_1","CLOCK_2"];
+    }
+
+    export function getPath(soundName: String) : Metronome.Sound {
+      if(soundName === "TOC"){
+        return Metronome.Sound.TOC;
+      }else if(soundName === "CLOCK_1"){
+          return Metronome.Sound.CLOCK_1;
+      }else {
+        return Metronome.Sound.CLOCK_2;
+      }
+    }
+
+    export function getSoundNameByPath(soundPath: Metronome.Sound): String{
+      console.log(soundPath);
+
+      if(soundPath === "../../assets/sounds/metronome/toc.wav"){
+        return "TOC";
+      }else if(soundPath === "../../assets/sounds/metronome/clock-1.wav"){
+        return "CLOCK_1";
+      }else {
+        return "CLOCK_2";
+      }
+    }
+  }

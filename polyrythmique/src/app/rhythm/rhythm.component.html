@@ -22,7 +22,7 @@
     </div>
 
     <div>
-      <app-signature></app-signature>
+      <app-signature (signatureOut)="setSignature($event)"></app-signature>
       <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>
     </div>
   </div>
