@@ -13,6 +13,8 @@ Mathieu DELALANDRE s'occupe de l'encadremment du projet.
 Ce dépôt git contient les parties 1 et 2 du projet, intitulées respectivement "application mobile" et "réseau" développées
 à l'aide de la technologie front Angular par le groupe 25 de l'année 2020-2021 composé de Yacine DAHBI et Célie PAUTREL.
 
+## Important
+Le fichier `_vars.sass` présent à la racine du git est à déplacer dans le dossier ignoré par git `locamat/nodes_module/sass`
 
 ## Technologies utilisées
 
@@ -72,21 +74,21 @@ triolet de noires                 | quarter note triplet
 quatre croches                    | four eight notes
 noire                             | quarter note
 deux croches                      | two eight notes
-croche pointée double             | dotted eight note sixteenth note
-double croche double              | sixteenth note eight note sixteenth note
-croche deux doubles               | eight note two sixteenth notes
-deux doubles croche               | two sixteenth notes eight note
-quatre doubles                    | four sixteenth notes
+croche pointée double             | dotted eight note sixteen note
+double croche double              | sixteen note eight note sixteen note
+croche deux doubles               | eight note two sixteen notes
+deux doubles croche               | two sixteen notes eight note
+quatre doubles                    | four sixteen notes
 triolet de croches                | eight note triolet
-deux doubles                      | two sixteenth notes
+deux doubles                      | two sixteen notes
 soupir                            | quarter note rest
 demi soupir                       | height note rest
-quart de soupir                   | sixteenth note rest
+quart de soupir                   | sixteen note rest
 demi pause                        | half note rest
 pause                             | whole note rest
 
 
-### Rythmes ternaires
+#### Rythmes ternaires
 
 Français | Anglais
 -------- | -------
@@ -94,22 +96,22 @@ noire pointée                     | dotted quarter note
 noire                             | quarter note
 croche                            | height note
 trois croche                      | three eight notes
-six doubles                       | six sixteenth notes
-deux doubles                      | two sixteenth notes
-croche quatre doubles             | eight note four sixteenth notes
-quatre doubles croche             | four sixteenth notes eight note
-croche deux doubles croche        | eight note two sixteenth notes eight note
-sicilienne (croche double croche) | sicilian (eight note sixteenth note eight note)
-deux croches deux doubles         | two eight notes two sixteenth notes
-deux doubles deux croches         | two sixteenth notes two eight notes
-croche pointée trois doubles      | dotted eight note three sixteenth notes
-trois doubles croche pointée      | three sixteenth notes dotted eight
-deux doubles croche deux doubles  | two sixteenth notes eight note two sixteenth notes
+six doubles                       | six sixteen notes
+deux doubles                      | two sixteen notes
+croche quatre doubles             | eight note four sixteen notes
+quatre doubles croche             | four sixteen notes eight note
+croche deux doubles croche        | eight note two sixteen notes eight note
+sicilienne (croche double croche) | sicilian (eight note sixteen note eight note)
+deux croches deux doubles         | two eight notes two sixteen notes
+deux doubles deux croches         | two sixteen notes two eight notes
+croche pointée trois doubles      | dotted eight note three sixteen notes
+trois doubles croche pointée      | three sixteen notes dotted eight
+deux doubles croche deux doubles  | two sixteen notes eight note two sixteen notes
 duolet                            | duplet
 soupir pointé                     | dotted quarter note rest
 demi soupir pointé                | dotted eight note rest
 demi soupir                       | eight note rest
-quart de soupir                   | sixteenth note rest
+quart de soupir                   | sixteen note rest
 demi pause pointée                | dotted half note rest
 
 
@@ -122,6 +124,8 @@ Anacrouse | Anacrusis
 Vous trouverez une traduction de noms d'instruments [ici](https://wallstreetenglish.fr/fiches-anglais/vocabulaire/instruments-musique-en-anglais).
 
 
+## Autres
 
-## Important
-Le fichier `_vars.sass` présent à la racine du git est à déplacer dans le dossier ignoré par git `locamat/nodes_module/sass`
+### Graphismes
+
+Certaines images (icones, rythmes, etc.) existent mais n'ont pas été exportées. Si vous possédez Affinity Designer, vous pouvez les exporter depuis le fichier .afdesign présent dans le dossier models. Sinon, contactez les personnes s'étant occupées du projet l'année d'avant et dont les noms sont sités à la fin du "À propos" de ce readme via les adresses : prenom.nom@etu.univ-tours.fr
