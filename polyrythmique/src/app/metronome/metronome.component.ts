@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tempo } from '../classes/tempo';
-import { Metronome } from '../classes/metronome';
+import { Metronome, Sound } from '../classes/metronome';
 import { BasicNote } from '../enums/basic-note';
 
 @Component({
@@ -22,7 +22,6 @@ export class MetronomeComponent implements OnInit {
    * The sound of the metronome. See the {@link Metronome#sound|metronome's sound attribute} for more
    */
   sound: Metronome.Sound = Metronome.Sound.TOC;
-
   /**
    * Whether or not the metronome is running (is being play)
    */
@@ -32,6 +31,8 @@ export class MetronomeComponent implements OnInit {
    * The metronome
    */
   runningMetronome: Metronome;
+
+  isModifyingInstrument: boolean = false;
 
   /**
   * @ignore
@@ -85,8 +86,10 @@ export class MetronomeComponent implements OnInit {
   * Starts the metronome
   */
   start(): void{
-    this.isRunning = true;
-    this.runningMetronome.start();
+    if(!this.isModifyingInstrument){
+      this.isRunning = true;
+      this.runningMetronome.start();
+    }
   }
 
   /**
@@ -95,6 +98,26 @@ export class MetronomeComponent implements OnInit {
   stop(): void{
     this.isRunning = false;
     this.runningMetronome.stop();
+  }
+
+  toggleModifyInstrument(): void{
+    if(!this.isRunning){
+      this.isModifyingInstrument = !this.isModifyingInstrument;
+      if(!this.isModifyingInstrument){
+        this.runningMetronome.setSound(this.sound);
+      }
+    }
+  }
+
+  getInstrumentList(): String[]{
+    return Sound.values();
+  }
+
+  setInstrument(soundName: String){
+    console.log("CLICKED");
+    this.toggleModifyInstrument();
+    this.sound = Sound.getPath(soundName);
+    this.runningMetronome.setSound(this.sound);
   }
 
 }

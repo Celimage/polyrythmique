@@ -64,6 +64,7 @@ export class Signature {
    */
   setBottom(bottom: BasicNote): void {
     if(this.isCompatible(this.top, bottom)) {
+
       this.bottom = bottom;
     }
   }
@@ -85,7 +86,7 @@ export class Signature {
    * NOT FINISHED
    */
   private isCompatible(top: number, bottom: BasicNote): boolean {
-    if(top >= 1 && top % 1 == 1) {
+    if(top >= 1 && top % 1 == 0) {
       return true;
     } else {
       return false;

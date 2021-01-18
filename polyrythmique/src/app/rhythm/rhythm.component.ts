@@ -124,6 +124,10 @@ export class RhythmComponent implements OnInit {
     this.updateMeasureDuration();
   }
 
+  setSignature(signature: Signature):void{
+    this.signature = signature;
+  }
+
 
   setSelectedTrackId(id: number | null): void {
     if(!this.recording) {

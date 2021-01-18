@@ -1,7 +1,17 @@
 <div class="sig-root">
   <p>Signature</p>
   <div>
-    <span>{{ signature.getTop() }}</span>
-    <span>{{ signature.getBottomNumber() }}</span>
+    <span *ngIf="!isModifyingTopSignature" (click)="toggleModifyTopSignature()">{{ signature.getTop() }}</span>
+    <span *ngIf="!isModifyingBottomSignature" (click)="toggleModifyBottomSignature()">{{ signature.getBottomNumber() }}</span>
+
+    <div *ngIf="isModifyingTopSignature">
+      <input [(ngModel)]="modifiableTop" value="signature.getTop()" placeholder="4" type="number" min="1" class="button-focus" />
+      <button (click)="toggleModifyTopSignature()">➤</button>
+    </div>
+
+    <div class="selectNote" *ngIf="isModifyingBottomSignature">
+      <img *ngFor="let note of getBasicNoteList()" src="{{getImgPath(note)}}" alt="{{getName(note)}}" (click)="setNoteToBottom(note)" />
+    </div>
+
   </div>
 </div>

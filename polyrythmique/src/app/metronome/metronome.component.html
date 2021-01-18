@@ -11,5 +11,15 @@
     <button *ngIf="isRunning"><img src="../../assets/images/icons/playbar/pause.svg" (click)="stop()" alt="Pause" /></button>
   </div>
 
-  <span>{{ runningMetronome.getSoundName() }}</span>
+  <span *ngIf="!isModifyingInstrument" (click) = "toggleModifyInstrument()">{{ runningMetronome.getSoundName() }}</span>
+<!--  <select *ngIf="isModifyingInstrument" id="instrumentSelector" onchange="getInstrument(this.value)">
+    <option *ngFor="let instrument of getInstrumentList()" value="{{ instrument }}" label="{{ instrument }}" (onclick)="setInstrument(instrument)">this.value</option>
+    <input type="submit" value="Validate"/>
+  </select> -->
+
+  <div *ngIf="isModifyingInstrument">
+    <span class="selectInstrument" *ngFor="let instrument of getInstrumentList()" (click)="setInstrument(instrument)">{{this.instrument}} </span>
+  </div>
+
+
 </div>
