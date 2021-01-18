@@ -1,5 +1,5 @@
 /**
- * Represents a metronome
+ * This class represents a metronome
  */
 export class Metronome {
   /**
@@ -61,7 +61,7 @@ export class Metronome {
 
   /**
    * Get the BPM associated to the metronome
-   * @returns The BPM of the metronome
+   * @returns {number} The BPM of the metronome
    */
   getBPM(): number {
     return 1 / (this.interval * 60);
@@ -75,17 +75,25 @@ export class Metronome {
     this.interval = 1 / (bpm / 60);
   }
 
+  /**
+  * Get the name of the current sound that's playing for each tick
+  * @returns {String} the name of the current sound playing for each tick
+  */
   getSoundName(): String {
     return this.soundName;
   }
 
+  /**
+  * Set the sound of the Metronome
+  * @param {Metronome.Sound} sound the sound to set the metronome's one with (actually a path)
+  */
   setSound(sound: Metronome.Sound): void {
     this.sound = new Audio(sound);
     this.soundName = Sound.getSoundNameByPath(sound);
   }
 
   /**
-   *
+   *  Play a sound and increase the timer
    */
   private tick(): void {
     this.sound.play();
@@ -96,11 +104,11 @@ export class Metronome {
 }
 
 /**
- *
+ * A namespace for the metronome restricted sound
  */
 export namespace Metronome {
   /**
-   *
+   * An enum of the different sounds possible
    */
   export const enum Sound {
     TOC = "../../assets/sounds/metronome/toc.wav",
@@ -108,11 +116,24 @@ export namespace Metronome {
     CLOCK_2 = "../../assets/sounds/metronome/clock-2.wav"
   }
 }
+  /**
+  * A namespace for the sound's specific functions
+  */
   export namespace Sound {
+
+    /**
+    * Get all the possible sounds names
+    * @returns {String[]} A list of the possible sound's name
+    */
     export function values(): string[] {
       return ["TOC","CLOCK_1","CLOCK_2"];
     }
 
+    /**
+    * Get the path of a sound using its name
+    * @param {String} soundName The name of the path
+    * @returns {Metronome.Sound} The path to the sound
+    */
     export function getPath(soundName: String) : Metronome.Sound {
       if(soundName === "TOC"){
         return Metronome.Sound.TOC;
@@ -123,6 +144,11 @@ export namespace Metronome {
       }
     }
 
+    /**
+    * Get the name of a sound using its path
+    * @param {Metronome.Sound} soundPath Tha path to the sound
+    * @returns {String} The name of the sound
+    */
     export function getSoundNameByPath(soundPath: Metronome.Sound): String{
       console.log(soundPath);
 

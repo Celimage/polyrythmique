@@ -2,6 +2,9 @@ import { Component, OnInit, SimpleChanges, OnChanges, EventEmitter, Output, Inpu
 
 import { environment } from "./../../environments/environment";
 
+/**
+* This component represent a sound-player, never to be displayed to plays sound
+*/
 @Component({
   selector: 'app-sound-player',
   templateUrl: './sound-player.component.html',
@@ -9,17 +12,36 @@ import { environment } from "./../../environments/environment";
 })
 export class SoundPlayerComponent implements OnInit, OnChanges {
 
+  /**
+  * The sound played by the player
+  */
   private sound: any;
 
+  /**
+  * @ignore
+  */
   @Output() finishedPlayingTrack: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  /**
+  * The name of the sound file played
+  */
   @Input() soundName: String = "";
+
+  /**
+  * Is the player playing sound
+  */
   @Input() isPlaying: boolean = false;
 
+  /**
+  * @ignore
+  */
   constructor() {
     this.sound = new Audio();
   }
 
+  /**
+  * @ignore
+  */
   ngOnInit(): void {
 
       this.sound = new Audio("../"+environment.pathsFromApp.sounds+this.soundName);
@@ -30,6 +52,9 @@ export class SoundPlayerComponent implements OnInit, OnChanges {
       //this.sound.play();
   }
 
+  /**
+  * @ignore
+  */
   ngOnChanges(changes: SimpleChanges){
      for(const propName in changes) {
        if(changes.hasOwnProperty(propName)) {
