@@ -35,7 +35,7 @@ export class MeasureComponent implements OnInit, OnChanges {
 
   getWidth(): number {
     let numberOfWholeNote: number = this.signature.getTop() * this.signature.getBottomNumber();
-    console.log(numberOfWholeNote);
+    //console.log(numberOfWholeNote);
 
     // TO DO : get the
     return numberOfWholeNote * 153;

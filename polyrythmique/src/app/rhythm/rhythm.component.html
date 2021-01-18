@@ -27,14 +27,24 @@
     </div>
   </div>
 
-  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{'disabled': !selectedTrackId}">START</button>
-  <button *ngIf="recording" id="tap-button" (click)="addNote($event)" (mousedown)="startTap($event)" (mouseup)="endTap($event)">TAP</button>
+  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{'disabled': !selectedTrackId}" [style.animation]="" >START</button>
+  <span *ngIf="waitingRecord" id="wait" [style.animation]="'record-timer '+ this.measureDuration * 2 +'s ease-in-out infinite'" ><span>WAIT</span></span>
+  <button *ngIf="!waitingRecord && recording" id="tap-button" (click)="addNote($event)" (mousedown)="startTap($event)" (mouseup)="endTap($event)">TAP</button>
 
   <div id="measure-and-track">
-    <div id="measure" *ngIf="true">
+    <div id="record-menu" *ngIf="recording">
+      <div>
+        <button (click)="toggleRecording()"><img src="../../assets/images/icons/stop.svg" alt="Stop" /></button>
+        <span>Stop</span>
+      </div>
+      <div>
+        <span>Mesure : </span><span>{{ atMeasure() }}</span>
+      </div>
+    </div>
+    <div id="measure" *ngIf="true && !recording">
 
     </div>
-    <div id="track" *ngIf="selectedTrackId != null">
+    <div id="track" *ngIf="selectedTrackId != null && !recording">
       <button><img src="../../assets/images/icons/delete.svg" alt="Supprimer" /></button>
       <button><img src="../../assets/images/icons/empty.svg" alt="Vider" /></button>
     </div>

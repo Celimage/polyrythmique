@@ -91,7 +91,53 @@ section
     font-size: 2.4em
     border-color: vars.$RED
 
+  #wait
+    display: flex
+    justify-content: center
+    align-items: center
+    height: $TAP_BUTTON_SIZE
+    width: $TAP_BUTTON_SIZE
+    flex-shrink: 0
+    border-radius: 50%
+    background-image: linear-gradient(to top, vars.$RED 50%, vars.$ORANGE 50%)
+    background-size: 100% 200%
+    font-size: 1.8em
+    text-align: center
+    //backgrond-position: 50%
+
+    &>span
+      height: $TAP_BUTTON_SIZE - 1.5rem
+      width: $TAP_BUTTON_SIZE - 1.5rem
+      border-radius: 50%
+      background-color: vars.$GRAY
+      line-height: $TAP_BUTTON_SIZE - 1.5rem
+
+
   #measure-and-track
     margin-left: 0.5rem
     display: flex
     justify-content: flex-end
+
+
+@mixin keyframes-animation($name)
+  @-webkit-keyframes #{$name}
+    @content
+
+  @keyframes #{$name}
+    @content
+
+@mixin prefix-property($name, $value1, $value2)
+  #{$name}: $value1 $value2
+          #{$name}: $value1 $value2
+
+@include keyframes-animation(record-timer)
+  0%
+    @include prefix-property(background-position, top, center)
+  /*25%
+    @include prefix-property(transform, translateX(-50%) rotate(0deg) linear)*/
+  /*50%
+    @include prefix-property(transform, translateX(-50%) rotate(45deg))*/
+  /*75%
+    @include prefix-property(transform, translateX(-50%) rotate(0deg) linear)*/
+  100%
+    @include prefix-property(background-position, bottom, center)

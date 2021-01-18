@@ -74,9 +74,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
           if(changes["isPlaying"].currentValue) {
             this.playMetronome();
           } else {
-            if(changes["isPlaying"].previousValue) {
-              this.stopMetronome();
-            }
+            this.stopMetronome();
           }
         }
       }

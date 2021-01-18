@@ -20,7 +20,7 @@ export class TempoComponent implements OnInit {
   /**
    * The BPM that can be directly modified by the user
    */
-  modifiableBPM: number = 0;
+  modifiableBPM: string = "0";
 
   /**
    * Whether or note the user is modigying the {@link Tempo#note|note} of the {@link Tempo|tempo}
@@ -45,7 +45,8 @@ export class TempoComponent implements OnInit {
    * @ignore
    */
   ngOnInit(): void {
-    this.modifiableBPM = this.tempo.getBPM();
+    this.modifiableBPM = this.tempo.getBPM().toString();
+    this.tempoOutput.emit(this.tempo);
   }
 
   /**
@@ -85,9 +86,9 @@ export class TempoComponent implements OnInit {
   toggleModifyBPM(): void {
     if(!this.isModifyingNote) {
       this.isModifyingBPM = !this.isModifyingBPM;
-      if(!this.isModifyingBPM) {
-        this.tempo.setBPM(this.modifiableBPM);
-      }
+      //if(!this.isModifyingBPM) {
+        this.tempo.setBPM(parseInt(this.modifiableBPM, 10));
+      //}
       this.tempoOutput.emit(this.tempo);
     }
   }

@@ -21,6 +21,8 @@ export class RhythmComponent implements OnInit {
 
   selectedTrackId: number | null = null;
   selectedTrackIndex: number = -1;
+
+  waitingRecord: boolean = false;
   recording: boolean = false
 
   nbOfSoloTracks: number = 0;
@@ -32,11 +34,17 @@ export class RhythmComponent implements OnInit {
   isPlayingTracks: boolean = false;
 
   /**
+   * In seconds
+   */
+  measureDuration: number = 0;
+
+  /**
    * @ignore
    */
   constructor() { }
 
   ngOnInit(): void {
+    this.updateMeasureDuration();
   }
 
   addTrack(bool: boolean): void {
@@ -45,10 +53,26 @@ export class RhythmComponent implements OnInit {
     }
   }
 
-  toggleRecording(): void {
+  async toggleRecording(): Promise<any> {
     if(this.selectedTrackId) {
       this.recording = !this.recording;
-      this.startRecord = new Date();
+      if(!this.recording) {
+        this.waitingRecord = false;
+      } else {
+        console.log("new")
+        this.startRecord = new Date();
+        this.waitingRecord = true;
+        let time = this.measureDuration * 2 * 1000; // Two measures time in ms
+        await new Promise<any>(function(resolve) {
+          setTimeout(function () {
+            resolve();
+          }, time);
+        });
+        this.waitingRecord = false;
+        this.startRecord = new Date();
+      }
+      //this.startRecord = new Date();
+
     }
   }
 
@@ -59,12 +83,24 @@ export class RhythmComponent implements OnInit {
 
   }
 
-  startTap(evt: Event): void {
-    let time = ((this.signature.getTop() * (this.tempo.getNoteNumber() / this.signature.getBottomNumber())) / this.tempo.getBPM()) * 120000;
-    let timer = setTimeout(function(startTapVar: Date) {
-      startTapVar = new Date();
-    }, time, this.startTapVar);
+  updateMeasureDuration(): void {
+    this.measureDuration = (((this.signature.getTop() * (this.tempo.getNoteNumber() / this.signature.getBottomNumber())) / this.tempo.getBPM()) * 60);
+  }
 
+  atMeasure(): number {
+    let result = Math.floor(( (Date.now() - this.startRecord.getTime()) / 1000) / this.measureDuration) + 1;
+    console.log(result);
+    if(this.waitingRecord) {
+      if(result == 1) {
+        return -2;
+      }
+      return -1;
+    }
+    return result;
+  }
+
+  startTap(evt: Event): void {
+    this.startTapVar = new Date();
   }
 
   endTap(evt: Event): void {
@@ -78,7 +114,14 @@ export class RhythmComponent implements OnInit {
   }
 
   setTempo(tempo: Tempo):void {
-    this.tempo = tempo;
+      // Must be set this way for being send to the child components after modification
+    this.tempo = new Tempo(tempo.getNote(), tempo.getBPM());
+    this.updateMeasureDuration();
+  }
+
+  setSignture(signature: Signature): void {
+    this.signature = new Signature(signature.getTop(), signature.getBottom());
+    this.updateMeasureDuration();
   }
 
 
@@ -144,26 +187,26 @@ export class RhythmComponent implements OnInit {
   }
 
 
-setIsPlayingTracks(bool: boolean){
-  this.isPlayingTracks = bool;
-}
-
-toString(): String {
-  let rythmStr: String = "";
-  rythmStr += "{";
-  rythmStr += this.tempo.toString()+",";
-  //Anacrouse wuold go there
-  rythmStr += this.signature.toString()+",";
-  //Number of "mesures" would go there
-  //A json array of modiified "mesures" would go there
-  rythmStr += "\"Tracks\":[";
-  for(let aTrack of this.tracks) {
-    rythmStr += aTrack.toString() + ",";
+  setIsPlayingTracks(bool: boolean){
+    this.isPlayingTracks = bool;
   }
-  rythmStr = rythmStr.slice(0, -1);
-  rythmStr += "]}";
 
-  return rythmStr;
-}
+  toString(): String {
+    let rythmStr: String = "";
+    rythmStr += "{";
+    rythmStr += this.tempo.toString()+",";
+    //Anacrouse wuold go there
+    rythmStr += this.signature.toString()+",";
+    //Number of "mesures" would go there
+    //A json array of modiified "mesures" would go there
+    rythmStr += "\"Tracks\":[";
+    for(let aTrack of this.tracks) {
+      rythmStr += aTrack.toString() + ",";
+    }
+    rythmStr = rythmStr.slice(0, -1);
+    rythmStr += "]}";
+
+    return rythmStr;
+  }
 
 }

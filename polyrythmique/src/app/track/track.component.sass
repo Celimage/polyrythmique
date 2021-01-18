@@ -75,6 +75,7 @@ article
     background: transparent
 
   .content-wrapper
+    position: relative
     //flex-grow: 1
     height: 80%
     //max-width: 100%
@@ -86,6 +87,14 @@ article
     background-size: 100% 0.2rem
     background-repeat: no-repeat
     background-position: center
+
+    .cursor
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      height: 100%
+      width: 0.2rem
+      background-color: vars.$ORANGE
 
   img
     display: inline-block
