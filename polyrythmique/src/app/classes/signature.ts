@@ -1,7 +1,7 @@
 import { BasicNote } from "../enums/basic-note";
 
 /**
- * This class represent a signature
+ * This class represents a signature
  */
 export class Signature {
   /**

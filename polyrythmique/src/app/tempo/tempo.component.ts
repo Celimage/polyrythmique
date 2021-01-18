@@ -3,14 +3,15 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Tempo } from "../classes/tempo";
 import { BasicNote } from "../enums/basic-note";
 
+
+/**
+ * This component allow the user to modify the tempo
+ */
 @Component({
   selector: 'app-tempo',
   templateUrl: './tempo.component.html',
   styleUrls: ['./tempo.component.sass']
 })
-/**
- * This component allow the user to modify the tempo
- */
 export class TempoComponent implements OnInit {
   /**
    * The current tempo

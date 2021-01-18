@@ -64,6 +64,14 @@
     <code>src/app/measure/measure.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>TODO<br/>
+The measures to insert inside the TrackComponent (this last one should have changes afterward, such as moving attributes)</p>
+
+    </p>
 
 
     <p class="comment">
@@ -71,6 +79,7 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
     </p>
 
 
@@ -117,30 +126,247 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getWidth">getWidth</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#measure">measure</a>
+                            </li>
+                            <li>
+                                <a href="#signature">signature</a>
+                            </li>
+                            <li>
+                                <a href="#tempo">tempo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="measure"></a>
+                        <b>measure</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Measure.html" target="_self" >Measure</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Measure(0)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/measure/measure.component.ts:32</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The measure</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="signature"></a>
+                        <b>signature</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Signature.html" target="_self" >Signature</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Signature()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/measure/measure.component.ts:22</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The signature of the measure <a href="../classes/Signature.html">Signature</a></p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tempo"></a>
+                        <b>tempo</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Tempo.html" target="_self" >Tempo</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Tempo()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/measure/measure.component.ts:27</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The tempo on the measure <a href="../classes/Measure.html">Measure</a></p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getWidth"></a>
+                    <span class="name">
+                        <b>
+                            getWidth
+                        </b>
+                        <a href="#getWidth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getWidth()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/measure/measure.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the width of the measure <br/> TODO</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The width of the measure</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, SimpleChanges, OnChanges, Input } from &#x27;@angular/core&#x27;;
 
+import { Signature } from &quot;../classes/signature&quot;;
+import { Tempo } from &quot;../classes/tempo&quot;;
+import { Measure } from &quot;../classes/measure&quot;;
+
+
+/**
+ * TODO&lt;br/&gt;
+ * The measures to insert inside the TrackComponent (this last one should have changes afterward, such as moving attributes)
+ */
 @Component({
   selector: &#x27;app-measure&#x27;,
   templateUrl: &#x27;./measure.component.html&#x27;,
   styleUrls: [&#x27;./measure.component.sass&#x27;]
 })
-/**
- * TODO&lt;br/&gt;
- * The measures to insert inside the TrackComponent (this last one should have changes afterward, such as moving attributes)
- */
-export class MeasureComponent implements OnInit {
+export class MeasureComponent implements OnInit, OnChanges {
+
+  /**
+  * The signature of the measure {@link Signature}
+  */
+  @Input() signature: Signature &#x3D; new Signature();
+
+  /**
+  * The tempo on the measure {@link Measure}
+  */
+  @Input() tempo: Tempo &#x3D; new Tempo();
+
+  /**
+  * The measure
+  */
+  @Input() measure: Measure &#x3D; new Measure(0);
   /**
    * @ignore
    */
@@ -151,12 +377,32 @@ export class MeasureComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+  * @ignore
+  */
+  ngOnChanges(changes: SimpleChanges): void {}
+
+  /**
+  * Get the width of the measure &lt;br/&gt; TODO
+  * @returns {number} The width of the measure
+  */
+  getWidth(): number {
+    let numberOfWholeNote: number &#x3D; this.signature.getTop() * this.signature.getBottomNumber();
+    //console.log(numberOfWholeNote);
+
+    // TO DO : get the
+    return numberOfWholeNote * 153;
+    //1N w &#x3D; 113.2 * 4
+    //N h &#x3D; 77
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;measure works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div [style.aspectRatio]&#x3D;&quot;getWidth() / 77&quot;&gt;&lt;!--[style.width]&#x3D;&quot;getWidth() +&#x27;rem&#x27;&quot;--&gt;
+  &lt;app-note *ngFor&#x3D;&quot;let note of measure.getNotes()&quot; [note]&#x3D;&quot;note&quot;&gt;&lt;/app-note&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -164,7 +410,21 @@ export class MeasureComponent implements OnInit {
                 <p class="comment">
                     <code>./measure.component.sass</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">@use &quot;~sass/vars&quot;
+
+:host
+  display: flex
+  min-height: 100%
+  // NEXT LINE TO CHANGE :
+  //min-width: 2rem
+
+  border-right: 0.2rem solid vars.$LIGHT_GRAY
+
+div
+  flex-grow: 1
+  display: flex
+  height: 100%
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -192,8 +452,8 @@ export class MeasureComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>measure works!</p></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
+        var COMPONENT_TEMPLATE = '<div><div [style.aspectRatio]="getWidth() / 77"><!--[style.width]="getWidth() +\'rem\'"-->  <app-note *ngFor="let note of measure.getNotes()" [note]="note"></app-note></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'SoundPlayerComponent', 'selector': 'app-sound-player'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MeasureComponent'};
 </script>

@@ -63,6 +63,13 @@
             <code>src/app/classes/track.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>A class that represents a Track</p>
+
+            </p>
 
 
 
@@ -86,6 +93,10 @@
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#instrument">instrument</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#measures">measures</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
@@ -128,6 +139,9 @@
                                 <a href="#getInstrument">getInstrument</a>
                             </li>
                             <li>
+                                <a href="#getMeasures">getMeasures</a>
+                            </li>
+                            <li>
                                 <a href="#getNoteAtIndex">getNoteAtIndex</a>
                             </li>
                             <li>
@@ -140,6 +154,9 @@
                                 <a href="#getPlan">getPlan</a>
                             </li>
                             <li>
+                                <a href="#planToString">planToString</a>
+                            </li>
+                            <li>
                                 <a href="#setInstrument">setInstrument</a>
                             </li>
                             <li>
@@ -147,6 +164,9 @@
                             </li>
                             <li>
                                 <a href="#setPlan">setPlan</a>
+                            </li>
+                            <li>
+                                <a href="#toString">toString</a>
                             </li>
                         </ul>
                     </td>
@@ -166,18 +186,18 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(instrument: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, plan: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, notes: <a href="../classes/Note.html">Note[]</a>)</code>
+<code>constructor(instrument: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, plan: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, measures: <a href="../classes/Measure.html">Measure[]</a>, notes: <a href="../classes/Note.html">Note[]</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/classes/track.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/classes/track.ts:37</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Create a new track whose attributes corresponds to the parameters. Its id is auto-incremented</p>
+                            <div class="io-description"><p>The constructor : Create a new track whose attributes corresponds to the parameters. Its id is auto-incremented</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -221,6 +241,20 @@
                                                         <td>
                                                                 <code><p>(optional) The {</p>
 </code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>measures</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Measure.html" target="_self" >Measure[]</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -274,7 +308,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/classes/track.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/classes/track.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -308,13 +342,47 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/classes/track.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/classes/track.ts:20</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>The instrument used for the sound of the track</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="measures"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            measures</b>
+                            <a href="#measures"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Measure.html" target="_self" >Measure[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/classes/track.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A list of the measures in this track</p>
 </div>
                     </td>
                 </tr>
@@ -348,7 +416,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/classes/track.ts:7</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/classes/track.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -382,7 +450,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/classes/track.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/classes/track.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -416,7 +484,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/classes/track.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/classes/track.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -461,14 +529,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/app/classes/track.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">src/app/classes/track.ts:167</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Add a note on the track</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -478,6 +548,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -492,6 +563,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the note to add</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -531,14 +606,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="90"
-                            class="link-to-prism">src/app/classes/track.ts:90</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/app/classes/track.ts:174</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Clear the list of notes of the track</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -570,14 +647,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/classes/track.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/app/classes/track.ts:183</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Delete all notes that begins in an interval of timecodes</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -587,6 +666,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -601,6 +681,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the start of the interval</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>to</td>
@@ -613,6 +697,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the end of the interval</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -652,17 +740,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/classes/track.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/classes/track.ts:64</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the id of the track <a href="../classes/Track.html#id">Track</a></p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>the id of the track</p>
 
                     </div>
                 </td>
@@ -691,17 +787,72 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/classes/track.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/classes/track.ts:72</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the instrument playing on this track <a href="../classes/Track.html#instrument">Track</a></p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The instrument playing</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMeasures"></a>
+                    <span class="name">
+                        <b>
+                            getMeasures
+                        </b>
+                        <a href="#getMeasures"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMeasures()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/classes/track.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get a list of all the measures of this track <a href="../classes/Track.html#measures">Track</a></p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Measure.html" target="_self" >Measure[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A lsit of the measures</p>
 
                     </div>
                 </td>
@@ -730,14 +881,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/app/classes/track.ts:69</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/classes/track.ts:137</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get a note based on the index</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -747,6 +900,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -761,6 +915,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the index of the note</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -772,7 +930,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>the note</p>
+
                     </div>
                 </td>
             </tr>
@@ -800,14 +959,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/app/classes/track.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">src/app/classes/track.ts:146</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the note based on its timecode</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -817,6 +978,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -831,6 +993,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the timecode of the note</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -842,7 +1008,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>the note</p>
+
                     </div>
                 </td>
             </tr>
@@ -870,17 +1037,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/classes/track.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">src/app/classes/track.ts:128</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get a list of the notes in the track <a href="../classes/Track.html#notes">Track</a></p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Note.html" target="_self" >Note[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A list of the notes</p>
 
                     </div>
                 </td>
@@ -909,17 +1084,72 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/classes/track.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/classes/track.ts:88</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the plan on this track</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The plan {</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="planToString"></a>
+                    <span class="name">
+                        <b>
+                            planToString
+                        </b>
+                        <a href="#planToString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>planToString()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/classes/track.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the name of the plan of this track <a href="../classes/Track.html#plan">Track</a></p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The name of the plan</p>
 
                     </div>
                 </td>
@@ -948,14 +1178,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/app/classes/track.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/classes/track.ts:80</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Set the instrument that plays on this track <a href="../classes/Track.html#instrument">Track</a></p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -965,6 +1197,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -979,6 +1212,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The instrument to set</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1018,14 +1255,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="82"
-                            class="link-to-prism">src/app/classes/track.ts:82</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/app/classes/track.ts:159</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Set the list of notes of the track <a href="../classes/Track.html#notes">Track</a></p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1035,6 +1274,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1049,6 +1289,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the list of notes to set</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1088,14 +1332,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/app/classes/track.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/classes/track.ts:96</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Set the plan of this track <a href="../classes/Track.html#plan">Track</a></p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1105,6 +1351,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1119,6 +1366,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The plan to set</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1136,6 +1387,53 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toString"></a>
+                    <span class="name">
+                        <b>
+                            toString
+                        </b>
+                        <a href="#toString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toString()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="196"
+                            class="link-to-prism">src/app/classes/track.ts:196</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Return the track in string form</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>a stringified version of the track</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
 
@@ -1146,8 +1444,12 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Note } from &quot;./note&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Measure } from &quot;./measure&quot;;
+import { Note } from &quot;./note&quot;;
 
+/**
+* A class that represents a Track
+*/
 export class Track {
   /**
    * The auto-increment value for the tracks&#x27; ids
@@ -1169,20 +1471,27 @@ export class Track {
    * 2 -&gt; Mute
    */
   private plan: number;
+
+  /**
+   * A list of the measures in this track
+   */
+ private measures: Measure[];
+
   /**
    * The notes inside the track
    */
   private notes: Note[];
 
   /**
-   * Create a new track whose attributes corresponds to the parameters. Its id is auto-incremented
+   * The constructor : Create a new track whose attributes corresponds to the parameters. Its id is auto-incremented
    *
    * @param {string} instrument (optional) The {@link Track#instrument|instrument} of the track
    * @param {number} plan (optional) The {@link Track#plan|plan sound} of the track. Must be 0, 1 or 2. If incorrect set to 0
    * @param {Note[]} notes (optional) The {@link Track#notes|notes} of the track.
    */
-  constructor(instrument: string &#x3D; &quot;&quot;, plan: number &#x3D; 0, notes: Note[] &#x3D; new Array&lt;Note&gt;()) {
+  constructor(instrument: string &#x3D; &quot;&quot;, plan: number &#x3D; 0, measures: Measure[] &#x3D; new Array&lt;Measure&gt;(), notes: Note[] &#x3D; new Array&lt;Note&gt;()) {
     this.id &#x3D; Track.nextId;
+    this.measures &#x3D; measures;
     ++Track.nextId;
 
     this.instrument &#x3D; instrument;
@@ -1190,34 +1499,96 @@ export class Track {
       plan &#x3D; 0;
     }
     this.plan &#x3D; plan;
+    //this.measures &#x3D; measures;
     this.notes &#x3D; notes;
   }
 
+  /**
+  * Get the id of the track {@link Track#id}
+  * @returns {number} the id of the track
+  */
   getId(): number {
     return this.id;
   }
 
+  /**
+  * Get the instrument playing on this track {@link Track#instrument}
+  * @returns {String} The instrument playing
+  */
   getInstrument(): string {
     return this.instrument;
   }
+
+  /**
+  * Set the instrument that plays on this track {@link Track#instrument}
+  * @param {String} instrument The instrument to set
+  */
   setInstrument(instrument: string): void {
     this.instrument &#x3D; instrument;
   }
 
+  /**
+  * Get the plan on this track
+  * @returns {number} The plan {@link Track#plan}
+  */
   getPlan(): number {
     return this.plan;
   }
+
+  /**
+  * Set the plan of this track {@link Track#plan}
+  * @param {number} plan The plan to set
+  */
   setPlan(plan: number): void {
-    this.plan &#x3D; plan;
+    if(plan &gt;&#x3D; 0 &amp;&amp; plan &lt;&#x3D; 2 &amp;&amp; plan % 1 &#x3D;&#x3D; 0) {
+      this.plan &#x3D; plan;
+    }
   }
 
+  /**
+  * Get the name of the plan of this track {@link Track#plan}
+  * @returns {String} The name of the plan
+  */
+  planToString(): string {
+    if(this.plan &#x3D;&#x3D; 0) {
+      return &quot;normal&quot;;
+    } else if(this.plan &#x3D;&#x3D; 1) {
+      return &quot;solo&quot;;
+    } else {
+      return &quot;mute&quot;;
+    }
+  }
+
+  /**
+  * Get a list of all the measures of this track {@link Track#measures}
+  * @returns {Measure[]} A lsit of the measures
+  */
+  getMeasures(): Measure[] {
+    return this.measures;
+  }
+
+  /**
+  * Get a list of the notes in the track {@link Track#notes}
+  * @returns {Note[]} A list of the notes
+  */
   getNotes(): Note[] {
     return this.notes;
   }
+
+  /**
+  * Get a note based on the index
+  * @param {number} i the index of the note
+  * @returns {Note} the note
+  */
   getNoteAtIndex(i: number): Note {
     return this.notes[i];
   }
 
+  /**
+  * Get the note based on its timecode
+  * @param {number} timecode the timecode of the note
+  * @returns {Note|null} the note
+  */
   getNoteAtTimecode(timecode: number): Note | null {
     for(let i &#x3D; 0 ; i &lt; this.notes.length ; ++i) {
       if(this.notes[i].getTimecode() &#x3D;&#x3D; timecode) {
@@ -1227,18 +1598,34 @@ export class Track {
     return null;
   }
 
+  /**
+  * Set the list of notes of the track {@link Track#notes}
+  * @param {Note[]} notes the list of notes to set
+  */
   setNotes(notes: Note[]): void {
     this.notes &#x3D; notes;
   }
 
+  /**
+  * Add a note on the track
+  * @param {Note} note the note to add
+  */
   addNote(note: Note): void {
     this.notes.push(note);
   }
 
+  /**
+  * Clear the list of notes of the track
+  */
   clearNotes(): void {
     this.notes &#x3D; new Array&lt;Note&gt;();
   }
 
+  /**
+  * Delete all notes that begins in an interval of timecodes
+  * @param {number} from the start of the interval
+  * @param {number} to the end of the interval
+  */
   deleteNotesBetweenTimecodes(from: number, to: number): void {
     for(let i &#x3D; 0 ; i &lt; this.notes.length ; ++i) {
       let timecode: number &#x3D; this.notes[i].getTimecode();
@@ -1247,6 +1634,35 @@ export class Track {
       }
     }
   }
+
+  /**
+  * Return the track in string form
+  * @returns {String} a stringified version of the track
+  */
+  toString(): string {
+    let notesStr: string &#x3D; &quot;&quot;;
+    for(let aNote of this.notes) { // this.measures.getNotes()
+      notesStr &#x3D; notesStr + aNote.toString() + &quot;,&quot;;
+    }
+    notesStr &#x3D; notesStr.slice(0, -1);
+    return &quot;{\&quot;id\&quot;: &quot; + this.id.toString() +
+              &quot;, \&quot;plan\&quot;: {\&quot;solo\&quot;: &quot; + (this.plan &#x3D;&#x3D; 1) +
+                          &quot;, \&quot;muet\&quot;: &quot; + (this.plan &#x3D;&#x3D; 2) +
+              &quot;}, \&quot;instrument\&quot;: &quot; + this.instrument +
+              &quot;, \&quot;notes\&quot;: [&quot; + notesStr + &quot;]}&quot;;
+  }
+  /*toString(): string {
+    let measuresStr: string &#x3D; &quot;&quot;;
+    for(let aMeasure of this.measures) {
+      measuresStr &#x3D; measuresStr + aMeasure.toString() + &quot;,&quot;;
+    }
+    measuresStr &#x3D; measuresStr.slice(0, -1);
+    return &quot;{\&quot;id\&quot;: &quot; + this.id.toString() +
+              &quot;, \&quot;plan\&quot;: {\&quot;solo\&quot;: &quot; + (this.plan &#x3D;&#x3D; 1) +
+                          &quot;, \&quot;muet\&quot;: &quot; + (this.plan &#x3D;&#x3D; 2) +
+              &quot;}, \&quot;instrument\&quot;: &quot; + this.instrument +
+              &quot;, \&quot;measures\&quot;: [&quot; + measuresStr + &quot;]}&quot;;
+  }*/
 }
 </code></pre>
     </div>

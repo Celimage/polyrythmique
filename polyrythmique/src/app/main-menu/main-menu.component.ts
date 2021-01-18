@@ -1,13 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+/**
+ * The main menu of the application.
+ */
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.sass']
 })
-/**
- * The main menu of the application.
- */
+
 export class MainMenuComponent implements OnInit {
   /**
    * The number of the active tab<br/>

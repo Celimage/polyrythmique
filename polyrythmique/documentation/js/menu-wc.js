@@ -55,13 +55,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-e80dea94a9bfc45fd580f233156c95a3"' : 'data-target="#xs-components-links-module-AppModule-e80dea94a9bfc45fd580f233156c95a3"' }>
+                                            'data-target="#components-links-module-AppModule-67c16900c5d4fe8ff8dcff0989501618"' : 'data-target="#xs-components-links-module-AppModule-67c16900c5d4fe8ff8dcff0989501618"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-e80dea94a9bfc45fd580f233156c95a3"' :
-                                            'id="xs-components-links-module-AppModule-e80dea94a9bfc45fd580f233156c95a3"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-67c16900c5d4fe8ff8dcff0989501618"' :
+                                            'id="xs-components-links-module-AppModule-67c16900c5d4fe8ff8dcff0989501618"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -115,6 +115,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">SignatureComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/SoundPlayerComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SoundPlayerComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/TempoComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">TempoComponent</a>
                                             </li>
@@ -142,6 +146,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/AddOn.html" data-type="entity-link">AddOn</a>
                             </li>
                             <li class="link">
+                                <a href="classes/Measure.html" data-type="entity-link">Measure</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/Note.html" data-type="entity-link">Note</a>
                             </li>
                             <li class="link">
@@ -149,9 +156,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/Signature.html" data-type="entity-link">Signature</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/SoundPlayer.html" data-type="entity-link">SoundPlayer</a>
                             </li>
                             <li class="link">
                                 <a href="classes/Tempo.html" data-type="entity-link">Tempo</a>

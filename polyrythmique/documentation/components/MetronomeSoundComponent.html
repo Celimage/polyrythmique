@@ -64,6 +64,15 @@
     <code>src/app/metronome-sound/metronome-sound.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>This component is a button that allows to select the type of sound of the metronome,
+   which starts when its parent component&#39;s attribute binded to the isPlaying attribute
+   pass to true and stop when this attribute pass to false if the mode correspond to 0 : sound all along</p>
+
+    </p>
 
 
     <p class="comment">
@@ -220,7 +229,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:44</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -252,7 +261,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:40</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -284,7 +293,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:36</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -326,8 +335,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:69</a></div>
                 </td>
             </tr>
 
@@ -417,8 +426,14 @@ Update the metronome and start it</p>
                     <div class="io-description"><p>Play the metronome for an undetermined time, two measure or not at all according to the <a href="MetronomeSoundComponent#mode">mode</a> of the componenet</p>
 </div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A promise to await for</p>
 
                     </div>
                 </td>
@@ -488,8 +503,8 @@ Update the metronome and start it</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:88</a></div>
                 </td>
             </tr>
 
@@ -533,7 +548,7 @@ Update the metronome and start it</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -571,7 +586,7 @@ Update the metronome and start it</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -612,7 +627,7 @@ Update the metronome and start it</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/metronome-sound/metronome-sound.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -637,16 +652,17 @@ import { Tempo } from &quot;../classes/tempo&quot;;
 import { Signature } from &quot;../classes/signature&quot;;
 import { Metronome } from &quot;../classes/metronome&quot;;
 
-@Component({
-  selector: &#x27;app-metronome-sound&#x27;,
-  templateUrl: &#x27;./metronome-sound.component.html&#x27;,
-  styleUrls: [&#x27;./metronome-sound.component.sass&#x27;]
-})
 /**
  * This component is a button that allows to select the type of sound of the metronome,
  *   which starts when its parent component&#x27;s attribute binded to the isPlaying attribute
  *   pass to true and stop when this attribute pass to false if the mode correspond to 0 : sound all along
  */
+@Component({
+  selector: &#x27;app-metronome-sound&#x27;,
+  templateUrl: &#x27;./metronome-sound.component.html&#x27;,
+  styleUrls: [&#x27;./metronome-sound.component.sass&#x27;]
+})
+
 export class MetronomeSoundComponent implements OnInit, OnChanges {
   /**
    * The sound mode of the component.
@@ -707,9 +723,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
           if(changes[&quot;isPlaying&quot;].currentValue) {
             this.playMetronome();
           } else {
-            if(changes[&quot;isPlaying&quot;].previousValue) {
-              this.stopMetronome();
-            }
+            this.stopMetronome();
           }
         }
       }
@@ -725,6 +739,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
 
   /**
    * Play the metronome for an undetermined time, two measure or not at all according to the {@link MetronomeSoundComponent#mode|mode} of the componenet
+   * @returns {Promise&lt;any&gt;} A promise to await for
    */
   async playMetronome(): Promise&lt;any&gt; {
     if(this.mode &#x3D;&#x3D; 0) {
@@ -792,7 +807,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><button (click)="toggleMode()">  <img src="../../assets/images/icons/metronome-sound.svg" alt="Métronome activé tout le long des enregistrements" *ngIf="mode == 0" />  <img src="../../assets/images/icons/metronome-sound-start.svg" alt="Métronome activé pendant les deux mesures à vide" *ngIf="mode == 1" />  <img src="../../assets/images/icons/metronome-mute.svg" alt="Métronome muet" *ngIf="mode == 2" /></button></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'SoundPlayerComponent', 'selector': 'app-sound-player'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MetronomeSoundComponent'};
 </script>

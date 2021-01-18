@@ -12,14 +12,15 @@ class AddOn {
    */
   private number: number;
   /**
-   * Wether or not the number should be sown with an hook
+   * Wether or not the number should be shown with an hook
    */
   private useHook: boolean;
 
 
   /**
-   * @param {number} number {@link AddOn#number}
-   * @param {boolean} useHook {@link AddOn#useHook}
+   * The constructor
+   * @param {number} number @link AddOn#number
+   * @param {boolean} useHook @link AddOn#useHook
    */
   constructor(number: number, useHook: boolean) {
     this.number = number;
@@ -27,12 +28,15 @@ class AddOn {
   }
 
   /**
+   * Get the number
    * @return {@link AddOn#number}
    */
   getNumber(): number {
     return this.number;
   }
+
   /**
+   * Set the number
    * @param {number} {@link AddOn#number}
    */
   setNumber(number: number): void {
@@ -40,12 +44,14 @@ class AddOn {
   }
 
   /**
-   * @return {@link AddOn#useHook}
+   * Check if using hoot for this representaion is needed
+   * @return {boolean} {@link AddOn#useHook}
    */
   getUseHook(): boolean {
     return this.useHook;
   }
   /**
+   * Set if using a hook for this represention is needed
    * @param {boolean} {@link AddOn#useHook}
    */
   setUseHook(useHook: boolean): void {
@@ -79,6 +85,7 @@ export class NoteRepresentation {
 
 
   /**
+   * The constructor
    * @param {string[]} imgsNames The names of the images, in order, used to form the note without the extention.
    * @param {AddOnJson|null} addOn Used to add a number on top of the note. If used, must possess the attributes {number} number and {boolean} useHook
    *
@@ -93,21 +100,47 @@ export class NoteRepresentation {
     this.setAddOn(addOn);
   }
 
+  /**
+  * Get the path of the image using its name
+  * @param {String} imgName The name of the image
+  * @returns {String} The path to the image
+  */
   private convertImgNameToPath(imgName: string): string {
     return NoteRepresentation.dirPath + imgName + NoteRepresentation.extension;
   }
 
+  /**
+  * Get the paths to all the images
+  * @returns {String[]} A list of all the paths
+  */
   getImgsPaths(): string[] {
     return this.imgsPaths;
   }
+
+  /**
+  * Get the name of the image at a certain position in the list
+  * @param {number} i The number of the image in the list
+  * @returns {String} The name of the image
+  */
   getImgPathAt(i: number): string {
     //if(i >= this.imgsPaths.length) {
     //}
     return this.imgsPaths[i];
   }
+
+  /**
+  * Get the number of different paths to images
+  * @returns {number} The number of paths
+  */
   getImgsPathsLength(): number {
     return this.imgsPaths.length;
   }
+
+  /**
+  * Add an image to the list of paths using its name
+  * @param {String} imgName The name of the image
+  * @param {number|null} index The place in the list where we insert
+  */
   addToImgsPaths(imgName: string, index: number | null): void {
     if(index == null || index == this.imgsPaths.length) {
       this.imgsPaths.push(this.convertImgNameToPath(imgName));
@@ -115,16 +148,30 @@ export class NoteRepresentation {
       this.imgsPaths.splice(index, 0, this.convertImgNameToPath(imgName));
     }
   }
+
+  /**
+  * Remove an image from the list of paths using its name
+  * @param {String} imgName The name of the image
+  */
   removeFromImgsPaths(imgName: string): void {
     let index:number = this.imgsPaths.indexOf(imgName);
     if(index != -1) {
       this.imgsPaths.splice(index, 1);
     }
   }
+
+  /**
+  * Remove an image from the list of paths using its palce in the list
+  * @param {number} index The place of the image to remove
+  */
   removeFromImgsPathsAt(index: number): void {
     this.imgsPaths.splice(index, 1);
   }
 
+  /**
+  * Set the addon linked to this representation
+  * @param {AddOnJson|null} addon the addon to set
+  */
   setAddOn(addOn: AddOnJson | null) {
     if(addOn != null) {
       this.addOn = new AddOn(addOn.number, addOn.useHook);
@@ -132,12 +179,22 @@ export class NoteRepresentation {
       this.addOn = null;
     }
   }
+
+  /**
+  * Get the number of the addon linked to this representation
+  * @returns {number|null} The number of the addon
+  */
   getAddOnNumber(): number | null {
     if(this.addOn != null) {
       return this.addOn.getNumber();
     }
     return null;
   }
+
+  /**
+  * Get if the addon linked to this representation needs to use a hook
+  * @returns {boolean|null} The value of the condition
+  */
   getAddOnUseHook(): boolean | null {
     if(this.addOn != null) {
       return this.addOn.getUseHook();

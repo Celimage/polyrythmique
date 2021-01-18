@@ -70,7 +70,16 @@
                             <a href="#getNumber" title="src/app/enums/basic-note.ts"><b>getNumber</b>&nbsp;&nbsp;&nbsp;(src/.../basic-note.ts)</a>
                         </li>
                         <li>
+                            <a href="#getPath" title="src/app/classes/metronome.ts"><b>getPath</b>&nbsp;&nbsp;&nbsp;(src/.../metronome.ts)</a>
+                        </li>
+                        <li>
                             <a href="#getRepresentation" title="src/app/enums/binary-note.ts"><b>getRepresentation</b>&nbsp;&nbsp;&nbsp;(src/.../binary-note.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getSoundNameByPath" title="src/app/classes/metronome.ts"><b>getSoundNameByPath</b>&nbsp;&nbsp;&nbsp;(src/.../metronome.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#values" title="src/app/classes/metronome.ts"><b>values</b>&nbsp;&nbsp;&nbsp;(src/.../metronome.ts)</a>
                         </li>
                         <li>
                             <a href="#values" title="src/app/enums/basic-note.ts"><b>values</b>&nbsp;&nbsp;&nbsp;(src/.../basic-note.ts)</a>
@@ -392,6 +401,185 @@ TO CHANGE FOR SOMETHING DYNAMIC</p>
                     </div>
                     <div class="io-description">
                         <p>All the possible BasicNote&#39;s values</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/classes/metronome.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPath"></a>
+                    <span class="name">
+                        <b>
+                            getPath
+                        </b>
+                        <a href="#getPath"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPath(soundName)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the path of a sound using its name</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>soundName</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The name of the path</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/enumerations.html#Sound" target="_self" >Metronome.Sound</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The path to the sound</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSoundNameByPath"></a>
+                    <span class="name">
+                        <b>
+                            getSoundNameByPath
+                        </b>
+                        <a href="#getSoundNameByPath"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSoundNameByPath(soundPath)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the name of a sound using its path</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>soundPath</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Tha path to the sound</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The name of the sound</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="values"></a>
+                    <span class="name">
+                        <b>
+                            values
+                        </b>
+                        <a href="#values"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>values()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get all the possible sounds names</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A list of the possible sound&#39;s name</p>
 
                     </div>
                 </td>

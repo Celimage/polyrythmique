@@ -64,6 +64,13 @@
     <code>src/app/rhythm/rhythm.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The component that holds all the interface for the first tab</p>
+
+    </p>
 
 
     <p class="comment">
@@ -133,6 +140,12 @@
                                 <a href="#endTapVar">endTapVar</a>
                             </li>
                             <li>
+                                <a href="#isPlayingTracks">isPlayingTracks</a>
+                            </li>
+                            <li>
+                                <a href="#measureDuration">measureDuration</a>
+                            </li>
+                            <li>
                                 <a href="#nbOfSoloTracks">nbOfSoloTracks</a>
                             </li>
                             <li>
@@ -159,6 +172,9 @@
                             <li>
                                 <a href="#tracks">tracks</a>
                             </li>
+                            <li>
+                                <a href="#waitingRecord">waitingRecord</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -172,7 +188,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#addNote">addNote</a>
+                            </li>
+                            <li>
                                 <a href="#addTrack">addTrack</a>
+                            </li>
+                            <li>
+                                <a href="#atMeasure">atMeasure</a>
                             </li>
                             <li>
                                 <a href="#endTap">endTap</a>
@@ -181,10 +203,13 @@
                                 <a href="#getTrackIndex">getTrackIndex</a>
                             </li>
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#setIsPlayingTracks">setIsPlayingTracks</a>
                             </li>
                             <li>
                                 <a href="#setSelectedTrackId">setSelectedTrackId</a>
+                            </li>
+                            <li>
+                                <a href="#setSignature">setSignature</a>
                             </li>
                             <li>
                                 <a href="#setTempo">setTempo</a>
@@ -196,7 +221,14 @@
                                 <a href="#startTap">startTap</a>
                             </li>
                             <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#toggleRecording">toggleRecording</a>
+                            </li>
+                            <li>
+                                <a href="#toString">toString</a>
+                            </li>
+                            <li>
+                                <a href="#updateMeasureDuration">updateMeasureDuration</a>
                             </li>
                         </ul>
                     </td>
@@ -224,32 +256,35 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="addTrack"></a>
+                    <a name="addNote"></a>
                     <span class="name">
                         <b>
-                            addTrack
+                            addNote
                         </b>
-                        <a href="#addTrack"><span class="icon ion-ios-link"></span></a>
+                        <a href="#addNote"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addTrack(bool: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+<code>addNote(note: <a href="../classes/Note.html">Note</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:138</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Add a note to the selected track <br/>
+TODO</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -263,9 +298,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>bool</td>
+                                    <td>note</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                <code><a href="../classes/Note.html" target="_self" >Note</a></code>
                                     </td>
 
                                     <td>
@@ -294,6 +329,130 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="addTrack"></a>
+                    <span class="name">
+                        <b>
+                            addTrack
+                        </b>
+                        <a href="#addTrack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addTrack(bool: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Add a new track to the list of tracks</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bool</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Should the track actually be added</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atMeasure"></a>
+                    <span class="name">
+                        <b>
+                            atMeasure
+                        </b>
+                        <a href="#atMeasure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atMeasure()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:153</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the number of the measure that currently being recorded (based on the start of the recording)</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>the number of the measure</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="endTap"></a>
                     <span class="name">
                         <b>
@@ -312,14 +471,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="67"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:67</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="177"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:177</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>State that a TAP has ended</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -329,6 +490,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -343,6 +505,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the TAP button is released</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -382,8 +548,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="107"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:107</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="235"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:235</a></div>
                 </td>
             </tr>
 
@@ -446,36 +612,74 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
+                    <a name="setIsPlayingTracks"></a>
                     <span class="name">
                         <b>
-                            ngOnInit
+                            setIsPlayingTracks
                         </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        <a href="#setIsPlayingTracks"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnInit()</code>
+<code>setIsPlayingTracks(bool: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="275"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:275</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Set if the tracks are playing</p>
+</div>
 
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bool</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>if the tracks are palying or not</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -503,14 +707,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="82"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:82</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:210</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Set the <a href="../components/RhythmComponent.html#selectedTrackId">RhythmComponent</a></p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -520,6 +726,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -534,6 +741,87 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The id of the selected track (null if none)</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSignature"></a>
+                    <span class="name">
+                        <b>
+                            setSignature
+                        </b>
+                        <a href="#setSignature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setSignature(signature: <a href="../classes/Signature.html">Signature</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:201</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set the <a href="../components/RhythmComponent.html#signature">RhythmComponent</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>signature</td>
+                                    <td>
+                                                <code><a href="../classes/Signature.html" target="_self" >Signature</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The signature to set with</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -573,14 +861,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:77</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:191</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Set the <a href="../components/RhythmComponent.html#tempo">RhythmComponent</a></p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -590,6 +880,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -604,6 +895,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The tempo to set with</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -643,8 +938,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="121"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:121</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="249"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:249</a></div>
                 </td>
             </tr>
 
@@ -720,14 +1015,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:169</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>State that a TAP has begun</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -737,6 +1034,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -751,6 +1049,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the TAP button is held</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -775,6 +1077,7 @@
                     <a name="toggleRecording"></a>
                     <span class="name">
                         <b>
+                            <span class="modifier">Async</span>
                             toggleRecording
                         </b>
                         <a href="#toggleRecording"><span class="icon ion-ios-link"></span></a>
@@ -783,21 +1086,119 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>toggleRecording()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>toggleRecording()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:45</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:111</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Toggle if the inputs are being recorded</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A promise to await for</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toString"></a>
+                    <span class="name">
+                        <b>
+                            toString
+                        </b>
+                        <a href="#toString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toString()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="284"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:284</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Return the current rhythm in string form <br/>
+(Should be the correct format for conversion)</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A stringified version of the rhythm</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateMeasureDuration"></a>
+                    <span class="name">
+                        <b>
+                            updateMeasureDuration
+                        </b>
+                        <a href="#updateMeasureDuration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateMeasureDuration()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/app/rhythm/rhythm.component.ts:145</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Update the duration of the measures based on the <a href="RythmComponent#signature">RythmComponent#signature</a> and the <a href="RythmComponent#tempo">RythmComponent#tempo</a></p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -838,10 +1239,92 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/rhythm/rhythm.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/rhythm/rhythm.component.ts:73</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The instant a TAP is released</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isPlayingTracks"></a>
+                        <span class="name">
+                            <b>
+                            isPlayingTracks</b>
+                            <a href="#isPlayingTracks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/rhythm/rhythm.component.ts:78</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>If the tracks are playing</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="measureDuration"></a>
+                        <span class="name">
+                            <b>
+                            measureDuration</b>
+                            <a href="#measureDuration"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/rhythm/rhythm.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The duration of the measures (in seconds)</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -870,10 +1353,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/rhythm/rhythm.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/rhythm/rhythm.component.ts:58</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The number of tracks stated as solo</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -902,10 +1391,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/rhythm/rhythm.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/rhythm/rhythm.component.ts:53</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>If we are recording the inputs</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -934,10 +1429,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/rhythm/rhythm.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/rhythm/rhythm.component.ts:38</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The id of the track that&#39;s being selected</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -966,10 +1467,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/rhythm/rhythm.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/rhythm/rhythm.component.ts:43</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The index of the selected track in the list of all the tracks</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -998,10 +1505,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/rhythm/rhythm.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/rhythm/rhythm.component.ts:28</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The general signature, being used when a measure doesn&#39;t have its own</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1030,10 +1543,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/rhythm/rhythm.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/rhythm/rhythm.component.ts:63</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The instant of the beginning of the recording</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1062,10 +1581,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/rhythm/rhythm.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/rhythm/rhythm.component.ts:68</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The instant a TAP is held</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1094,10 +1619,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/rhythm/rhythm.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/rhythm/rhythm.component.ts:33</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The general tempo of the tracks</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1126,10 +1657,54 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/rhythm/rhythm.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/rhythm/rhythm.component.ts:23</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A list of all the tracks</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="waitingRecord"></a>
+                        <span class="name">
+                            <b>
+                            waitingRecord</b>
+                            <a href="#waitingRecord"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/rhythm/rhythm.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>If we need to wait 2 measure before actually recording the inputs</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1145,66 +1720,176 @@ import { Track } from &quot;../classes/track&quot;;
 import { Note } from &quot;../classes/note&quot;;
 import { Tempo } from &quot;../classes/tempo&quot;;
 import { Signature } from &quot;../classes/signature&quot;;
+import {EventEmitter, Output, Input} from &#x27;@angular/core&#x27;;
 
 
+/**
+* The component that holds all the interface for the first tab
+*/
 @Component({
   selector: &#x27;app-rhythm&#x27;,
   templateUrl: &#x27;./rhythm.component.html&#x27;,
   styleUrls: [&#x27;./rhythm.component.sass&#x27;]
 })
 export class RhythmComponent implements OnInit {
+
+  /**
+  * A list of all the tracks
+  */
   tracks: Track[] &#x3D; new Array&lt;Track&gt;();
 
+  /**
+  * The general signature, being used when a measure doesn&#x27;t have its own
+  */
   signature: Signature &#x3D; new Signature();
+
+  /**
+  * The general tempo of the tracks
+  */
   tempo: Tempo &#x3D; new Tempo();
 
-
+  /**
+  * The id of the track that&#x27;s being selected
+  */
   selectedTrackId: number | null &#x3D; null;
+
+  /**
+  * The index of the selected track in the list of all the tracks
+  */
   selectedTrackIndex: number &#x3D; -1;
+
+  /**
+  * If we need to wait 2 measure before actually recording the inputs
+  */
+  waitingRecord: boolean &#x3D; false;
+
+  /**
+  * If we are recording the inputs
+  */
   recording: boolean &#x3D; false
 
+  /**
+  * The number of tracks stated as solo
+  */
   nbOfSoloTracks: number &#x3D; 0;
 
+  /**
+  * The instant of the beginning of the recording
+  */
   startRecord: Date &#x3D; new Date();
+
+  /**
+  * The instant a TAP is held
+  */
   startTapVar: Date &#x3D; new Date();
+
+  /**
+  * The instant a TAP is released
+  */
   endTapVar: Date &#x3D; new Date();
+
+  /**
+  * If the tracks are playing
+  */
+  isPlayingTracks: boolean &#x3D; false;
+
+  /**
+   * The duration of the measures (in seconds)
+   */
+  measureDuration: number &#x3D; 0;
 
   /**
    * @ignore
    */
   constructor() { }
 
+  /**
+  * @ignore
+  */
   ngOnInit(): void {
+    this.updateMeasureDuration();
   }
 
+  /**
+  * Add a new track to the list of tracks
+  * @param {boolean} bool Should the track actually be added
+  */
   addTrack(bool: boolean): void {
     if(bool) {
       this.tracks.push(new Track());
     }
   }
 
-  toggleRecording(): void {
+  /**
+  * Toggle if the inputs are being recorded
+  * @returns {Promise&lt;any&gt;} A promise to await for
+  */
+  async toggleRecording(): Promise&lt;any&gt; {
     if(this.selectedTrackId) {
       this.recording &#x3D; !this.recording;
-      this.startRecord &#x3D; new Date();
+      if(!this.recording) {
+        this.waitingRecord &#x3D; false;
+      } else {
+        console.log(&quot;new&quot;)
+        this.startRecord &#x3D; new Date();
+        this.waitingRecord &#x3D; true;
+        let time &#x3D; this.measureDuration * 2 * 1000; // Two measures time in ms
+        await new Promise&lt;any&gt;(function(resolve) {
+          setTimeout(function () {
+            resolve();
+          }, time);
+        });
+        this.waitingRecord &#x3D; false;
+        this.startRecord &#x3D; new Date();
+      }
+      //this.startRecord &#x3D; new Date();
+
     }
   }
 
   /**
-   * @ignore
+   * Add a note to the selected track &lt;br/&gt;
+   * TODO
    */
-  addNote(evt: Event): void {
+  addNote(note: Note): void {
 
   }
 
+  /**
+  * Update the duration of the measures based on the {@link RythmComponent#signature} and the {@link RythmComponent#tempo}
+  */
+  updateMeasureDuration(): void {
+    this.measureDuration &#x3D; (((this.signature.getTop() * (this.tempo.getNoteNumber() / this.signature.getBottomNumber())) / this.tempo.getBPM()) * 60);
+  }
+
+  /**
+  * Get the number of the measure that currently being recorded (based on the start of the recording)
+  * @returns {number} the number of the measure
+  */
+  atMeasure(): number {
+    let result &#x3D; Math.floor(( (Date.now() - this.startRecord.getTime()) / 1000) / this.measureDuration) + 1;
+    console.log(result);
+    if(this.waitingRecord) {
+      if(result &#x3D;&#x3D; 1) {
+        return -2;
+      }
+      return -1;
+    }
+    return result;
+  }
+
+  /**
+  * State that a TAP has begun
+  * @param {Event} evt the TAP button is held
+  */
   startTap(evt: Event): void {
-    let time &#x3D; ((this.signature.getTop() * (this.tempo.getNoteNumber() / this.signature.getBottomNumber())) / this.tempo.getBPM()) * 120000;
-    let timer &#x3D; setTimeout(function(startTapVar: Date) {
-      startTapVar &#x3D; new Date();
-    }, time, this.startTapVar);
-
+    this.startTapVar &#x3D; new Date();
   }
 
+  /**
+  * State that a TAP has ended
+  * @param {Event} evt the TAP button is released
+  */
   endTap(evt: Event): void {
     this.endTapVar &#x3D; new Date();
 
@@ -1215,11 +1900,29 @@ export class RhythmComponent implements OnInit {
     this.tracks[this.selectedTrackIndex].addNote(new Note(timecode, duration));
   }
 
+  /**
+  * Set the {@link RhythmComponent#tempo}
+  * @param {Tempo} tempo The tempo to set with
+  */
   setTempo(tempo: Tempo):void {
-    this.tempo &#x3D; tempo;
+      // Must be set this way for being send to the child components after modification
+    this.tempo &#x3D; new Tempo(tempo.getNote(), tempo.getBPM());
+    this.updateMeasureDuration();
   }
 
+  /**
+  * Set the {@link RhythmComponent#signature}
+  * @param {Signature} signature The signature to set with
+  */
+  setSignature(signature: Signature): void {
+    this.signature &#x3D; new Signature(signature.getTop(), signature.getBottom());
+    this.updateMeasureDuration();
+  }
 
+  /**
+  * Set the {@link RhythmComponent#selectedTrackId}
+  * @param {number|null} id The id of the selected track (null if none)
+  */
   setSelectedTrackId(id: number | null): void {
     if(!this.recording) {
       // Put the last selected (this.selectedTrackId) track component&#x27;s inside attribute isSelected as false
@@ -1280,6 +1983,38 @@ export class RhythmComponent implements OnInit {
       }
     }
   }
+
+  /**
+  * Set if the tracks are playing
+  * @param {boolean} bool if the tracks are palying or not
+  */
+  setIsPlayingTracks(bool: boolean){
+    this.isPlayingTracks &#x3D; bool;
+  }
+
+  /**
+  * Return the current rhythm in string form &lt;br/&gt;
+  * (Should be the correct format for conversion)
+  * @returns {String} A stringified version of the rhythm
+  */
+  toString(): String {
+    let rythmStr: String &#x3D; &quot;&quot;;
+    rythmStr +&#x3D; &quot;{&quot;;
+    rythmStr +&#x3D; this.tempo.toString()+&quot;,&quot;;
+    //Anacrouse wuold go there
+    rythmStr +&#x3D; this.signature.toString()+&quot;,&quot;;
+    //Number of &quot;mesures&quot; would go there
+    //A json array of modiified &quot;mesures&quot; would go there
+    rythmStr +&#x3D; &quot;\&quot;Tracks\&quot;:[&quot;;
+    for(let aTrack of this.tracks) {
+      rythmStr +&#x3D; aTrack.toString() + &quot;,&quot;;
+    }
+    rythmStr &#x3D; rythmStr.slice(0, -1);
+    rythmStr +&#x3D; &quot;]}&quot;;
+
+    return rythmStr;
+  }
+
 }
 </code></pre>
     </div>
@@ -1288,7 +2023,7 @@ export class RhythmComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;h1 class&#x3D;&quot;hide&quot;&gt;Créer une polyrythmie&lt;/h1&gt;
 
 &lt;section id&#x3D;&quot;tracks&quot;&gt;
-  &lt;app-track *ngFor&#x3D;&quot;let track of tracks&quot; [track]&#x3D;&quot;track&quot; (selectedTrack)&#x3D;&quot;setSelectedTrackId($event)&quot;
+  &lt;app-track *ngFor&#x3D;&quot;let track of tracks&quot; [track]&#x3D;&quot;track&quot; [isPlaying]&#x3D;&quot;isPlayingTracks&quot; [signature]&#x3D;&quot;signature&quot; [tempo]&#x3D;&quot;tempo&quot; (selectedTrack)&#x3D;&quot;setSelectedTrackId($event)&quot; (isPlayingOutput)&#x3D;&quot;setIsPlayingTracks($event)&quot;
             [ngClass]&#x3D;&quot;{&#x27;selected&#x27; : track.getId() &#x3D;&#x3D; selectedTrackId, &#x27;recording&#x27; : recording &amp;&amp; track.getId() &#x3D;&#x3D; selectedTrackId}&quot;&gt;&lt;/app-track&gt;
   &lt;app-create-track (create)&#x3D;&quot;addTrack($event)&quot;&gt;&lt;/app-create-track&gt;
 &lt;/section&gt;
@@ -1301,7 +2036,7 @@ export class RhythmComponent implements OnInit {
     &lt;/div&gt;
 
     &lt;div&gt;
-      &lt;app-playbar&gt;&lt;/app-playbar&gt;
+      &lt;app-playbar [isPlaying]&#x3D;&quot;isPlayingTracks&quot; (playTracks)&#x3D;&quot;setIsPlayingTracks($event)&quot;&gt;&lt;/app-playbar&gt;
       &lt;div&gt;
         &lt;button class&#x3D;&quot;anacrouse disabled&quot;&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/anacrusis.svg&quot; alt&#x3D;&quot;Anacrouse&quot; /&gt;&lt;/button&gt;
         &lt;app-metronome-sound [tempo]&#x3D;&quot;tempo&quot; [signature]&#x3D;&quot;signature&quot; [isPlaying]&#x3D;&quot;recording&quot;&gt;&lt;/app-metronome-sound&gt;
@@ -1309,19 +2044,29 @@ export class RhythmComponent implements OnInit {
     &lt;/div&gt;
 
     &lt;div&gt;
-      &lt;app-signature&gt;&lt;/app-signature&gt;
+      &lt;app-signature (signatureOut)&#x3D;&quot;setSignature($event)&quot;&gt;&lt;/app-signature&gt;
       &lt;app-tempo (tempoOutput)&#x3D;&quot;setTempo($event)&quot;&gt;&lt;/app-tempo&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;button *ngIf&#x3D;&quot;!recording&quot; id&#x3D;&quot;start-button&quot; (click)&#x3D;&quot;toggleRecording()&quot; [ngClass]&#x3D;&quot;{&#x27;disabled&#x27;: !selectedTrackId}&quot;&gt;START&lt;/button&gt;
-  &lt;button *ngIf&#x3D;&quot;recording&quot; id&#x3D;&quot;tap-button&quot; (click)&#x3D;&quot;addNote($event)&quot; (mousedown)&#x3D;&quot;startTap($event)&quot; (mouseup)&#x3D;&quot;endTap($event)&quot;&gt;TAP&lt;/button&gt;
+  &lt;button *ngIf&#x3D;&quot;!recording&quot; id&#x3D;&quot;start-button&quot; (click)&#x3D;&quot;toggleRecording()&quot; [ngClass]&#x3D;&quot;{&#x27;disabled&#x27;: !selectedTrackId}&quot; [style.animation]&#x3D;&quot;&quot; &gt;START&lt;/button&gt;
+  &lt;span *ngIf&#x3D;&quot;waitingRecord&quot; id&#x3D;&quot;wait&quot; [style.animation]&#x3D;&quot;&#x27;record-timer &#x27;+ this.measureDuration * 2 +&#x27;s ease-in-out infinite&#x27;&quot; &gt;&lt;span&gt;WAIT&lt;/span&gt;&lt;/span&gt;
+  &lt;button *ngIf&#x3D;&quot;!waitingRecord &amp;&amp; recording&quot; id&#x3D;&quot;tap-button&quot; (click)&#x3D;&quot;addNote($event)&quot; (mousedown)&#x3D;&quot;startTap($event)&quot; (mouseup)&#x3D;&quot;endTap($event)&quot;&gt;TAP&lt;/button&gt;
 
   &lt;div id&#x3D;&quot;measure-and-track&quot;&gt;
-    &lt;div id&#x3D;&quot;measure&quot; *ngIf&#x3D;&quot;true&quot;&gt;
+    &lt;div id&#x3D;&quot;record-menu&quot; *ngIf&#x3D;&quot;recording&quot;&gt;
+      &lt;div&gt;
+        &lt;button (click)&#x3D;&quot;toggleRecording()&quot;&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/stop.svg&quot; alt&#x3D;&quot;Stop&quot; /&gt;&lt;/button&gt;
+        &lt;span&gt;Stop&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;span&gt;Mesure : &lt;/span&gt;&lt;span&gt;{{ atMeasure() }}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id&#x3D;&quot;measure&quot; *ngIf&#x3D;&quot;true &amp;&amp; !recording&quot;&gt;
 
     &lt;/div&gt;
-    &lt;div id&#x3D;&quot;track&quot; *ngIf&#x3D;&quot;selectedTrackId !&#x3D; null&quot;&gt;
+    &lt;div id&#x3D;&quot;track&quot; *ngIf&#x3D;&quot;selectedTrackId !&#x3D; null &amp;&amp; !recording&quot;&gt;
       &lt;button&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/delete.svg&quot; alt&#x3D;&quot;Supprimer&quot; /&gt;&lt;/button&gt;
       &lt;button&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/empty.svg&quot; alt&#x3D;&quot;Vider&quot; /&gt;&lt;/button&gt;
     &lt;/div&gt;
@@ -1347,6 +2092,7 @@ $BUTTON_SIZE: 3rem
   display: flex
   flex-direction: column
   width: 100%
+  max-width: 100%
   flex-grow: 1
   max-height: 100vh
 
@@ -1358,8 +2104,14 @@ section
   padding: 0.5rem 0
   overflow-y: auto
   overflow-x: hidden
+  max-width: 100%
   scroll-behavior: smooth
   max-height: calc(100vh - $CONTROLS_HEIGHT)
+
+  &amp;::-webkit-scrollbar
+    height: 0px
+    width: 0px
+    background: transparent
 
 #controls
   margin-top: auto
@@ -1421,10 +2173,56 @@ section
     font-size: 2.4em
     border-color: vars.$RED
 
+  #wait
+    display: flex
+    justify-content: center
+    align-items: center
+    height: $TAP_BUTTON_SIZE
+    width: $TAP_BUTTON_SIZE
+    flex-shrink: 0
+    border-radius: 50%
+    background-image: linear-gradient(to top, vars.$RED 50%, vars.$ORANGE 50%)
+    background-size: 100% 200%
+    font-size: 1.8em
+    text-align: center
+    //backgrond-position: 50%
+
+    &amp;&gt;span
+      height: $TAP_BUTTON_SIZE - 1.5rem
+      width: $TAP_BUTTON_SIZE - 1.5rem
+      border-radius: 50%
+      background-color: vars.$GRAY
+      line-height: $TAP_BUTTON_SIZE - 1.5rem
+
+
   #measure-and-track
     margin-left: 0.5rem
     display: flex
     justify-content: flex-end
+
+
+@mixin keyframes-animation($name)
+  @-webkit-keyframes #{$name}
+    @content
+
+  @keyframes #{$name}
+    @content
+
+@mixin prefix-property($name, $value1, $value2)
+  #{$name}: $value1 $value2
+          #{$name}: $value1 $value2
+
+@include keyframes-animation(record-timer)
+  0%
+    @include prefix-property(background-position, top, center)
+  /*25%
+    @include prefix-property(transform, translateX(-50%) rotate(0deg) linear)*/
+  /*50%
+    @include prefix-property(transform, translateX(-50%) rotate(45deg))*/
+  /*75%
+    @include prefix-property(transform, translateX(-50%) rotate(0deg) linear)*/
+  100%
+    @include prefix-property(background-position, bottom, center)
 </code></pre>
     </div>
 
@@ -1453,8 +2251,8 @@ section
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1 class="hide">Créer une polyrythmie</h1><section id="tracks">  <app-track *ngFor="let track of tracks" [track]="track" (selectedTrack)="setSelectedTrackId($event)"            [ngClass]="{\'selected\' : track.getId() == selectedTrackId, \'recording\' : recording && track.getId() == selectedTrackId}"></app-track>  <app-create-track (create)="addTrack($event)"></app-create-track></section><section id="controls">  <div id="generals">    <div>      <app-save-menu></app-save-menu>      <app-export-menu></app-export-menu>    </div>    <div>      <app-playbar></app-playbar>      <div>        <button class="anacrouse disabled"><img src="../../assets/images/icons/anacrusis.svg" alt="Anacrouse" /></button>        <app-metronome-sound [tempo]="tempo" [signature]="signature" [isPlaying]="recording"></app-metronome-sound>      </div>    </div>    <div>      <app-signature></app-signature>      <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>    </div>  </div>  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{\'disabled\': !selectedTrackId}">START</button>  <button *ngIf="recording" id="tap-button" (click)="addNote($event)" (mousedown)="startTap($event)" (mouseup)="endTap($event)">TAP</button>  <div id="measure-and-track">    <div id="measure" *ngIf="true">    </div>    <div id="track" *ngIf="selectedTrackId != null">      <button><img src="../../assets/images/icons/delete.svg" alt="Supprimer" /></button>      <button><img src="../../assets/images/icons/empty.svg" alt="Vider" /></button>    </div>  </div></section></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
+        var COMPONENT_TEMPLATE = '<div><h1 class="hide">Créer une polyrythmie</h1><section id="tracks">  <app-track *ngFor="let track of tracks" [track]="track" [isPlaying]="isPlayingTracks" [signature]="signature" [tempo]="tempo" (selectedTrack)="setSelectedTrackId($event)" (isPlayingOutput)="setIsPlayingTracks($event)"            [ngClass]="{\'selected\' : track.getId() == selectedTrackId, \'recording\' : recording && track.getId() == selectedTrackId}"></app-track>  <app-create-track (create)="addTrack($event)"></app-create-track></section><section id="controls">  <div id="generals">    <div>      <app-save-menu></app-save-menu>      <app-export-menu></app-export-menu>    </div>    <div>      <app-playbar [isPlaying]="isPlayingTracks" (playTracks)="setIsPlayingTracks($event)"></app-playbar>      <div>        <button class="anacrouse disabled"><img src="../../assets/images/icons/anacrusis.svg" alt="Anacrouse" /></button>        <app-metronome-sound [tempo]="tempo" [signature]="signature" [isPlaying]="recording"></app-metronome-sound>      </div>    </div>    <div>      <app-signature (signatureOut)="setSignature($event)"></app-signature>      <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>    </div>  </div>  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{\'disabled\': !selectedTrackId}" [style.animation]="" >START</button>  <span *ngIf="waitingRecord" id="wait" [style.animation]="\'record-timer \'+ this.measureDuration * 2 +\'s ease-in-out infinite\'" ><span>WAIT</span></span>  <button *ngIf="!waitingRecord && recording" id="tap-button" (click)="addNote($event)" (mousedown)="startTap($event)" (mouseup)="endTap($event)">TAP</button>  <div id="measure-and-track">    <div id="record-menu" *ngIf="recording">      <div>        <button (click)="toggleRecording()"><img src="../../assets/images/icons/stop.svg" alt="Stop" /></button>        <span>Stop</span>      </div>      <div>        <span>Mesure : </span><span>{{ atMeasure() }}</span>      </div>    </div>    <div id="measure" *ngIf="true && !recording">    </div>    <div id="track" *ngIf="selectedTrackId != null && !recording">      <button><img src="../../assets/images/icons/delete.svg" alt="Supprimer" /></button>      <button><img src="../../assets/images/icons/empty.svg" alt="Vider" /></button>    </div>  </div></section></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'SoundPlayerComponent', 'selector': 'app-sound-player'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RhythmComponent'};
 </script>

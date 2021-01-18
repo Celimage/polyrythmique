@@ -4,16 +4,17 @@ import { Tempo } from "../classes/tempo";
 import { Signature } from "../classes/signature";
 import { Metronome } from "../classes/metronome";
 
-@Component({
-  selector: 'app-metronome-sound',
-  templateUrl: './metronome-sound.component.html',
-  styleUrls: ['./metronome-sound.component.sass']
-})
 /**
  * This component is a button that allows to select the type of sound of the metronome,
  *   which starts when its parent component's attribute binded to the isPlaying attribute
  *   pass to true and stop when this attribute pass to false if the mode correspond to 0 : sound all along
  */
+@Component({
+  selector: 'app-metronome-sound',
+  templateUrl: './metronome-sound.component.html',
+  styleUrls: ['./metronome-sound.component.sass']
+})
+
 export class MetronomeSoundComponent implements OnInit, OnChanges {
   /**
    * The sound mode of the component.
@@ -90,6 +91,7 @@ export class MetronomeSoundComponent implements OnInit, OnChanges {
 
   /**
    * Play the metronome for an undetermined time, two measure or not at all according to the {@link MetronomeSoundComponent#mode|mode} of the componenet
+   * @returns {Promise<any>} A promise to await for
    */
   async playMetronome(): Promise<any> {
     if(this.mode == 0) {

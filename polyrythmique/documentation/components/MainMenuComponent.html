@@ -64,6 +64,13 @@
     <code>src/app/main-menu/main-menu.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The main menu of the application.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -183,7 +190,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/main-menu/main-menu.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/main-menu/main-menu.component.ts:19</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -228,8 +235,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/main-menu/main-menu.component.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/main-menu/main-menu.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -291,14 +298,15 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
 
+/**
+ * The main menu of the application.
+ */
 @Component({
   selector: &#x27;app-main-menu&#x27;,
   templateUrl: &#x27;./main-menu.component.html&#x27;,
   styleUrls: [&#x27;./main-menu.component.sass&#x27;]
 })
-/**
- * The main menu of the application.
- */
+
 export class MainMenuComponent implements OnInit {
   /**
    * The number of the active tab&lt;br/&gt;
@@ -504,7 +512,7 @@ img
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><aside>  <button>MENU</button>  <nav>    <a routerLink="/rhythm" [ngClass]="{\'middle\' : active == 2, \'dark\' : active == 3}" (click)="setActive(1)">      <img src="../assets/images/rhythm.svg" alt="Créer une polyrythmie" />      <span>Créer une polyrythmie</span>    </a>    <a routerLink="/rhythm-sound" [ngClass]="{\'middle\' : active != 2}" (click)="setActive(2)">      <img src="../assets/images/rhythm-sound.svg" alt="Créer une polyrythmie depuis une musique" />      <span>Créer une polyrythmie depuis une musique</span>    </a>    <a routerLink="/metronome" [ngClass]="{\'middle\' : active == 2, \'dark\' : active == 1}" (click)="setActive(3)">      <img src="../assets/images/metronome.svg" alt="Métronome" />      <span>Métronome</span>    </a>  </nav></aside></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'SoundPlayerComponent', 'selector': 'app-sound-player'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MainMenuComponent'};
 </script>

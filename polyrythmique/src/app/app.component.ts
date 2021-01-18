@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 
+
+/**
+ * The application component, or main component
+ */
 @Component({
   selector: "app-root",
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']//,
   //encapsulation: ViewEncapsulation.None
 })
-/**
- * The application component, or main component
- */
 export class AppComponent {
   /**
    * The title of the application

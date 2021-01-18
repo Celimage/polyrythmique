@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+* The save-menu component <br/>
+* TODO
+*/
 @Component({
   selector: 'app-save-menu',
   templateUrl: './save-menu.component.html',
   styleUrls: ['./save-menu.component.sass']
 })
-/**
- * TODO
- */
 export class SaveMenuComponent implements OnInit {
   /**
    * @ignore

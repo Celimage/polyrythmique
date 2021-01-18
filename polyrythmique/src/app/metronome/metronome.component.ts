@@ -3,15 +3,15 @@ import { Tempo } from '../classes/tempo';
 import { Metronome, Sound } from '../classes/metronome';
 import { BasicNote } from '../enums/basic-note';
 
+/**
+ * Used to define the Metronome
+ */
 @Component({
   selector: 'app-metronome',
   templateUrl: './metronome.component.html',
   styleUrls: ['./metronome.component.sass']
 })
 
-/**
- * Used to define the Metronome
- */
 export class MetronomeComponent implements OnInit {
   /**
    * The BPM (Beat Per Minute) of the metronome
@@ -32,6 +32,9 @@ export class MetronomeComponent implements OnInit {
    */
   runningMetronome: Metronome;
 
+  /**
+  * If the instrument is being changed or not
+  */
   isModifyingInstrument: boolean = false;
 
   /**
@@ -49,7 +52,6 @@ export class MetronomeComponent implements OnInit {
 
   /**
   * Set the BPM at which the metronome beats
-  *
   *@param {number} bpm The beat per minute ratio the metronome will beat at
   */
   setBPM(bpm: number): void {
@@ -62,7 +64,6 @@ export class MetronomeComponent implements OnInit {
 
   /**
     * Set the {@link MetronomeCOmponent#tempo|tempo} of the metronome
-    *
     *@param {Tempo} tempo The new tempo of the metronome
     */
   setTempo(tempo: Tempo): void {
@@ -75,7 +76,6 @@ export class MetronomeComponent implements OnInit {
 
   /**
   * Get the BPM at which the metronome beats
-  *
   * @returns {number} The time it takes for the metronome to tick twice (in sec)
   */
   getMetronomeMovementLengthInSec(): number {
@@ -100,6 +100,9 @@ export class MetronomeComponent implements OnInit {
     this.runningMetronome.stop();
   }
 
+  /**
+  * Change is the instrument is being modified or not {@link MetronomeComponent#isModifyingInstrument}
+  */
   toggleModifyInstrument(): void{
     if(!this.isRunning){
       this.isModifyingInstrument = !this.isModifyingInstrument;
@@ -109,10 +112,18 @@ export class MetronomeComponent implements OnInit {
     }
   }
 
+  /**
+  * Get the list of possible instruments
+  * @returns {String[]} The list of possible instrument's paths
+  */
   getInstrumentList(): String[]{
     return Sound.values();
   }
 
+  /**
+  * Set the sound played by the metronome based on its name
+  * @param {String} soundName The name of the sound to set
+  */
   setInstrument(soundName: String){
     console.log("CLICKED");
     this.toggleModifyInstrument();

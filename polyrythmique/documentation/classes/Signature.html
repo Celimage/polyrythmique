@@ -67,7 +67,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>This class represent a signature</p>
+                <p>This class represents a signature</p>
 
             </p>
 
@@ -375,8 +375,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="118"
-                            class="link-to-prism">src/app/classes/signature.ts:118</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/classes/signature.ts:119</a></div>
                 </td>
             </tr>
 
@@ -422,8 +422,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="109"
-                            class="link-to-prism">src/app/classes/signature.ts:109</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/classes/signature.ts:110</a></div>
                 </td>
             </tr>
 
@@ -469,8 +469,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/app/classes/signature.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/classes/signature.ts:101</a></div>
                 </td>
             </tr>
 
@@ -565,8 +565,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/app/classes/signature.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/classes/signature.ts:88</a></div>
                 </td>
             </tr>
 
@@ -805,8 +805,8 @@ NOT FINISHED</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/classes/signature.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/classes/signature.ts:76</a></div>
                 </td>
             </tr>
 
@@ -881,7 +881,7 @@ NOT FINISHED</p>
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BasicNote } from &quot;../enums/basic-note&quot;;
 
 /**
- * This class represent a signature
+ * This class represents a signature
  */
 export class Signature {
   /**
@@ -944,6 +944,7 @@ export class Signature {
    */
   setBottom(bottom: BasicNote): void {
     if(this.isCompatible(this.top, bottom)) {
+
       this.bottom &#x3D; bottom;
     }
   }
@@ -965,7 +966,7 @@ export class Signature {
    * NOT FINISHED
    */
   private isCompatible(top: number, bottom: BasicNote): boolean {
-    if(top &gt;&#x3D; 1 &amp;&amp; top % 1 &#x3D;&#x3D; 1) {
+    if(top &gt;&#x3D; 1 &amp;&amp; top % 1 &#x3D;&#x3D; 0) {
       return true;
     } else {
       return false;
