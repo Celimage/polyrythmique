@@ -119,13 +119,9 @@ export class RhythmComponent implements OnInit {
     this.updateMeasureDuration();
   }
 
-  setSignture(signature: Signature): void {
+  setSignature(signature: Signature): void {
     this.signature = new Signature(signature.getTop(), signature.getBottom());
     this.updateMeasureDuration();
-  }
-
-  setSignature(signature: Signature):void{
-    this.signature = signature;
   }
 
 
