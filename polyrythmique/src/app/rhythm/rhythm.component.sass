@@ -118,6 +118,34 @@ section
     display: flex
     justify-content: flex-end
 
+    #record-menu
+      display: flex
+      justify-content: space-around
+      align-items: center
+      font-size: 1.2em
+      flex-grow: 1
+
+      &>button
+        height: $TAP_BUTTON_SIZE / 1.75
+        width: $TAP_BUTTON_SIZE / 1.75
+        border: 0.5rem solid vars.$RED
+        border-radius: 0.5rem
+        display: flex
+        justify-content: center
+        align-items: center
+
+      &>div
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        span:first-child
+          margin-bottom: 0.75rem
+        span:last-child
+          font-size: 1.2em
+          font-weight: bold
+
+
 
 @mixin keyframes-animation($name)
   @-webkit-keyframes #{$name}

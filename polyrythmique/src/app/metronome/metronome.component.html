@@ -17,7 +17,7 @@
     <input type="submit" value="Validate"/>
   </select> -->
 
-  <div *ngIf="isModifyingInstrument">
+  <div *ngIf="isModifyingInstrument" class="list">
     <span class="selectInstrument" *ngFor="let instrument of getInstrumentList()" (click)="setInstrument(instrument)">{{this.instrument}} </span>
   </div>
 
