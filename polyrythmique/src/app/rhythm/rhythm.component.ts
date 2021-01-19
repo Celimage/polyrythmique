@@ -135,7 +135,7 @@ export class RhythmComponent implements OnInit {
    * Add a note to the selected track <br/>
    * TODO
    */
-  addNote(note: Note): void {
+  addNote(evt: Event): void {
 
   }
 
