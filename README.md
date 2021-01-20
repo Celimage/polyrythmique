@@ -58,7 +58,7 @@ Les fichiers JSON transitant entre les différentes parties du projet seront qua
 | **Typescript :**<br />Variables<br />Fonctions<br />Attributs<br />Méthodes | `camelCase` |
 | **SASS :**<br />Variables<br />Mixins<br />Etc. | `kebab-case` |
 | Constantes<br />Valeurs des enum | `UPPER_SNAKE_CASE` |
-| Enum<br />(lasses | `PascalCase` |
+| Enum<br />Classes | `PascalCase` |
 
 ### Traduction des termes musicaux
 
