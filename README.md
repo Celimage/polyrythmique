@@ -3,8 +3,8 @@
 
 ## À propos
 
-Cette application a pour but d'aider les rythmiciens et rythmicienne à enregistrer leurs polyrythmies.
-Elle propose trois fonctionnalités majeures : la prise de rythme de zéro, la prise de rythme sur fond
+Cette application a pour but d'aider les rythmiciens et rythmiciennes à enregistrer leurs polyrythmies.
+Elle propose trois fonctionnalités majeures : la prise de rythmes de zéro, la prise de rythmes sur fond
 musical et un métronome. Les détails de ces fonctionnalités sont spécifiées dans le cahier des charges à la racine du dépôt.
 
 Cette application est développée par plusieurs groupes d'étudiants de Polytech Tours en quatrième année d'informatique. Le commanditaire du projet est Sylvain FABRE.
@@ -14,7 +14,7 @@ Ce dépôt git contient les parties 1 et 2 du projet, intitulées respectivement
 à l'aide de la technologie front Angular par le groupe 25 de l'année 2020-2021 composé de Yacine DAHBI et Célie PAUTREL.
 
 ## Important
-Le fichier `_vars.sass` présent à la racine du git est à déplacer dans le dossier ignoré par git `locamat/nodes_module/sass`
+Le fichier `_vars.sass` présent à la racine du git est à déplacer dans le dossier ignoré par git `polyrythmique/nodes_module/sass`
 
 ## Technologies utilisées
 
@@ -57,7 +57,7 @@ Les fichiers JSON transitant entre les différentes parties du projet seront qua
 | Fichiers<br />Dossiers | `kebab-case` |
 | **Typescript :**<br />Variables<br />Fonctions<br />Attributs<br />Méthodes | `camelCase` |
 | **SASS :**<br />Variables<br />Mixins<br />Etc. | `kebab-case` |
-| Constantes<br />Variables d’environnement<br />Valeurs des enum | `UPPER_SNAKE_CASE` |
+| Constantes<br />Valeurs des enum | `UPPER_SNAKE_CASE` |
 | Enum<br />(Classes) | `PascalCase` |
 
 ### Traduction des termes musicaux
