@@ -150,7 +150,7 @@ export namespace Metronome {
     * @returns {String} The name of the sound
     */
     export function getSoundNameByPath(soundPath: Metronome.Sound): String{
-      console.log(soundPath);
+      //console.log(soundPath);
 
       if(soundPath === "../../assets/sounds/metronome/toc.wav"){
         return "TOC";

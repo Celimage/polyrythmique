@@ -114,7 +114,7 @@ export class RhythmComponent implements OnInit {
       if(!this.recording) {
         this.waitingRecord = false;
       } else {
-        console.log("new")
+        //console.log("new")
         this.startRecord = new Date();
         this.waitingRecord = true;
         let time = this.measureDuration * 2 * 1000; // Two measures time in ms
@@ -152,7 +152,7 @@ export class RhythmComponent implements OnInit {
   */
   atMeasure(): number {
     let result = Math.floor(( (Date.now() - this.startRecord.getTime()) / 1000) / this.measureDuration) + 1;
-    console.log(result);
+    //console.log(result);
     if(this.waitingRecord) {
       if(result == 1) {
         return -2;
@@ -182,6 +182,11 @@ export class RhythmComponent implements OnInit {
     let duration: number = (this.endTapVar.getTime() - this.startTapVar.getTime()) / 1000;
 
     this.tracks[this.selectedTrackIndex].addNote(new Note(timecode, duration));
+
+    console.log("NOUVELLE NOTE :");
+    console.log(timecode+"s du début");
+    console.log(duration+"s d'appuie");
+    console.log("-");
   }
 
   /**
