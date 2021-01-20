@@ -1011,7 +1011,7 @@ export class MetronomeComponent implements OnInit {
     &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Validate&quot;/&gt;
   &lt;/select&gt; --&gt;
 
-  &lt;div *ngIf&#x3D;&quot;isModifyingInstrument&quot;&gt;
+  &lt;div *ngIf&#x3D;&quot;isModifyingInstrument&quot; class&#x3D;&quot;list&quot;&gt;
     &lt;span class&#x3D;&quot;selectInstrument&quot; *ngFor&#x3D;&quot;let instrument of getInstrumentList()&quot; (click)&#x3D;&quot;setInstrument(instrument)&quot;&gt;{{this.instrument}} &lt;/span&gt;
   &lt;/div&gt;
 
@@ -1097,6 +1097,13 @@ $METRONOME_WIDTH: ($METRONOME_HEIGHT * 90) / 112.5
 .selectInstrument
   display: block
   font-size: 0.8em
+
+.list&gt;span
+  padding: 0.25rem
+  margin: 0.5rem 0
+
+  &amp;::before
+    content: &quot;&gt;  &quot;
 </code></pre>
     </div>
 
@@ -1125,7 +1132,7 @@ $METRONOME_WIDTH: ($METRONOME_HEIGHT * 90) / 112.5
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  [ngClass]="{\'metronome\': true, \'run\': isRunning}">  <img src="../../assets/images/metronome/metronome-stick.svg" alt="Aiguillle du métronome" [style.animation]="\'rotating \'+ getMetronomeMovementLengthInSec() +\'s ease-in-out infinite\'" *ngIf="isRunning" />  <img src="../../assets/images/metronome/metronome-stick.svg" alt="Aiguillle du métronome" *ngIf="!isRunning" /></div><div class="controls">  <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>  <div class="play">    <button *ngIf="!isRunning"><img src="../../assets/images/icons/playbar/play.svg" (click)="start()" alt="Lancer" /></button>    <button *ngIf="isRunning"><img src="../../assets/images/icons/playbar/pause.svg" (click)="stop()" alt="Pause" /></button>  </div>  <span *ngIf="!isModifyingInstrument" (click) = "toggleModifyInstrument()">{{ runningMetronome.getSoundName() }}</span><!--  <select *ngIf="isModifyingInstrument" id="instrumentSelector" onchange="getInstrument(this.value)">    <option *ngFor="let instrument of getInstrumentList()" value="{{ instrument }}" label="{{ instrument }}" (onclick)="setInstrument(instrument)">this.value</option>    <input type="submit" value="Validate"/>  </select> -->  <div *ngIf="isModifyingInstrument">    <span class="selectInstrument" *ngFor="let instrument of getInstrumentList()" (click)="setInstrument(instrument)">{{this.instrument}} </span>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div  [ngClass]="{\'metronome\': true, \'run\': isRunning}">  <img src="../../assets/images/metronome/metronome-stick.svg" alt="Aiguillle du métronome" [style.animation]="\'rotating \'+ getMetronomeMovementLengthInSec() +\'s ease-in-out infinite\'" *ngIf="isRunning" />  <img src="../../assets/images/metronome/metronome-stick.svg" alt="Aiguillle du métronome" *ngIf="!isRunning" /></div><div class="controls">  <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>  <div class="play">    <button *ngIf="!isRunning"><img src="../../assets/images/icons/playbar/play.svg" (click)="start()" alt="Lancer" /></button>    <button *ngIf="isRunning"><img src="../../assets/images/icons/playbar/pause.svg" (click)="stop()" alt="Pause" /></button>  </div>  <span *ngIf="!isModifyingInstrument" (click) = "toggleModifyInstrument()">{{ runningMetronome.getSoundName() }}</span><!--  <select *ngIf="isModifyingInstrument" id="instrumentSelector" onchange="getInstrument(this.value)">    <option *ngFor="let instrument of getInstrumentList()" value="{{ instrument }}" label="{{ instrument }}" (onclick)="setInstrument(instrument)">this.value</option>    <input type="submit" value="Validate"/>  </select> -->  <div *ngIf="isModifyingInstrument" class="list">    <span class="selectInstrument" *ngFor="let instrument of getInstrumentList()" (click)="setInstrument(instrument)">{{this.instrument}} </span>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'SoundPlayerComponent', 'selector': 'app-sound-player'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MetronomeComponent'};

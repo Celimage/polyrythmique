@@ -267,7 +267,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addNote(note: <a href="../classes/Note.html">Note</a>)</code>
+<code>addNote(evt: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
                 </td>
             </tr>
 
@@ -298,9 +298,9 @@ TODO</p>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>note</td>
+                                    <td>evt</td>
                                     <td>
-                                                <code><a href="../classes/Note.html" target="_self" >Note</a></code>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
                                     </td>
 
                                     <td>
@@ -1851,7 +1851,7 @@ export class RhythmComponent implements OnInit {
    * Add a note to the selected track &lt;br/&gt;
    * TODO
    */
-  addNote(note: Note): void {
+  addNote(evt: Event): void {
 
   }
 
@@ -2055,10 +2055,7 @@ export class RhythmComponent implements OnInit {
 
   &lt;div id&#x3D;&quot;measure-and-track&quot;&gt;
     &lt;div id&#x3D;&quot;record-menu&quot; *ngIf&#x3D;&quot;recording&quot;&gt;
-      &lt;div&gt;
-        &lt;button (click)&#x3D;&quot;toggleRecording()&quot;&gt;&lt;img src&#x3D;&quot;../../assets/images/icons/stop.svg&quot; alt&#x3D;&quot;Stop&quot; /&gt;&lt;/button&gt;
-        &lt;span&gt;Stop&lt;/span&gt;
-      &lt;/div&gt;
+      &lt;button (click)&#x3D;&quot;toggleRecording()&quot;&gt;&lt;span&gt;STOP&lt;/span&gt;&lt;/button&gt;
       &lt;div&gt;
         &lt;span&gt;Mesure : &lt;/span&gt;&lt;span&gt;{{ atMeasure() }}&lt;/span&gt;
       &lt;/div&gt;
@@ -2200,6 +2197,34 @@ section
     display: flex
     justify-content: flex-end
 
+    #record-menu
+      display: flex
+      justify-content: space-around
+      align-items: center
+      font-size: 1.2em
+      flex-grow: 1
+
+      &amp;&gt;button
+        height: $TAP_BUTTON_SIZE / 1.75
+        width: $TAP_BUTTON_SIZE / 1.75
+        border: 0.5rem solid vars.$RED
+        border-radius: 0.5rem
+        display: flex
+        justify-content: center
+        align-items: center
+
+      &amp;&gt;div
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        span:first-child
+          margin-bottom: 0.75rem
+        span:last-child
+          font-size: 1.2em
+          font-weight: bold
+
+
 
 @mixin keyframes-animation($name)
   @-webkit-keyframes #{$name}
@@ -2251,7 +2276,7 @@ section
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1 class="hide">Créer une polyrythmie</h1><section id="tracks">  <app-track *ngFor="let track of tracks" [track]="track" [isPlaying]="isPlayingTracks" [signature]="signature" [tempo]="tempo" (selectedTrack)="setSelectedTrackId($event)" (isPlayingOutput)="setIsPlayingTracks($event)"            [ngClass]="{\'selected\' : track.getId() == selectedTrackId, \'recording\' : recording && track.getId() == selectedTrackId}"></app-track>  <app-create-track (create)="addTrack($event)"></app-create-track></section><section id="controls">  <div id="generals">    <div>      <app-save-menu></app-save-menu>      <app-export-menu></app-export-menu>    </div>    <div>      <app-playbar [isPlaying]="isPlayingTracks" (playTracks)="setIsPlayingTracks($event)"></app-playbar>      <div>        <button class="anacrouse disabled"><img src="../../assets/images/icons/anacrusis.svg" alt="Anacrouse" /></button>        <app-metronome-sound [tempo]="tempo" [signature]="signature" [isPlaying]="recording"></app-metronome-sound>      </div>    </div>    <div>      <app-signature (signatureOut)="setSignature($event)"></app-signature>      <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>    </div>  </div>  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{\'disabled\': !selectedTrackId}" [style.animation]="" >START</button>  <span *ngIf="waitingRecord" id="wait" [style.animation]="\'record-timer \'+ this.measureDuration * 2 +\'s ease-in-out infinite\'" ><span>WAIT</span></span>  <button *ngIf="!waitingRecord && recording" id="tap-button" (click)="addNote($event)" (mousedown)="startTap($event)" (mouseup)="endTap($event)">TAP</button>  <div id="measure-and-track">    <div id="record-menu" *ngIf="recording">      <div>        <button (click)="toggleRecording()"><img src="../../assets/images/icons/stop.svg" alt="Stop" /></button>        <span>Stop</span>      </div>      <div>        <span>Mesure : </span><span>{{ atMeasure() }}</span>      </div>    </div>    <div id="measure" *ngIf="true && !recording">    </div>    <div id="track" *ngIf="selectedTrackId != null && !recording">      <button><img src="../../assets/images/icons/delete.svg" alt="Supprimer" /></button>      <button><img src="../../assets/images/icons/empty.svg" alt="Vider" /></button>    </div>  </div></section></div>'
+        var COMPONENT_TEMPLATE = '<div><h1 class="hide">Créer une polyrythmie</h1><section id="tracks">  <app-track *ngFor="let track of tracks" [track]="track" [isPlaying]="isPlayingTracks" [signature]="signature" [tempo]="tempo" (selectedTrack)="setSelectedTrackId($event)" (isPlayingOutput)="setIsPlayingTracks($event)"            [ngClass]="{\'selected\' : track.getId() == selectedTrackId, \'recording\' : recording && track.getId() == selectedTrackId}"></app-track>  <app-create-track (create)="addTrack($event)"></app-create-track></section><section id="controls">  <div id="generals">    <div>      <app-save-menu></app-save-menu>      <app-export-menu></app-export-menu>    </div>    <div>      <app-playbar [isPlaying]="isPlayingTracks" (playTracks)="setIsPlayingTracks($event)"></app-playbar>      <div>        <button class="anacrouse disabled"><img src="../../assets/images/icons/anacrusis.svg" alt="Anacrouse" /></button>        <app-metronome-sound [tempo]="tempo" [signature]="signature" [isPlaying]="recording"></app-metronome-sound>      </div>    </div>    <div>      <app-signature (signatureOut)="setSignature($event)"></app-signature>      <app-tempo (tempoOutput)="setTempo($event)"></app-tempo>    </div>  </div>  <button *ngIf="!recording" id="start-button" (click)="toggleRecording()" [ngClass]="{\'disabled\': !selectedTrackId}" [style.animation]="" >START</button>  <span *ngIf="waitingRecord" id="wait" [style.animation]="\'record-timer \'+ this.measureDuration * 2 +\'s ease-in-out infinite\'" ><span>WAIT</span></span>  <button *ngIf="!waitingRecord && recording" id="tap-button" (click)="addNote($event)" (mousedown)="startTap($event)" (mouseup)="endTap($event)">TAP</button>  <div id="measure-and-track">    <div id="record-menu" *ngIf="recording">      <button (click)="toggleRecording()"><span>STOP</span></button>      <div>        <span>Mesure : </span><span>{{ atMeasure() }}</span>      </div>    </div>    <div id="measure" *ngIf="true && !recording">    </div>    <div id="track" *ngIf="selectedTrackId != null && !recording">      <button><img src="../../assets/images/icons/delete.svg" alt="Supprimer" /></button>      <button><img src="../../assets/images/icons/empty.svg" alt="Vider" /></button>    </div>  </div></section></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateTrackComponent', 'selector': 'app-create-track'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'ExportMenuComponent', 'selector': 'app-export-menu'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MeasureComponent', 'selector': 'app-measure'},{'name': 'MetronomeComponent', 'selector': 'app-metronome'},{'name': 'MetronomeSoundComponent', 'selector': 'app-metronome-sound'},{'name': 'NoteComponent', 'selector': 'app-note'},{'name': 'PlaybarComponent', 'selector': 'app-playbar'},{'name': 'RhythmComponent', 'selector': 'app-rhythm'},{'name': 'SaveMenuComponent', 'selector': 'app-save-menu'},{'name': 'SignatureComponent', 'selector': 'app-signature'},{'name': 'SoundPlayerComponent', 'selector': 'app-sound-player'},{'name': 'TempoComponent', 'selector': 'app-tempo'},{'name': 'TrackComponent', 'selector': 'app-track'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RhythmComponent'};
